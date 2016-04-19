@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Users -->
+      <package
+            uri="http://www.rskytech.com/hmi/users"
+            class="com.rskytech.hmi.users.UsersPackage"
+            genModel="model/Users.genmodel"/>
+   </extension>
+
+</plugin>
