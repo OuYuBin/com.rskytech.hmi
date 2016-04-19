@@ -21,7 +21,7 @@ import org.eclipse.ui.splash.AbstractSplashHandler;
  */
 public class InteractiveSplashHandler extends AbstractSplashHandler {
 	
-	private final static int F_LABEL_HORIZONTAL_INDENT = 225;
+	private final static int F_LABEL_HORIZONTAL_INDENT = 175;
 
 	private final static int F_BUTTON_WIDTH_HINT = 80;
 
@@ -263,7 +263,7 @@ public class InteractiveSplashHandler extends AbstractSplashHandler {
 	 * 
 	 */
 	private void createUICompositeBlank() {
-		Composite spanner = new Composite(fCompositeLogin, SWT.BORDER);
+		Composite spanner = new Composite(fCompositeLogin, SWT.NONE);
 		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
 		data.horizontalSpan = F_COLUMN_COUNT;
 		spanner.setLayoutData(data);
