@@ -67,7 +67,7 @@ public interface UsersPackage extends EPackage {
 	int USERS_CONFIGURATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>User</b></em>' containment reference.
+	 * The feature id for the '<em><b>User</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -76,7 +76,7 @@ public interface UsersPackage extends EPackage {
 	int USERS_CONFIGURATION__USER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Profile</b></em>' containment reference.
+	 * The feature id for the '<em><b>Profile</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -215,10 +215,10 @@ public interface UsersPackage extends EPackage {
 	EClass getUsersConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.rskytech.hmi.users.UsersConfiguration#getUser <em>User</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.rskytech.hmi.users.UsersConfiguration#getUser <em>User</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>User</em>'.
+	 * @return the meta object for the containment reference list '<em>User</em>'.
 	 * @see com.rskytech.hmi.users.UsersConfiguration#getUser()
 	 * @see #getUsersConfiguration()
 	 * @generated
@@ -226,10 +226,10 @@ public interface UsersPackage extends EPackage {
 	EReference getUsersConfiguration_User();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.rskytech.hmi.users.UsersConfiguration#getProfile <em>Profile</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.rskytech.hmi.users.UsersConfiguration#getProfile <em>Profile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Profile</em>'.
+	 * @return the meta object for the containment reference list '<em>Profile</em>'.
 	 * @see com.rskytech.hmi.users.UsersConfiguration#getProfile()
 	 * @see #getUsersConfiguration()
 	 * @generated
@@ -345,7 +345,7 @@ public interface UsersPackage extends EPackage {
 		EClass USERS_CONFIGURATION = eINSTANCE.getUsersConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>User</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>User</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -353,7 +353,7 @@ public interface UsersPackage extends EPackage {
 		EReference USERS_CONFIGURATION__USER = eINSTANCE.getUsersConfiguration_User();
 
 		/**
-		 * The meta object literal for the '<em><b>Profile</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Profile</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

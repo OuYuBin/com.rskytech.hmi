@@ -88,7 +88,7 @@
    <extension
          point="org.eclipse.ui.splashHandlers">
       <splashHandler
-            class="com.rskytech.hmi.application.splashHandlers.InteractiveSplashHandler"
+            class="com.rskytech.hmi.application.splashHandlers.LoginSplashHandler"
             id="com.rskytech.hmi.application.splashHandlers.interactive">
       </splashHandler>
       <splashHandlerProductBinding
