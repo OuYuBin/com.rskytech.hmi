@@ -154,6 +154,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import com.rskytech.hmi.common.editor.IRskyCommonEditor;
 import com.rskytech.hmi.users.editor.page.UserConfigurateFormPage;
+import com.rskytech.hmi.users.editor.page.UserProfileFormPage;
 import com.rskytech.hmi.users.provider.UsersItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
@@ -979,6 +980,8 @@ public class UsersEditor extends FormEditor implements IEditingDomainProvider, I
 	}
 
 	UserConfigurateFormPage userConfigurateFormPage;
+	
+	UserProfileFormPage userProfileFormPage;
 
 	@Override
 	protected void createPages() {
@@ -998,6 +1001,8 @@ public class UsersEditor extends FormEditor implements IEditingDomainProvider, I
 		//
 		createModel();
 
+		
+		
 		// --创建用户编辑页
 		userConfigurateFormPage = new UserConfigurateFormPage(this, "userConfigurate", "用户管理");
 		try {
@@ -1006,218 +1011,228 @@ public class UsersEditor extends FormEditor implements IEditingDomainProvider, I
 		} catch (PartInitException e) {
 			e.printStackTrace();
 		}
+		
+		userProfileFormPage=new UserProfileFormPage(this,"userProfile","角色管理");
+		try {
+			int pageIndex = addPage(userProfileFormPage);
+			setPageText(pageIndex, "角色");
+		} catch (PartInitException e) {
+			e.printStackTrace();
+		}
+		
+		
 
 		// Only creates the other pages if there is something that can be edited
 		//
-		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
-			// Create a page for the selection tree view.
-			//
-			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
-					@Override
-					public Viewer createViewer(Composite composite) {
-						Tree tree = new Tree(composite, SWT.MULTI);
-						TreeViewer newTreeViewer = new TreeViewer(tree);
-						return newTreeViewer;
-					}
-
-					@Override
-					public void requestActivation() {
-						super.requestActivation();
-						setCurrentViewerPane(this);
-					}
-				};
-				viewerPane.createControl(getContainer());
-
-				selectionViewer = (TreeViewer) viewerPane.getViewer();
-				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-
-				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-				selectionViewer.setInput(editingDomain.getResourceSet());
-				selectionViewer.setSelection(
-						new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
-				viewerPane.setTitle(editingDomain.getResourceSet());
-
-				new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
-
-				createContextMenuFor(selectionViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_SelectionPage_label"));
-			}
-
-			// Create a page for the parent tree view.
-			//
-			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
-					@Override
-					public Viewer createViewer(Composite composite) {
-						Tree tree = new Tree(composite, SWT.MULTI);
-						TreeViewer newTreeViewer = new TreeViewer(tree);
-						return newTreeViewer;
-					}
-
-					@Override
-					public void requestActivation() {
-						super.requestActivation();
-						setCurrentViewerPane(this);
-					}
-				};
-				viewerPane.createControl(getContainer());
-
-				parentViewer = (TreeViewer) viewerPane.getViewer();
-				parentViewer.setAutoExpandLevel(30);
-				parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));
-				parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-				createContextMenuFor(parentViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_ParentPage_label"));
-			}
-
-			// This is the page for the list viewer
-			//
-			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
-					@Override
-					public Viewer createViewer(Composite composite) {
-						return new ListViewer(composite);
-					}
-
-					@Override
-					public void requestActivation() {
-						super.requestActivation();
-						setCurrentViewerPane(this);
-					}
-				};
-				viewerPane.createControl(getContainer());
-				listViewer = (ListViewer) viewerPane.getViewer();
-				listViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				listViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-				createContextMenuFor(listViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_ListPage_label"));
-			}
-
-			// This is the page for the tree viewer
-			//
-			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
-					@Override
-					public Viewer createViewer(Composite composite) {
-						return new TreeViewer(composite);
-					}
-
-					@Override
-					public void requestActivation() {
-						super.requestActivation();
-						setCurrentViewerPane(this);
-					}
-				};
-				viewerPane.createControl(getContainer());
-				treeViewer = (TreeViewer) viewerPane.getViewer();
-				treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-				new AdapterFactoryTreeEditor(treeViewer.getTree(), adapterFactory);
-
-				createContextMenuFor(treeViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_TreePage_label"));
-			}
-
-			// This is the page for the table viewer.
-			//
-			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
-					@Override
-					public Viewer createViewer(Composite composite) {
-						return new TableViewer(composite);
-					}
-
-					@Override
-					public void requestActivation() {
-						super.requestActivation();
-						setCurrentViewerPane(this);
-					}
-				};
-				viewerPane.createControl(getContainer());
-				tableViewer = (TableViewer) viewerPane.getViewer();
-
-				Table table = tableViewer.getTable();
-				TableLayout layout = new TableLayout();
-				table.setLayout(layout);
-				table.setHeaderVisible(true);
-				table.setLinesVisible(true);
-
-				TableColumn objectColumn = new TableColumn(table, SWT.NONE);
-				layout.addColumnData(new ColumnWeightData(3, 100, true));
-				objectColumn.setText(getString("_UI_ObjectColumn_label"));
-				objectColumn.setResizable(true);
-
-				TableColumn selfColumn = new TableColumn(table, SWT.NONE);
-				layout.addColumnData(new ColumnWeightData(2, 100, true));
-				selfColumn.setText(getString("_UI_SelfColumn_label"));
-				selfColumn.setResizable(true);
-
-				tableViewer.setColumnProperties(new String[] { "a", "b" });
-				tableViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-				createContextMenuFor(tableViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_TablePage_label"));
-			}
-
-			// This is the page for the table tree viewer.
-			//
-			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
-					@Override
-					public Viewer createViewer(Composite composite) {
-						return new TreeViewer(composite);
-					}
-
-					@Override
-					public void requestActivation() {
-						super.requestActivation();
-						setCurrentViewerPane(this);
-					}
-				};
-				viewerPane.createControl(getContainer());
-
-				treeViewerWithColumns = (TreeViewer) viewerPane.getViewer();
-
-				Tree tree = treeViewerWithColumns.getTree();
-				tree.setLayoutData(new FillLayout());
-				tree.setHeaderVisible(true);
-				tree.setLinesVisible(true);
-
-				TreeColumn objectColumn = new TreeColumn(tree, SWT.NONE);
-				objectColumn.setText(getString("_UI_ObjectColumn_label"));
-				objectColumn.setResizable(true);
-				objectColumn.setWidth(250);
-
-				TreeColumn selfColumn = new TreeColumn(tree, SWT.NONE);
-				selfColumn.setText(getString("_UI_SelfColumn_label"));
-				selfColumn.setResizable(true);
-				selfColumn.setWidth(200);
-
-				treeViewerWithColumns.setColumnProperties(new String[] { "a", "b" });
-				treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-				createContextMenuFor(treeViewerWithColumns);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_TreeWithColumnsPage_label"));
-			}
-
+//		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
+//			// Create a page for the selection tree view.
+//			//
+//			{
+//				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
+//					@Override
+//					public Viewer createViewer(Composite composite) {
+//						Tree tree = new Tree(composite, SWT.MULTI);
+//						TreeViewer newTreeViewer = new TreeViewer(tree);
+//						return newTreeViewer;
+//					}
+//
+//					@Override
+//					public void requestActivation() {
+//						super.requestActivation();
+//						setCurrentViewerPane(this);
+//					}
+//				};
+//				viewerPane.createControl(getContainer());
+//
+//				selectionViewer = (TreeViewer) viewerPane.getViewer();
+//				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+//
+//				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+//				selectionViewer.setInput(editingDomain.getResourceSet());
+//				selectionViewer.setSelection(
+//						new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+//				viewerPane.setTitle(editingDomain.getResourceSet());
+//
+//				new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
+//
+//				createContextMenuFor(selectionViewer);
+//				int pageIndex = addPage(viewerPane.getControl());
+//				setPageText(pageIndex, getString("_UI_SelectionPage_label"));
+//			}
+//
+//			// Create a page for the parent tree view.
+//			//
+//			{
+//				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
+//					@Override
+//					public Viewer createViewer(Composite composite) {
+//						Tree tree = new Tree(composite, SWT.MULTI);
+//						TreeViewer newTreeViewer = new TreeViewer(tree);
+//						return newTreeViewer;
+//					}
+//
+//					@Override
+//					public void requestActivation() {
+//						super.requestActivation();
+//						setCurrentViewerPane(this);
+//					}
+//				};
+//				viewerPane.createControl(getContainer());
+//
+//				parentViewer = (TreeViewer) viewerPane.getViewer();
+//				parentViewer.setAutoExpandLevel(30);
+//				parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));
+//				parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+//
+//				createContextMenuFor(parentViewer);
+//				int pageIndex = addPage(viewerPane.getControl());
+//				setPageText(pageIndex, getString("_UI_ParentPage_label"));
+//			}
+//
+//			// This is the page for the list viewer
+//			//
+//			{
+//				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
+//					@Override
+//					public Viewer createViewer(Composite composite) {
+//						return new ListViewer(composite);
+//					}
+//
+//					@Override
+//					public void requestActivation() {
+//						super.requestActivation();
+//						setCurrentViewerPane(this);
+//					}
+//				};
+//				viewerPane.createControl(getContainer());
+//				listViewer = (ListViewer) viewerPane.getViewer();
+//				listViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+//				listViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+//
+//				createContextMenuFor(listViewer);
+//				int pageIndex = addPage(viewerPane.getControl());
+//				setPageText(pageIndex, getString("_UI_ListPage_label"));
+//			}
+//
+//			// This is the page for the tree viewer
+//			//
+//			{
+//				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
+//					@Override
+//					public Viewer createViewer(Composite composite) {
+//						return new TreeViewer(composite);
+//					}
+//
+//					@Override
+//					public void requestActivation() {
+//						super.requestActivation();
+//						setCurrentViewerPane(this);
+//					}
+//				};
+//				viewerPane.createControl(getContainer());
+//				treeViewer = (TreeViewer) viewerPane.getViewer();
+//				treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+//				treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+//
+//				new AdapterFactoryTreeEditor(treeViewer.getTree(), adapterFactory);
+//
+//				createContextMenuFor(treeViewer);
+//				int pageIndex = addPage(viewerPane.getControl());
+//				setPageText(pageIndex, getString("_UI_TreePage_label"));
+//			}
+//
+//			// This is the page for the table viewer.
+//			//
+//			{
+//				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
+//					@Override
+//					public Viewer createViewer(Composite composite) {
+//						return new TableViewer(composite);
+//					}
+//
+//					@Override
+//					public void requestActivation() {
+//						super.requestActivation();
+//						setCurrentViewerPane(this);
+//					}
+//				};
+//				viewerPane.createControl(getContainer());
+//				tableViewer = (TableViewer) viewerPane.getViewer();
+//
+//				Table table = tableViewer.getTable();
+//				TableLayout layout = new TableLayout();
+//				table.setLayout(layout);
+//				table.setHeaderVisible(true);
+//				table.setLinesVisible(true);
+//
+//				TableColumn objectColumn = new TableColumn(table, SWT.NONE);
+//				layout.addColumnData(new ColumnWeightData(3, 100, true));
+//				objectColumn.setText(getString("_UI_ObjectColumn_label"));
+//				objectColumn.setResizable(true);
+//
+//				TableColumn selfColumn = new TableColumn(table, SWT.NONE);
+//				layout.addColumnData(new ColumnWeightData(2, 100, true));
+//				selfColumn.setText(getString("_UI_SelfColumn_label"));
+//				selfColumn.setResizable(true);
+//
+//				tableViewer.setColumnProperties(new String[] { "a", "b" });
+//				tableViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+//				tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+//
+//				createContextMenuFor(tableViewer);
+//				int pageIndex = addPage(viewerPane.getControl());
+//				setPageText(pageIndex, getString("_UI_TablePage_label"));
+//			}
+//
+//			// This is the page for the table tree viewer.
+//			//
+//			{
+//				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), UsersEditor.this) {
+//					@Override
+//					public Viewer createViewer(Composite composite) {
+//						return new TreeViewer(composite);
+//					}
+//
+//					@Override
+//					public void requestActivation() {
+//						super.requestActivation();
+//						setCurrentViewerPane(this);
+//					}
+//				};
+//				viewerPane.createControl(getContainer());
+//
+//				treeViewerWithColumns = (TreeViewer) viewerPane.getViewer();
+//
+//				Tree tree = treeViewerWithColumns.getTree();
+//				tree.setLayoutData(new FillLayout());
+//				tree.setHeaderVisible(true);
+//				tree.setLinesVisible(true);
+//
+//				TreeColumn objectColumn = new TreeColumn(tree, SWT.NONE);
+//				objectColumn.setText(getString("_UI_ObjectColumn_label"));
+//				objectColumn.setResizable(true);
+//				objectColumn.setWidth(250);
+//
+//				TreeColumn selfColumn = new TreeColumn(tree, SWT.NONE);
+//				selfColumn.setText(getString("_UI_SelfColumn_label"));
+//				selfColumn.setResizable(true);
+//				selfColumn.setWidth(200);
+//
+//				treeViewerWithColumns.setColumnProperties(new String[] { "a", "b" });
+//				treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+//				treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+//
+//				createContextMenuFor(treeViewerWithColumns);
+//				int pageIndex = addPage(viewerPane.getControl());
+//				setPageText(pageIndex, getString("_UI_TreeWithColumnsPage_label"));
+//			}
+//
 			getSite().getShell().getDisplay().asyncExec(new Runnable() {
 				public void run() {
 					setActivePage(0);
 				}
 			});
-		}
+//		}
 
 		// Ensures that this editor will only display the page's tab
 		// area if there are more than one page

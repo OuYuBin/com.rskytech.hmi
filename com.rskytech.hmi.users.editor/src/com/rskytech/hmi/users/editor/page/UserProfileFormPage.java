@@ -8,21 +8,21 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 
 import com.rskytech.hmi.common.editor.page.RskyCommonFormPage;
-import com.rskytech.hmi.users.editor.page.block.UserConfigMasterDetailBlock;
+import com.rskytech.hmi.users.editor.page.block.UserProfileMasterDetailBlock;
 
 /**
  * 
  * @author robin
  *
  */
-public class UserConfigurateFormPage extends RskyCommonFormPage {
+public class UserProfileFormPage extends RskyCommonFormPage {
 
-	private UserConfigMasterDetailBlock userConfigMasterDetailBlock;
+	private UserProfileMasterDetailBlock userProfileMasterDetailBlock;
 
-	public UserConfigurateFormPage(FormEditor editor, String id, String title) {
+	public UserProfileFormPage(FormEditor editor, String id, String title) {
 		super(editor, id, title);
 	}
-
+	
 	@Override
 	public void createPartControl(Composite parent) {
 		super.createPartControl(parent);
@@ -31,12 +31,11 @@ public class UserConfigurateFormPage extends RskyCommonFormPage {
 	@Override
 	protected void createFormContent(IManagedForm managedForm) {
 		ScrolledForm scrolledForm = managedForm.getForm();
-		scrolledForm.setText("用户配置管理");
+		scrolledForm.setText("用户角色管理");
 		FormToolkit formToolkit = managedForm.getToolkit();
 		Form form = scrolledForm.getForm();
 		formToolkit.decorateFormHeading(form);
-		userConfigMasterDetailBlock = new UserConfigMasterDetailBlock(this);
-		userConfigMasterDetailBlock.createContent(managedForm);
+		userProfileMasterDetailBlock = new UserProfileMasterDetailBlock(this);
+		userProfileMasterDetailBlock.createContent(managedForm);
 	}
-
 }

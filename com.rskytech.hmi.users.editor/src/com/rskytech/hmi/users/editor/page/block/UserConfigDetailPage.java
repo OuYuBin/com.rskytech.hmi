@@ -32,9 +32,9 @@ import com.rskytech.hmi.users.Profile;
 import com.rskytech.hmi.users.User;
 import com.rskytech.hmi.users.UsersConfiguration;
 import com.rskytech.hmi.users.editor.page.block.editSupport.UserProfileCheckedEditingSupport;
-import com.rskytech.hmi.users.editor.page.block.provider.UserProfileCheckBoxColumnLabelProvider;
-import com.rskytech.hmi.users.editor.page.block.provider.UserProfileStructuredContentProvider;
-import com.rskytech.hmi.users.editor.page.block.provider.UserProfileTableColumnLabelProvider;
+import com.rskytech.hmi.users.editor.page.block.provider.UserRoleCheckBoxColumnLabelProvider;
+import com.rskytech.hmi.users.editor.page.block.provider.UserRoleStructuredContentProvider;
+import com.rskytech.hmi.users.editor.page.block.provider.UserRoleTableColumnLabelProvider;
 
 public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPage {
 
@@ -87,7 +87,7 @@ public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPa
 		EList<Profile> profiles = usersConfiguration.getProfile();
 
 		if (!profiles.isEmpty()) {
-			attrsSection = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
+			attrsSection = toolKit.createSection(parent, Section.EXPANDED|Section.TITLE_BAR);
 			attrsSection.setText("角色");
 			attrsSection.clientVerticalSpacing = 0;
 
@@ -103,7 +103,6 @@ public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPa
 			createProfilesSection(profiles, client);
 			attrsSection.setClient(client);
 			SectionPart attrsSectionPart = new SectionPart(attrsSection);
-			attrsSectionPart.refresh();
 
 			getManagedForm().addPart(attrsSectionPart);
 
@@ -118,7 +117,7 @@ public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPa
 	private void createProfilesSection(EList<Profile> profiles, Composite composite) {
 		final Text searchText = toolKit.createText(composite, "",
 				SWT.BORDER | SWT.SEARCH | SWT.ICON_SEARCH | SWT.CANCEL);
-		searchText.setMessage("搜索:角色");
+		searchText.setMessage("搜索: 角色");
 		searchText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
 		searchText.addKeyListener(new KeyAdapter() {
@@ -132,13 +131,13 @@ public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPa
 		Composite tableParentComposite = toolKit.createComposite(composite, SWT.NULL);
 		GridData gd = new GridData(GridData.FILL, GridData.FILL, true, true);
 		gd.widthHint = 1;
-		gd.minimumHeight=50;
+		// adgd.minimumHeight=50;
 		tableParentComposite.setLayoutData(gd);
 		TableColumnLayout tableColumnLayout = new TableColumnLayout();
 		tableParentComposite.setLayout(tableColumnLayout);
 
 		TableViewer attrTableViewer = new TableViewer(tableParentComposite,
-				SWT.MULTI | SWT.NO_SCROLL | SWT.BORDER | SWT.FULL_SELECTION);
+				SWT.MULTI | SWT.V_SCROLL | SWT.BORDER | SWT.FULL_SELECTION);
 		Table table = attrTableViewer.getTable();
 		gd = new GridData(GridData.FILL, GridData.FILL, true, true);
 		table.setHeaderVisible(true);
@@ -149,7 +148,7 @@ public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPa
 		// attrFilter = new AttrFilter();
 		// attrTableViewer.addFilter(attrFilter);
 
-		attrTableViewer.setContentProvider(new UserProfileStructuredContentProvider());
+		attrTableViewer.setContentProvider(new UserRoleStructuredContentProvider());
 		attrTableViewer.setInput(profiles);
 
 	}
@@ -161,22 +160,21 @@ public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPa
 
 		TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer,
 				SWT.CENTER | SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI);
-		tableViewerColumn.setLabelProvider(new UserProfileCheckBoxColumnLabelProvider(input));
+		tableViewerColumn.setLabelProvider(new UserRoleCheckBoxColumnLabelProvider(input));
 		tableViewerColumn.getColumn().setText("!");
 		tableViewerColumn.getColumn().setResizable(false);
-		tableViewerColumn.setEditingSupport(new UserProfileCheckedEditingSupport(input,tableViewer));
+		tableViewerColumn.setEditingSupport(new UserProfileCheckedEditingSupport(input, tableViewer));
 		tableColumnLayout.setColumnData(tableViewerColumn.getColumn(), new ColumnPixelData(21, false));
 
-		tableViewerColumn = new TableViewerColumn(tableViewer, SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI | SWT.MULTI);
+		tableViewerColumn = new TableViewerColumn(tableViewer, SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI );
 		tableViewerColumn.getColumn().setText("角色");
 
-		tableViewerColumn.setLabelProvider(new UserProfileTableColumnLabelProvider(tableViewer));
+		tableViewerColumn.setLabelProvider(new UserRoleTableColumnLabelProvider(tableViewer));
 		composite = tableViewer.getTable().getParent();
 		tableColumnLayout = (TableColumnLayout) composite.getLayout();
 		ColumnWeightData columnWeightData = new ColumnWeightData(1, 100, true);
 		tableColumnLayout.setColumnData(tableViewerColumn.getColumn(), columnWeightData);
 	}
-
 
 	/**
 	 * 

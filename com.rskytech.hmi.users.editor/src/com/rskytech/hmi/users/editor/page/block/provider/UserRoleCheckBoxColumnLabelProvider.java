@@ -13,12 +13,12 @@ import com.rskytech.hmi.users.editor.UsersEditorPlugin;
  * @author robin
  * 
  */
-public class UserProfileCheckBoxColumnLabelProvider extends
+public class UserRoleCheckBoxColumnLabelProvider extends
 		ColumnLabelProvider {
 	
 	private EList<Profile> profiles;
 
-	public UserProfileCheckBoxColumnLabelProvider(Object input) {
+	public UserRoleCheckBoxColumnLabelProvider(Object input) {
 		super();
 		if (input != null & input instanceof User) {
 			this.profiles = ((User) input).getProfiles();

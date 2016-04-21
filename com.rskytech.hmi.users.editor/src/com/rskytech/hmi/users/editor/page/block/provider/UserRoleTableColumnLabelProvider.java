@@ -10,11 +10,11 @@ import com.rskytech.hmi.users.Profile;
  * @author robin
  * 
  */
-public class UserProfileTableColumnLabelProvider extends ColumnLabelProvider {
+public class UserRoleTableColumnLabelProvider extends ColumnLabelProvider {
 
 	TableViewer tableViewer;
 
-	public UserProfileTableColumnLabelProvider(TableViewer tableViewer) {
+	public UserRoleTableColumnLabelProvider(TableViewer tableViewer) {
 		this.tableViewer = tableViewer;
 	}
 

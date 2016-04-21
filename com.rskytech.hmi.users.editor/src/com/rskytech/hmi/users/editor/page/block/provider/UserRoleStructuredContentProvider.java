@@ -10,7 +10,7 @@ import org.eclipse.jface.viewers.Viewer;
  * @author robin
  * 
  */
-public class UserProfileStructuredContentProvider implements
+public class UserRoleStructuredContentProvider implements
 		IStructuredContentProvider {
 
 	@Override
