@@ -5,6 +5,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -261,6 +262,7 @@ public class LoginSplashHandler extends AbstractSplashHandler {
 		// Create the label
 		Label label = new Label(fCompositeLogin, SWT.NONE);
 		label.setText("密码:"); //$NON-NLS-1$
+		label.setForeground(new Color(null, 255,255,255));
 		// Configure layout data
 		GridData data = new GridData();
 		data.horizontalIndent = F_LABEL_HORIZONTAL_INDENT;
@@ -287,6 +289,7 @@ public class LoginSplashHandler extends AbstractSplashHandler {
 		// Create the label
 		Label label = new Label(fCompositeLogin, SWT.NONE);
 		label.setText("用户名:"); //$NON-NLS-1$
+		label.setForeground(new Color(null, 255,255,255));
 		// Configure layout data
 		GridData data = new GridData();
 		data.horizontalIndent = F_LABEL_HORIZONTAL_INDENT;

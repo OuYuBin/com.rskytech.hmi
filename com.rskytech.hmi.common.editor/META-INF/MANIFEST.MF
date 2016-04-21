@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Editor
+Bundle-SymbolicName: com.rskytech.hmi.common.editor
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.rskytech.hmi.common.editor.Activator
+Bundle-Vendor: RSKYTECH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf;bundle-version="2.6.0",
+ org.eclipse.emf.ecore;bundle-version="2.11.2",
+ org.eclipse.ui.forms;bundle-version="3.6.200"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: com.rskytech.hmi.common.editor,
+ com.rskytech.hmi.common.editor.page

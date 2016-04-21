@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Users -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.rskytech.hmi.users.editor.UsersModelWizardID"
+            name="%_UI_UsersModelWizard_label"
+            class="com.rskytech.hmi.users.editor.UsersModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UsersModelFile.gif">
+         <description>%_UI_UsersModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Users -->
+      <editor
+            id="com.rskytech.hmi.users.editor.UsersEditorID"
+            name="%_UI_UsersEditor_label"
+            icon="icons/full/obj16/UsersModelFile.gif"
+            extensions="users"
+            class="com.rskytech.hmi.users.editor.UsersEditor"
+            contributorClass="com.rskytech.hmi.users.editor.UsersActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
