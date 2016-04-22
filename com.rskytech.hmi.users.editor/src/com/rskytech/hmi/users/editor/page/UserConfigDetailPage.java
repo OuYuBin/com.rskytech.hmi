@@ -1,4 +1,4 @@
-package com.rskytech.hmi.users.editor.page.block;
+package com.rskytech.hmi.users.editor.page;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
@@ -36,6 +36,11 @@ import com.rskytech.hmi.users.editor.page.block.provider.UserRoleCheckBoxColumnL
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleStructuredContentProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleTableColumnLabelProvider;
 
+/**
+ * 
+ * @author robin
+ *
+ */
 public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPage {
 
 	FormToolkit toolKit;

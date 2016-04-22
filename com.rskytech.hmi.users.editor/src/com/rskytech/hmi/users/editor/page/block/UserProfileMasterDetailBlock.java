@@ -34,6 +34,7 @@ import com.rskytech.hmi.users.Profile;
 import com.rskytech.hmi.users.UsersConfiguration;
 import com.rskytech.hmi.users.editor.page.block.provider.UserConfigDetailPageProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleContentProvider;
+import com.rskytech.hmi.users.editor.page.block.provider.UserRoleDetailPageProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleLabelProvider;
 
 public class UserProfileMasterDetailBlock extends MasterDetailsBlock {
@@ -44,11 +45,11 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock {
 
 	IDetailsPageProvider detailsPageProvider;
 
-	UserConfigDetailPageProvider userConfigDetailPageProvider;
+	UserRoleDetailPageProvider userRoleDetailPageProvider;
 
 	public UserProfileMasterDetailBlock(IRskyCommonFormPage rskyCommonFormPage) {
 		this.rskyCommonFormPage = rskyCommonFormPage;
-		this.userConfigDetailPageProvider = new UserConfigDetailPageProvider();
+		this.userRoleDetailPageProvider = new UserRoleDetailPageProvider();
 	}
 
 	@Override
@@ -194,7 +195,7 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock {
 
 	@Override
 	protected void registerPages(DetailsPart detailsPart) {
-		//detailsPart.setPageProvider(userConfigDetailPageProvider);
+		detailsPart.setPageProvider(userRoleDetailPageProvider);
 	}
 
 	@Override

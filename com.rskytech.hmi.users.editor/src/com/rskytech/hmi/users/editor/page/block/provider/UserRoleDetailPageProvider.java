@@ -3,14 +3,14 @@ package com.rskytech.hmi.users.editor.page.block.provider;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IDetailsPageProvider;
 
-import com.rskytech.hmi.users.editor.page.UserConfigDetailPage;
+import com.rskytech.hmi.users.editor.page.UserRoleDetailPage;
 
 /**
  * 
  * @author robin
  *
  */
-public class UserConfigDetailPageProvider implements IDetailsPageProvider {
+public class UserRoleDetailPageProvider implements IDetailsPageProvider {
 
 	@Override
 	public Object getPageKey(Object object) {
@@ -19,7 +19,7 @@ public class UserConfigDetailPageProvider implements IDetailsPageProvider {
 
 	@Override
 	public IDetailsPage getPage(Object key) {
-		return new UserConfigDetailPage(key);
+		return new UserRoleDetailPage(key);
 	}
 
 }
