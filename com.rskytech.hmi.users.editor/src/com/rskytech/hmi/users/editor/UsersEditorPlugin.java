@@ -111,6 +111,8 @@ public final class UsersEditorPlugin extends EMFPlugin {
 			map.put("CheckBoxOff", "icons/CheckBoxOff.gif");
 			map.put("CheckBoxGroup", "icons/CheckBoxGroup.gif");
 			map.put("Role", "icons/role.gif");
+			map.put("AddProfile", "icons/add_profile.gif");
+			map.put("DelProfile","icons/del_profile.gif");
 
 			for (@SuppressWarnings("rawtypes")
 			Iterator iter = map.entrySet().iterator(); iter.hasNext();) {
