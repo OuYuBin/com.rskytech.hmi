@@ -9,5 +9,6 @@
                serviceClass="com.rskytech.hmi.users.core.service.IUserService"></service>
       </serviceFactory>
    </extension>
+  
 
 </plugin>

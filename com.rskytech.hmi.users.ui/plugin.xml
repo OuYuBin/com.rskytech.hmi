@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ <extension
+         point="org.eclipse.ui.activities">
+    <activity
+          id="com.rskytech.hmi.users.ui.activities.userconfiguration"
+          name="用户管理">
+    </activity>
+    <activityPatternBinding
+          activityId="com.rskytech.hmi.users.ui.activities.userconfiguration"
+          isEqualityPattern="false"
+          pattern="com.rskytech.hmi.users.ui/com.rskytech.hmi.users.ui.*">
+    </activityPatternBinding>
+   </extension>
+</plugin>

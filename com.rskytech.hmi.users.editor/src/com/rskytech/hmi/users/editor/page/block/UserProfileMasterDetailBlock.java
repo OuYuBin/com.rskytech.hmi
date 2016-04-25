@@ -1,13 +1,20 @@
 package com.rskytech.hmi.users.editor.page.block;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.DeleteCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -32,20 +39,31 @@ import org.eclipse.ui.forms.widgets.Section;
 import com.rskytech.hmi.common.editor.page.IRskyCommonFormPage;
 import com.rskytech.hmi.users.Profile;
 import com.rskytech.hmi.users.UsersConfiguration;
+import com.rskytech.hmi.users.UsersFactory;
+import com.rskytech.hmi.users.UsersPackage;
+import com.rskytech.hmi.users.edit.UsersEditPlugin;
+import com.rskytech.hmi.users.editor.UsersEditorPlugin;
 import com.rskytech.hmi.users.editor.page.block.provider.UserConfigDetailPageProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleContentProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleDetailPageProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleLabelProvider;
 
-public class UserProfileMasterDetailBlock extends MasterDetailsBlock {
+/**
+ * 
+ * @author robin
+ *
+ */
+public class UserProfileMasterDetailBlock extends MasterDetailsBlock implements ISelectionChangedListener {
 
-	TreeViewer treeViewer;
+	private TreeViewer treeViewer;
 
-	IRskyCommonFormPage rskyCommonFormPage;
+	private IRskyCommonFormPage rskyCommonFormPage;
 
-	IDetailsPageProvider detailsPageProvider;
+	private IDetailsPageProvider detailsPageProvider;
 
-	UserRoleDetailPageProvider userRoleDetailPageProvider;
+	private UserRoleDetailPageProvider userRoleDetailPageProvider;
+
+	private Object selectionObject;
 
 	public UserProfileMasterDetailBlock(IRskyCommonFormPage rskyCommonFormPage) {
 		this.rskyCommonFormPage = rskyCommonFormPage;
@@ -65,44 +83,52 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock {
 		ToolBar toolbar = toolBarManager.createControl(section);
 		toolbar.setCursor(Display.getDefault().getSystemCursor(SWT.CURSOR_HAND));
 
-		toolBarManager.add(new Action("Collapseall", SWT.CHECK) {
+		toolBarManager.add(new Action("新增角色", SWT.CHECK) {
 
 			@Override
 			public ImageDescriptor getImageDescriptor() {
-				// return Activator.getDefault().getImageRegistry()
-				// .getDescriptor("Collapseall");
-				return null;
+				return UsersEditorPlugin.getPlugin().getImageRegistry().getDescriptor("AddProfile");
 			}
 
 			@Override
 			public void run() {
 				super.run();
-				// treeViewer.expandToLevel(2);
+				Resource resource = rskyCommonFormPage.getResource();
+				UsersConfiguration usersConfiguration = (UsersConfiguration) resource.getContents().get(0);
+				EditingDomain editingDomain = rskyCommonFormPage.getEditingDomain();
+				Profile profile = UsersFactory.eINSTANCE.createProfile();
+				profile.setName("新角色");
+
+				AddCommand addCommand = new AddCommand(editingDomain, usersConfiguration,
+						UsersPackage.eINSTANCE.getUsersConfiguration_Profile(), profile);
+				editingDomain.getCommandStack().execute(addCommand);
+				treeViewer.refresh();
 			}
 
 		});
 
-		toolBarManager.add(new Action("ToggleExpandState", SWT.CHECK) {
+		toolBarManager.add(new Action("删除角色", SWT.CHECK) {
 
 			@Override
 			public ImageDescriptor getImageDescriptor() {
-				// return Activator.getDefault().getImageRegistry()
-				// .getDescriptor("ToggleExpandState");
-				return null;
+				return UsersEditorPlugin.getPlugin().getImageRegistry().getDescriptor("DelProfile");
 			}
 
 			@Override
 			public void run() {
 				super.run();
-				// if (this.isChecked())
-				// treeViewer.expandAll();
-				// else
-				// treeViewer.collapseAll();
+				Resource resource = rskyCommonFormPage.getResource();
+				UsersConfiguration usersConfiguration = (UsersConfiguration) resource.getContents().get(0);
+				EditingDomain editingDomain = rskyCommonFormPage.getEditingDomain();
+				RemoveCommand removeCommand = new RemoveCommand(editingDomain, usersConfiguration,
+						UsersPackage.eINSTANCE.getUsersConfiguration_Profile(),
+						UserProfileMasterDetailBlock.this.selectionObject);
+				editingDomain.getCommandStack().execute(removeCommand);
+				treeViewer.refresh();
 			}
 
 		});
-
-		// toolBarManager.update(true);
+		toolBarManager.update(true);
 		section.setTextClient(toolbar);
 
 		Composite client = formToolkit.createComposite(section, SWT.WRAP);
@@ -139,6 +165,7 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock {
 		// treeViewer.addFilter(hostConfigFilter);
 		treeViewer.setContentProvider(new UserRoleContentProvider());
 		treeViewer.setLabelProvider(new UserRoleLabelProvider());
+		treeViewer.addSelectionChangedListener(this);
 		// SysConfigLabelDecorator sysConfigLabelDecorator = new
 		// SysConfigLabelDecorator();
 		// ModelLabelProvider modelLabelProvider = new ModelLabelProvider();
@@ -201,6 +228,12 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock {
 	@Override
 	protected void createToolBarActions(IManagedForm managedForm) {
 
+	}
+
+	@Override
+	public void selectionChanged(SelectionChangedEvent event) {
+		IStructuredSelection selection = (IStructuredSelection) event.getSelection();
+		this.selectionObject = selection.getFirstElement();
 	}
 
 }
