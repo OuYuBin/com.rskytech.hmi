@@ -94,15 +94,6 @@ public interface UsersPackage extends EPackage {
 	int USERS_CONFIGURATION_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Configuration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USERS_CONFIGURATION_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link com.rskytech.hmi.users.impl.UserImpl <em>User</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,15 +140,6 @@ public interface UsersPackage extends EPackage {
 	int USER_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>User</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link com.rskytech.hmi.users.impl.ProfileImpl <em>Profile</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,16 +175,6 @@ public interface UsersPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROFILE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Profile</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROFILE_OPERATION_COUNT = 0;
-
 
 	/**
 	 * Returns the meta object for class '{@link com.rskytech.hmi.users.UsersConfiguration <em>Configuration</em>}'.

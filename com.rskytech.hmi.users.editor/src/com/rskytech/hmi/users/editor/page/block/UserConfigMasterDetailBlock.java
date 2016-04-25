@@ -52,7 +52,7 @@ public class UserConfigMasterDetailBlock extends MasterDetailsBlock {
 	}
 
 	@Override
-	protected void createMasterPart(IManagedForm managedForm, Composite parent) {
+	protected void createMasterPart(final IManagedForm managedForm, Composite parent) {
 		FormToolkit formToolkit = managedForm.getToolkit();
 		Section section = formToolkit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
 		section.setText("用户列表");

@@ -7,7 +7,6 @@ Bundle-ClassPath: .
 Bundle-Activator: com.rskytech.hmi.users.editor.UsersEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: com.rskytech.hmi.users.editor
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
@@ -15,6 +14,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- org.eclipse.ui.forms;bundle-version="3.6.200",
+ org.eclipse.ui.forms,
  com.rskytech.hmi.common.editor;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

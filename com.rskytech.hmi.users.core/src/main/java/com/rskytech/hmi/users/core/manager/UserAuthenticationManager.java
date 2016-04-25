@@ -18,7 +18,8 @@ public class UserAuthenticationManager {
 	 * @return
 	 */
 	public static User authentifyUser(String name, String password) {
-		IUserService userService = UserService.getInstance();
+//		IUserService userService = UserService.getInstance();
+		IUserService userService = (IUserService) PlatformUI.getWorkbench().getService(IUserService.class);
 		if(StringUtils.isNotBlank(name)&&StringUtils.isNotBlank(password)){
 			return userService.loadCurrentUser(name, password);
 		}

@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.users.UsersConfiguration#getUser <em>User</em>}</li>
  *   <li>{@link com.rskytech.hmi.users.UsersConfiguration#getProfile <em>Profile</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.rskytech.hmi.users.UsersPackage#getUsersConfiguration()
  * @model
@@ -34,10 +34,10 @@ public interface UsersConfiguration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User</em>' containment reference list.
 	 * @see com.rskytech.hmi.users.UsersPackage#getUsersConfiguration_User()
-	 * @model containment="true"
+	 * @model type="com.rskytech.hmi.users.User" containment="true"
 	 * @generated
 	 */
-	EList<User> getUser();
+	EList getUser();
 
 	/**
 	 * Returns the value of the '<em><b>Profile</b></em>' containment reference list.
@@ -50,9 +50,9 @@ public interface UsersConfiguration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Profile</em>' containment reference list.
 	 * @see com.rskytech.hmi.users.UsersPackage#getUsersConfiguration_Profile()
-	 * @model containment="true"
+	 * @model type="com.rskytech.hmi.users.Profile" containment="true"
 	 * @generated
 	 */
-	EList<Profile> getProfile();
+	EList getProfile();
 
 } // UsersConfiguration

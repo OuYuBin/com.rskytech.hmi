@@ -65,22 +65,18 @@ public class UsersAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UsersSwitch<Adapter> modelSwitch =
-		new UsersSwitch<Adapter>() {
-			@Override
-			public Adapter caseUsersConfiguration(UsersConfiguration object) {
+	protected UsersSwitch modelSwitch =
+		new UsersSwitch() {
+			public Object caseUsersConfiguration(UsersConfiguration object) {
 				return createUsersConfigurationAdapter();
 			}
-			@Override
-			public Adapter caseUser(User object) {
+			public Object caseUser(User object) {
 				return createUserAdapter();
 			}
-			@Override
-			public Adapter caseProfile(Profile object) {
+			public Object caseProfile(Profile object) {
 				return createProfileAdapter();
 			}
-			@Override
-			public Adapter defaultCase(EObject object) {
+			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -95,7 +91,7 @@ public class UsersAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return (Adapter)modelSwitch.doSwitch((EObject)target);
 	}
 
 

@@ -10,10 +10,10 @@ import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.ILog;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.ui.services.IServiceLocator;
 
 import com.rskytech.hmi.users.Activator;
@@ -26,7 +26,7 @@ import com.rskytech.hmi.users.util.UsersAdapterFactory;
 /**
  * 
  * @author robin
- *
+ * 
  */
 public class UserService implements IUserService {
 
@@ -55,13 +55,15 @@ public class UserService implements IUserService {
 	public User loadCurrentUser(String name, String password) {
 		// --载入大概当前用户配置信息
 		Resource resource = loadUserConfigurationResource();
-		UsersConfiguration usersConfiguration = (UsersConfiguration) resource.getContents().get(0);
+		UsersConfiguration usersConfiguration = (UsersConfiguration) resource
+				.getContents().get(0);
 		if (usersConfiguration != null) {
 			EList<User> users = usersConfiguration.getUser();
 			Iterator<User> iter = users.iterator();
 			while (iter.hasNext()) {
 				User user = iter.next();
-				if (StringUtils.equals(user.getName(), name) && StringUtils.equals(user.getPassword(), password)) {
+				if (StringUtils.equals(user.getName(), name)
+						&& StringUtils.equals(user.getPassword(), password)) {
 					return user;
 				}
 			}
@@ -71,6 +73,7 @@ public class UserService implements IUserService {
 
 	private Resource loadUserConfigurationResource() {
 		Resource resource = null;
+		Exception exception = null;
 		try {
 			File file = getUserConfigurationFile();
 			if (!file.exists()) {
@@ -81,13 +84,16 @@ public class UserService implements IUserService {
 			resourceSet.getAdapterFactories().add(new UsersAdapterFactory());
 			try {
 				resource = resourceSet.getResource(uri, true);
-			} catch (WrappedException wrappedException) {
-				wrappedException.printStackTrace();
+			} catch (Exception e) {
+				exception = e;
+				// resource = resourceSet.getResource(uri, false);
 			}
 			if (resource == null) {
 				resource = resourceSet.createResource(uri);
+
 				// --初始化用户配置信息及管理员admin信息
-				UsersConfiguration usersConfiguration = UsersFactory.eINSTANCE.createUsersConfiguration();
+				UsersConfiguration usersConfiguration = UsersFactory.eINSTANCE
+						.createUsersConfiguration();
 				// --角色定义
 				Profile profile = UsersFactory.eINSTANCE.createProfile();
 				profile.setName("ROOT");
@@ -111,7 +117,8 @@ public class UserService implements IUserService {
 	}
 
 	public File getUserConfigurationFile() {
-		return Activator.getDefault().getStateLocation().append("userConfiguration.cfg").toFile();
+		return Activator.getDefault().getStateLocation()
+				.append("userConfiguration.cfg").toFile();
 	}
 
 	@Override

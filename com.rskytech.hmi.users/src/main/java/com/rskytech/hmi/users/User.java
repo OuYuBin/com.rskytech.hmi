@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.users.User#getName <em>Name</em>}</li>
  *   <li>{@link com.rskytech.hmi.users.User#getPassword <em>Password</em>}</li>
  *   <li>{@link com.rskytech.hmi.users.User#getProfiles <em>Profiles</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.rskytech.hmi.users.UsersPackage#getUser()
  * @model
@@ -88,9 +88,9 @@ public interface User extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Profiles</em>' reference list.
 	 * @see com.rskytech.hmi.users.UsersPackage#getUser_Profiles()
-	 * @model
+	 * @model type="com.rskytech.hmi.users.Profile"
 	 * @generated
 	 */
-	EList<Profile> getProfiles();
+	EList getProfiles();
 
 } // User

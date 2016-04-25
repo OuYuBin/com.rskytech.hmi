@@ -142,8 +142,8 @@ public class LoginSplashHandler extends AbstractSplashHandler {
 	 * 
 	 */
 	private void handleButtonOKWidgetSelected() {
-		String username = fTextUsername.getText();
-		String password = fTextPassword.getText();
+		final String username = fTextUsername.getText();
+		final String password = fTextPassword.getText();
 		// Aunthentication is successful if a user provides any username and
 		// any password
 		// --TODO:进度条显示

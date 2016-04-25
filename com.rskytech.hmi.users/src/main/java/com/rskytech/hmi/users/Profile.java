@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.users.Profile#getName <em>Name</em>}</li>
  *   <li>{@link com.rskytech.hmi.users.Profile#getRestriction <em>Restriction</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.rskytech.hmi.users.UsersPackage#getProfile()
  * @model
@@ -64,6 +64,6 @@ public interface Profile extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<String> getRestriction();
+	EList getRestriction();
 
 } // Profile

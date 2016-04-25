@@ -27,7 +27,7 @@ public class UsersFactoryImpl extends EFactoryImpl implements UsersFactory {
 	 */
 	public static UsersFactory init() {
 		try {
-			UsersFactory theUsersFactory = (UsersFactory)EPackage.Registry.INSTANCE.getEFactory(UsersPackage.eNS_URI);
+			UsersFactory theUsersFactory = (UsersFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.rskytech.com/hmi/users"); 
 			if (theUsersFactory != null) {
 				return theUsersFactory;
 			}

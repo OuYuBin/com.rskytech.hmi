@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.users.impl.ProfileImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.rskytech.hmi.users.impl.ProfileImpl#getRestriction <em>Restriction</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -61,7 +61,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> restriction;
+	protected EList restriction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,9 +108,9 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getRestriction() {
+	public EList getRestriction() {
 		if (restriction == null) {
-			restriction = new EDataTypeUniqueEList<String>(String.class, this, UsersPackage.PROFILE__RESTRICTION);
+			restriction = new EDataTypeUniqueEList(String.class, this, UsersPackage.PROFILE__RESTRICTION);
 		}
 		return restriction;
 	}
@@ -145,7 +145,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 				return;
 			case UsersPackage.PROFILE__RESTRICTION:
 				getRestriction().clear();
-				getRestriction().addAll((Collection<? extends String>)newValue);
+				getRestriction().addAll((Collection)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

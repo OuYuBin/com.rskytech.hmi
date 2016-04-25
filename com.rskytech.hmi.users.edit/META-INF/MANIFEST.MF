@@ -7,7 +7,6 @@ Bundle-ClassPath: .
 Bundle-Activator: com.rskytech.hmi.users.edit.UsersEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: com.rskytech.hmi.users.edit,
  com.rskytech.hmi.users.provider
 Require-Bundle: org.eclipse.core.runtime,

@@ -25,12 +25,12 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.users.impl.UserImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.rskytech.hmi.users.impl.UserImpl#getPassword <em>Password</em>}</li>
  *   <li>{@link com.rskytech.hmi.users.impl.UserImpl#getProfiles <em>Profiles</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -83,7 +83,7 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Profile> profiles;
+	protected EList profiles;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,9 +151,9 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Profile> getProfiles() {
+	public EList getProfiles() {
 		if (profiles == null) {
-			profiles = new EObjectResolvingEList<Profile>(Profile.class, this, UsersPackage.USER__PROFILES);
+			profiles = new EObjectResolvingEList(Profile.class, this, UsersPackage.USER__PROFILES);
 		}
 		return profiles;
 	}
@@ -193,7 +193,7 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User {
 				return;
 			case UsersPackage.USER__PROFILES:
 				getProfiles().clear();
-				getProfiles().addAll((Collection<? extends Profile>)newValue);
+				getProfiles().addAll((Collection)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

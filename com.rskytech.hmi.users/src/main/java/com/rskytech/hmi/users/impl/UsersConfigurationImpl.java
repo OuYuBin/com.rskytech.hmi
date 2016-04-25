@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.users.impl.UsersConfigurationImpl#getUser <em>User</em>}</li>
  *   <li>{@link com.rskytech.hmi.users.impl.UsersConfigurationImpl#getProfile <em>Profile</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -40,7 +40,7 @@ public class UsersConfigurationImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<User> user;
+	protected EList user;
 
 	/**
 	 * The cached value of the '{@link #getProfile() <em>Profile</em>}' containment reference list.
@@ -50,7 +50,7 @@ public class UsersConfigurationImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Profile> profile;
+	protected EList profile;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,9 +76,9 @@ public class UsersConfigurationImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<User> getUser() {
+	public EList getUser() {
 		if (user == null) {
-			user = new EObjectContainmentEList<User>(User.class, this, UsersPackage.USERS_CONFIGURATION__USER);
+			user = new EObjectContainmentEList(User.class, this, UsersPackage.USERS_CONFIGURATION__USER);
 		}
 		return user;
 	}
@@ -88,9 +88,9 @@ public class UsersConfigurationImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Profile> getProfile() {
+	public EList getProfile() {
 		if (profile == null) {
-			profile = new EObjectContainmentEList<Profile>(Profile.class, this, UsersPackage.USERS_CONFIGURATION__PROFILE);
+			profile = new EObjectContainmentEList(Profile.class, this, UsersPackage.USERS_CONFIGURATION__PROFILE);
 		}
 		return profile;
 	}
@@ -104,9 +104,9 @@ public class UsersConfigurationImpl extends MinimalEObjectImpl.Container impleme
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case UsersPackage.USERS_CONFIGURATION__USER:
-				return ((InternalEList<?>)getUser()).basicRemove(otherEnd, msgs);
+				return ((InternalEList)getUser()).basicRemove(otherEnd, msgs);
 			case UsersPackage.USERS_CONFIGURATION__PROFILE:
-				return ((InternalEList<?>)getProfile()).basicRemove(otherEnd, msgs);
+				return ((InternalEList)getProfile()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -138,11 +138,11 @@ public class UsersConfigurationImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case UsersPackage.USERS_CONFIGURATION__USER:
 				getUser().clear();
-				getUser().addAll((Collection<? extends User>)newValue);
+				getUser().addAll((Collection)newValue);
 				return;
 			case UsersPackage.USERS_CONFIGURATION__PROFILE:
 				getProfile().clear();
-				getProfile().addAll((Collection<? extends Profile>)newValue);
+				getProfile().addAll((Collection)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

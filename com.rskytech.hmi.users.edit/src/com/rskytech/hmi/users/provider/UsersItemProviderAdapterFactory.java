@@ -55,7 +55,7 @@ public class UsersItemProviderAdapterFactory extends UsersAdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+	protected Collection supportedTypes = new ArrayList();
 
 	/**
 	 * This constructs an instance.
@@ -190,7 +190,7 @@ public class UsersItemProviderAdapterFactory extends UsersAdapterFactory impleme
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class) || (((Class)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
