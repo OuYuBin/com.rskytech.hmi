@@ -14,12 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
-<<<<<<< HEAD
  org.eclipse.ui.forms,
- com.rskytech.hmi.common.editor;bundle-version="1.0.0"
-=======
- org.eclipse.ui.forms;bundle-version="3.6.200",
  com.rskytech.hmi.common.editor,
  com.rskytech.hmi.common;bundle-version="1.0.0"
->>>>>>> branch 'master' of https://github.com/OuYuBin/com.rskytech.hmi.git
 Bundle-ActivationPolicy: lazy
