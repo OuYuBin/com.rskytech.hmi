@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Common
+Bundle-SymbolicName: com.rskytech.hmi.common
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.rskytech.hmi.common.Activator
+Bundle-Vendor: RSKYTECH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: com.rskytech.hmi.common,
+ com.rskytech.hmi.common.activities

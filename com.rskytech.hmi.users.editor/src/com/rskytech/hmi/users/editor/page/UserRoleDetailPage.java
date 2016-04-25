@@ -1,9 +1,9 @@
 package com.rskytech.hmi.users.editor.page;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.layout.TableColumnLayout;
 import org.eclipse.jface.viewers.ColumnPixelData;
 import org.eclipse.jface.viewers.ColumnWeightData;
@@ -19,6 +19,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.activities.IActivity;
 import org.eclipse.ui.forms.AbstractFormPart;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
@@ -28,13 +29,12 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
 
+import com.rskytech.hmi.common.activities.ActivitiesManager;
 import com.rskytech.hmi.users.Profile;
-import com.rskytech.hmi.users.User;
-import com.rskytech.hmi.users.UsersConfiguration;
 import com.rskytech.hmi.users.editor.page.block.editSupport.UserProfileCheckedEditingSupport;
+import com.rskytech.hmi.users.editor.page.block.provider.UserRestrictionStructuredContentProvider;
+import com.rskytech.hmi.users.editor.page.block.provider.UserRestrictionTableColumnLabelProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleCheckBoxColumnLabelProvider;
-import com.rskytech.hmi.users.editor.page.block.provider.UserRoleStructuredContentProvider;
-import com.rskytech.hmi.users.editor.page.block.provider.UserRoleTableColumnLabelProvider;
 
 public class UserRoleDetailPage extends AbstractFormPart implements IDetailsPage {
 
@@ -81,14 +81,18 @@ public class UserRoleDetailPage extends AbstractFormPart implements IDetailsPage
 		SectionPart objectInfoSectionPart = new SectionPart(editionSection);
 		getManagedForm().addPart(objectInfoSectionPart);
 
-		// --获取功能信息
+		// --获取权限信息
 		// Resource resource = ((EObject) input).eResource();
 		// UsersConfiguration usersConfiguration = (UsersConfiguration)
 		// resource.getContents().get(0);
 		// EList<Profile> profiles = usersConfiguration.getProfile();
+		Map<String,IActivity> activities=ActivitiesManager.getActivites();
+		//List activities=new ArrayList();
+		//activities.add(map);
+		
 		EList<String> restrictions = ((Profile) input).getRestriction();
 
-		if (!restrictions.isEmpty()) {
+		if (!activities.isEmpty()) {
 			attrsSection = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
 			attrsSection.setText("权限");
 			attrsSection.clientVerticalSpacing = 0;
@@ -102,7 +106,7 @@ public class UserRoleDetailPage extends AbstractFormPart implements IDetailsPage
 			gridLayout = new GridLayout();
 			client.setLayout(gridLayout);
 
-			createRestrictionsSection(restrictions, client);
+			createRestrictionsSection(activities, client);
 			attrsSection.setClient(client);
 			SectionPart attrsSectionPart = new SectionPart(attrsSection);
 
@@ -116,7 +120,7 @@ public class UserRoleDetailPage extends AbstractFormPart implements IDetailsPage
 	 * @param profiles
 	 * @param client
 	 */
-	private void createRestrictionsSection(EList<String> restrictions, Composite composite) {
+	private void createRestrictionsSection(Map<String,IActivity> activities, Composite composite) {
 		final Text searchText = toolKit.createText(composite, "",
 				SWT.BORDER | SWT.SEARCH | SWT.ICON_SEARCH | SWT.CANCEL);
 		searchText.setMessage("搜索: 角色");
@@ -149,9 +153,9 @@ public class UserRoleDetailPage extends AbstractFormPart implements IDetailsPage
 		// attrFilter = new AttrFilter();
 		// attrTableViewer.addFilter(attrFilter);
 
-		// attrTableViewer.setContentProvider(new
-		// UserRoleStructuredContentProvider());
-		// attrTableViewer.setInput(restrictions);
+		 attrTableViewer.setContentProvider(new
+				 UserRestrictionStructuredContentProvider());
+		attrTableViewer.setInput(activities);
 
 	}
 
@@ -171,7 +175,7 @@ public class UserRoleDetailPage extends AbstractFormPart implements IDetailsPage
 		tableViewerColumn = new TableViewerColumn(tableViewer, SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI);
 		tableViewerColumn.getColumn().setText("功能");
 
-		tableViewerColumn.setLabelProvider(new UserRoleTableColumnLabelProvider(tableViewer));
+		tableViewerColumn.setLabelProvider(new UserRestrictionTableColumnLabelProvider(tableViewer));
 		composite = tableViewer.getTable().getParent();
 		tableColumnLayout = (TableColumnLayout) composite.getLayout();
 		ColumnWeightData columnWeightData = new ColumnWeightData(1, 100, true);
