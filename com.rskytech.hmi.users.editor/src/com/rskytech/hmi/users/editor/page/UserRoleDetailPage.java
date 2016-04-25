@@ -94,7 +94,7 @@ public class UserRoleDetailPage extends AbstractFormPart implements IDetailsPage
 
 		if (!activities.isEmpty()) {
 			attrsSection = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
-			attrsSection.setText("权限");
+			attrsSection.setText("权限约束");
 			attrsSection.clientVerticalSpacing = 0;
 
 			twd = new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB);
