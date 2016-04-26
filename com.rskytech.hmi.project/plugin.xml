@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:com.rskytech.hmi.menus.file.new">
+         <command
+               commandId="com.rskytech.hmi.project.commands.NewRskyTechTestProjectHandler"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="com.rskytech.hmi.project.commands.NewRskyTechTestProjectHandler"
+            id="com.rskytech.hmi.project.commands.NewRskyTechTestProjectHandler"
+            name="新建RSkyTech™测试工程项目">
+      </command>
+   </extension>
+
+</plugin>

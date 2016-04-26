@@ -1,10 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Security
-Bundle-SymbolicName: com.rskytech.hmi.security
+Bundle-Name: Project
+Bundle-SymbolicName: com.rskytech.hmi.project;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.rskytech.hmi.security.Activator
+Bundle-Activator: com.rskytech.hmi.project.Activator
 Bundle-Vendor: RSKYTECH
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

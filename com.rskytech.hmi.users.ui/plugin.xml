@@ -13,4 +13,21 @@
           pattern="com.rskytech.hmi.users.ui/com.rskytech.hmi.users.ui.*">
     </activityPatternBinding>
    </extension>
+ <extension
+       point="org.eclipse.ui.menus">
+    <menuContribution
+          locationURI="menu:com.rskytech.hmi.menus.manage">
+       <command
+             commandId="com.rskytech.hmi.users.ui.commands.UserConfigManagerHandler"
+             style="push">
+       </command>
+    </menuContribution>
+ </extension>
+ <extension
+       point="org.eclipse.ui.commands">
+    <command
+          id="com.rskytech.hmi.users.ui.commands.UserConfigManagerHandler"
+          name="用户管理">
+    </command>
+ </extension>
 </plugin>
