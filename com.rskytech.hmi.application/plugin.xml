@@ -91,6 +91,10 @@
             class="com.rskytech.hmi.application.splashHandlers.LoginSplashHandler"
             id="com.rskytech.hmi.application.splashHandlers.interactive">
       </splashHandler>
+      <splashHandlerProductBinding
+            productId="com.rskytech.hmi.application.product"
+            splashId="com.rskytech.hmi.application.splashHandlers.interactive">
+      </splashHandlerProductBinding>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -141,8 +145,7 @@
             allPopups="false"
             locationURI="menu:com.rskytech.hmi.menus.manage">
          <command
-               commandId="com.rskytech.hmi.application.open"
-               label="test"
+               commandId="com.rskytech.hmi.users.ui.commands.UserConfigManagerHandler"
                style="push">
          </command>
       </menuContribution>

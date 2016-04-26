@@ -1691,32 +1691,32 @@ public class UsersEditor extends FormEditor implements IEditingDomainProvider, I
 	 * @generated
 	 */
 	public void setStatusLineManager(ISelection selection) {
-		IStatusLineManager statusLineManager = currentViewer != null && currentViewer == contentOutlineViewer
-				? contentOutlineStatusLineManager : getActionBars().getStatusLineManager();
-
-		if (statusLineManager != null) {
-			if (selection instanceof IStructuredSelection) {
-				Collection<?> collection = ((IStructuredSelection) selection).toList();
-				switch (collection.size()) {
-				case 0: {
-					statusLineManager.setMessage(getString("_UI_NoObjectSelected"));
-					break;
-				}
-				case 1: {
-					String text = new AdapterFactoryItemDelegator(adapterFactory).getText(collection.iterator().next());
-					statusLineManager.setMessage(getString("_UI_SingleObjectSelected", text));
-					break;
-				}
-				default: {
-					statusLineManager
-							.setMessage(getString("_UI_MultiObjectSelected", Integer.toString(collection.size())));
-					break;
-				}
-				}
-			} else {
-				statusLineManager.setMessage("");
-			}
-		}
+//		IStatusLineManager statusLineManager = currentViewer != null && currentViewer == contentOutlineViewer
+//				? contentOutlineStatusLineManager : getActionBars().getStatusLineManager();
+//
+//		if (statusLineManager != null) {
+//			if (selection instanceof IStructuredSelection) {
+//				Collection<?> collection = ((IStructuredSelection) selection).toList();
+//				switch (collection.size()) {
+//				case 0: {
+//					statusLineManager.setMessage(getString("_UI_NoObjectSelected"));
+//					break;
+//				}
+//				case 1: {
+//					String text = new AdapterFactoryItemDelegator(adapterFactory).getText(collection.iterator().next());
+//					statusLineManager.setMessage(getString("_UI_SingleObjectSelected", text));
+//					break;
+//				}
+//				default: {
+//					statusLineManager
+//							.setMessage(getString("_UI_MultiObjectSelected", Integer.toString(collection.size())));
+//					break;
+//				}
+//				}
+//			} else {
+//				statusLineManager.setMessage("");
+//			}admi
+//		}
 	}
 
 	/**
@@ -1765,7 +1765,8 @@ public class UsersEditor extends FormEditor implements IEditingDomainProvider, I
 	 * @generated
 	 */
 	public IActionBars getActionBars() {
-		return getActionBarContributor().getActionBars();
+		return null;
+		//return getActionBarContributor().getActionBars();
 	}
 
 	/**

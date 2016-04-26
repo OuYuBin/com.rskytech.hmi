@@ -25,7 +25,7 @@ public class UserConfigManagerHandler extends AbstractHandler {
 				IFileStore fileStore = EFS.getLocalFileSystem().getStore(file.toURI());
 				IEditorInput editorInput = new FileStoreEditorInput(fileStore);
 				PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(editorInput,
-						"com.rskytech.hmi.users.editor.UsersEditorID");
+						"com.rskytech.hmi.users.editor.UsersEditor");
 			}
 		} catch (PartInitException e) {
 			e.printStackTrace();

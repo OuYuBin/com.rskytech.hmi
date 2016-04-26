@@ -25,12 +25,11 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated Users -->
       <editor
-            id="com.rskytech.hmi.users.editor.UsersEditorID"
+            id="com.rskytech.hmi.users.editor.UsersEditor"
             name="%_UI_UsersEditor_label"
             icon="icons/full/obj16/UsersModelFile.gif"
             extensions="users"
-            class="com.rskytech.hmi.users.editor.UsersEditor"
-            contributorClass="com.rskytech.hmi.users.editor.UsersActionBarContributor">
+            class="com.rskytech.hmi.users.editor.UsersEditor">
       </editor>
    </extension>
 
