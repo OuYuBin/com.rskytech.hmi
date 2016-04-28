@@ -35,6 +35,13 @@
             class="com.rskytech.hmi.application.NavigationView"
             id="com.rskytech.hmi.application.navigationView">
       </view>
+      <view
+            class="com.rskytech.hmi.application.BenchViewPart"
+            icon="icons/bench_view.gif"
+            id="com.rskytech.hmi.application.BenchViewPart"
+            name="测试硬件资源管理"
+            restorable="true">
+      </view>
    </extension>
    <extension
          point="org.eclipse.ui.commands">

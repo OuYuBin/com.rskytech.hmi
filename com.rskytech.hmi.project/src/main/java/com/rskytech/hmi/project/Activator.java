@@ -1,6 +1,18 @@
 package com.rskytech.hmi.project;
 
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -13,7 +25,7 @@ public class Activator extends AbstractUIPlugin {
 
 	// The shared instance
 	private static Activator plugin;
-	
+
 	/**
 	 * The constructor
 	 */
@@ -22,7 +34,9 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
+	 * 
+	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.
+	 * BundleContext)
 	 */
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
@@ -31,7 +45,9 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
+	 * 
+	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.
+	 * BundleContext)
 	 */
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
@@ -45,6 +61,25 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public static Activator getDefault() {
 		return plugin;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	protected void initializeImageRegistry(ImageRegistry registry) {
+		Bundle bundle = this.getBundle();
+		@SuppressWarnings("rawtypes")
+		Map map = new HashMap();
+		map.put("NewProject", "icons/newproject_wiz.gif");
+
+		for (@SuppressWarnings("rawtypes")
+		Iterator iter = map.entrySet().iterator(); iter.hasNext();) {
+			@SuppressWarnings("rawtypes")
+			Map.Entry entry = (Entry) iter.next();
+			IPath path = new Path((String) entry.getValue());
+			URL url = FileLocator.find(bundle, path, null);
+			ImageDescriptor desc = ImageDescriptor.createFromURL(url);
+			registry.put((String) entry.getKey(), desc);
+		}
 	}
 
 }

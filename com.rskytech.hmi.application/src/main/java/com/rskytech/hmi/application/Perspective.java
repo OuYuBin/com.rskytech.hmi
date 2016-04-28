@@ -1,8 +1,10 @@
 package com.rskytech.hmi.application;
 
-import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
+import org.eclipse.ui.navigator.resources.ProjectExplorer;
+
+import com.rskytech.hmi.navigator.TestProjectNavigator;
 
 public class Perspective implements IPerspectiveFactory {
 
@@ -21,6 +23,8 @@ public class Perspective implements IPerspectiveFactory {
 //		folder.addView(View.ID);
 		
 		//layout.getViewLayout(NavigationView.ID).setCloseable(false);
-		layout.addView("com.rskytech.hmi.explorer", IPageLayout.LEFT, 0.22f, editorArea);
+		layout.addView(TestProjectNavigator.VIEW_ID, IPageLayout.LEFT, 0.23f, editorArea);
+		
+		layout.addView(BenchViewPart.ID,IPageLayout.RIGHT,0.67f,editorArea);
 	}
 }

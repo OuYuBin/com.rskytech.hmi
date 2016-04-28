@@ -1,54 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension
-         point="org.eclipse.ui.views">
-      <view
-            class="org.eclipse.ui.navigator.CommonNavigator"
-            icon="icons/navigator.gif"
-            id="com.rskytech.hmi.explorer"
-            name="测试工程资源管理">
-      </view>
-   </extension>
-   <extension
+<extension
          point="org.eclipse.ui.navigator.viewer">
-      <viewerActionBinding
-            viewerId="com.rskytech.hmi.explorer">
-         <includes>
-            <actionExtension
-                  pattern="org.eclipse.ui.navigator.resources.*">
-            </actionExtension>
-         </includes>
-      </viewerActionBinding>
-      <viewerContentBinding
-            viewerId="com.rskytech.hmi.explorer">
-         <includes>
-            <contentExtension
-                  pattern="org.eclipse.ui.navigator.resourceContent">
-            </contentExtension>
-            <contentExtension
-                  pattern="org.eclipse.ui.navigator.resources.filters.*">
-            </contentExtension>
-            <contentExtension
-                  pattern="org.eclipse.ui.navigator.resources.linkHelper">
-            </contentExtension>
-            <contentExtension
-                  pattern="org.eclipse.ui.navigator.resources.workingSets">
-            </contentExtension>
-         </includes>
-      </viewerContentBinding>
+   <viewerActionBinding
+         viewerId="com.rskytech.hmi.navigator.TestProjectNavigator">
+      <includes>
+         <actionExtension
+               pattern="org.eclipse.ui.navigator.resources.*">
+         </actionExtension>
+      </includes>
+   </viewerActionBinding>
+       <viewerContentBinding
+            viewerId="com.rskytech.hmi.navigator.TestProjectNavigator">
+          <includes>
+       	     <contentExtension pattern="org.eclipse.ui.navigator.resourceContent" />
+	     <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+      <contentExtension
+            pattern="com.rskytech.hmi.navigator.resources.linkHelper">
+      </contentExtension>
+          </includes>
+       </viewerContentBinding>
+       <viewer
+             viewerId="com.rskytech.hmi.navigator.TestProjectNavigator">
+		<!--
+		<popupMenu
+                allowsPlatformContributions="true"
+                id="org.eclipse.ui.navigator.resourceContent#PopupMenu">
+             <insertionPoint name="group.new"/>
+             <insertionPoint name="group.edit" />
+             <insertionPoint name="group.reorganize" />
+             <insertionPoint name="group.open" />
+             <insertionPoint name="group.openWith"/>
+          </popupMenu>-->
+       </viewer>
    </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="org.eclipse.ui.resourcePerspective">
-         <view
-               id="com.rskytech.hmi.explorer"
-               ratio="0.5"
-               relationship="stack"
-               relative="org.eclipse.ui.navigator.ProjectExplorer">
-         </view>
-      </perspectiveExtension>
-   </extension>
-
+<extension
+      point="org.eclipse.ui.views">
+   <view
+         class="com.rskytech.hmi.navigator.TestProjectNavigator"
+         icon="icons/navigator.gif"
+         id="com.rskytech.hmi.navigator.TestProjectNavigator"
+         name="测试工程资源管理"
+         restorable="true">
+   </view>
+      
+</extension>
 </plugin>

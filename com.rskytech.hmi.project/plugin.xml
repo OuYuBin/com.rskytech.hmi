@@ -16,8 +16,18 @@
       <command
             defaultHandler="com.rskytech.hmi.project.commands.NewRskyTechTestProjectHandler"
             id="com.rskytech.hmi.project.commands.NewRskyTechTestProjectHandler"
-            name="新建RSkyTech™测试工程项目">
+            name="新建测试工程项目">
       </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            class="com.rskytech.hmi.project.wizard.NewRskyTechTestProjectWizard"
+            finalPerspective="com.rskytech.hmi.application.perspective"
+            id="com.rskytech.hmi.project.wizard.NewRskyTechTestProjectWizard"
+            name="Test"
+            project="true">
+      </wizard>
    </extension>
 
 </plugin>

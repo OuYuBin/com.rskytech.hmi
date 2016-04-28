@@ -14,6 +14,11 @@ import org.eclipse.ui.ide.FileStoreEditorInput;
 
 import com.rskytech.hmi.users.core.service.UserService;
 
+/**
+ * 
+ * @author robin
+ *
+ */
 public class UserConfigManagerHandler extends AbstractHandler {
 
 	@Override

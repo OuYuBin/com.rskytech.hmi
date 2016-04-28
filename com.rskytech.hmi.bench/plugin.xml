@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated RSATEConfig -->
+      <package
+            uri="platform:/resource/com.rskytech.hmi.bench/model/RSATEConfig.xsd"
+            class="com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage"
+            genModel="model/RSATEConfig.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated RSATEConfig -->
+      <parser
+            type="xml"
+            class="com.rskytech.hmi.bench.rsateconfig.util.RSATEConfigResourceFactoryImpl"/>
+   </extension>
+</plugin>

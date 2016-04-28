@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Internal
+Bundle-SymbolicName: com.rskytech.hmi.internal
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.rskytech.hmi.internal.Activator
+Bundle-Vendor: RSKYTECH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: com.rskytech.hmi.internal,
+ com.rskytech.hmi.internal.pdt,
+ com.rskytech.hmi.internal.resource

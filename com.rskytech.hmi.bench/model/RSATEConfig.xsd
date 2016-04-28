@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="RSATEConfig" type="RSATEConfig" />
+	<xsd:complexType name="RSATEConfig">
+		<xsd:sequence>
+			<xsd:element name="Bench" type="Bench">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Bench">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" name="Nodes" type="Nodes"></xsd:element>
+			<xsd:element maxOccurs="1" name="Drivers" type="Drivers"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Nodes">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Node" type="Node"></xsd:element>
+		</xsd:sequence>
+
+	</xsd:complexType>
+	<xsd:complexType name="Node">
+		<xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="Drivers">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Driver" type="Driver"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Driver">
+		<xsd:sequence>
+			<xsd:element name="Version" type="Token">
+				<xsd:annotation>
+					<xsd:documentation>设备驱动版本信息.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="Token">
+		<xsd:restriction base="xsd:token">
+			<xsd:minLength value="1"></xsd:minLength>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.rskytech.hmi.bench/src/main/java" modelPluginID="com.rskytech.hmi.bench"
+    modelName="RSATEConfig" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.xsd.ecore.importer">
+    <details key="createMap" value="true"/>
+  </genAnnotations>
+  <foreignModel>RSATEConfig.xsd</foreignModel>
+  <genPackages prefix="RSATEConfig" basePackage="com.rskytech.hmi.bench" resource="XML"
+      disposableProviderFactory="true" fileExtensions="xml" ecorePackage="RSATEConfig.ecore#/">
+    <genDataTypes ecoreDataType="RSATEConfig.ecore#//Token"/>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Bench">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/drivers"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RSATEConfig.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RSATEConfig.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//DocumentRoot/rSATEConfig"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Driver">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Driver/version"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Drivers">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Drivers/driver"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Node/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Nodes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Nodes/node"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//RSATEConfig">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//RSATEConfig/bench"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
