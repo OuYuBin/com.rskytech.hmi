@@ -31,7 +31,7 @@ public class UserProfileFormPage extends RskyCommonFormPage {
 	@Override
 	protected void createFormContent(IManagedForm managedForm) {
 		ScrolledForm scrolledForm = managedForm.getForm();
-		scrolledForm.setText("用户角色管理");
+		scrolledForm.setText("用户组管理");
 		FormToolkit formToolkit = managedForm.getToolkit();
 		Form form = scrolledForm.getForm();
 		formToolkit.decorateFormHeading(form);

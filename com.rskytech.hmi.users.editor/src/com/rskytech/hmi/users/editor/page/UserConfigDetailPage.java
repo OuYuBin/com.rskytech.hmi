@@ -93,7 +93,7 @@ public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPa
 
 		if (!profiles.isEmpty()) {
 			attrsSection = toolKit.createSection(parent, Section.EXPANDED|Section.TITLE_BAR);
-			attrsSection.setText("角色");
+			attrsSection.setText("用户组");
 			attrsSection.clientVerticalSpacing = 0;
 
 			twd = new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB);

@@ -17,5 +17,10 @@ Require-Bundle: org.eclipse.ui,
  com.rskytech.hmi.navigator;bundle-version="1.0.0",
  com.rskytech.hmi.users.ui;bundle-version="1.0.0",
  org.eclipse.ui.navigator.resources,
- org.eclipse.core.resources;bundle-version="3.10.1"
+ org.eclipse.core.resources;bundle-version="3.10.1",
+ com.rskytech.hmi.bench;bundle-version="1.0.0",
+ com.rskytech.hmi.bench.edit;bundle-version="1.0.0",
+ com.rskytech.hmi.bench.editor;bundle-version="1.0.0",
+ org.eclipse.ui.forms;bundle-version="3.6.200",
+ com.rskytech.hmi.bench.ui;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

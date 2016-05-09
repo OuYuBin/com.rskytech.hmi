@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Driver#getVersion <em>Version</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Driver#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getDriver()
@@ -46,5 +47,32 @@ public interface Driver extends EObject {
 	 * @generated
 	 */
 	void setVersion(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getDriver_Name()
+	 * @model dataType="com.rskytech.hmi.bench.rsateconfig.DriverName"
+	 *        extendedMetaData="kind='attribute' name='name' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link com.rskytech.hmi.bench.rsateconfig.Driver#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Driver

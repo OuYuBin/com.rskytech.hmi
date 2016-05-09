@@ -2,8 +2,6 @@ package com.rskytech.hmi.project.wizard;
 
 import java.lang.reflect.InvocationTargetException;
 
-import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.ResourcesPlugin;

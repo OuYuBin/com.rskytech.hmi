@@ -63,9 +63,12 @@ public class RSATEConfigFactoryImpl extends EFactoryImpl implements RSATEConfigF
 			case RSATEConfigPackage.BENCH: return createBench();
 			case RSATEConfigPackage.DOCUMENT_ROOT: return createDocumentRoot();
 			case RSATEConfigPackage.DRIVER: return createDriver();
+			case RSATEConfigPackage.DRIVER_NAME_AND_VERSION: return createDriverNameAndVersion();
 			case RSATEConfigPackage.DRIVERS: return createDrivers();
 			case RSATEConfigPackage.NODE: return createNode();
 			case RSATEConfigPackage.NODES: return createNodes();
+			case RSATEConfigPackage.RESOUCES: return createResouces();
+			case RSATEConfigPackage.RESOURCE: return createResource();
 			case RSATEConfigPackage.RSATE_CONFIG: return createRSATEConfig();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -80,6 +83,10 @@ public class RSATEConfigFactoryImpl extends EFactoryImpl implements RSATEConfigF
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case RSATEConfigPackage.DRIVER_NAME:
+				return createDriverNameFromString(eDataType, initialValue);
+			case RSATEConfigPackage.INTEGER:
+				return createIntegerFromString(eDataType, initialValue);
 			case RSATEConfigPackage.TOKEN:
 				return createTokenFromString(eDataType, initialValue);
 			default:
@@ -95,6 +102,10 @@ public class RSATEConfigFactoryImpl extends EFactoryImpl implements RSATEConfigF
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case RSATEConfigPackage.DRIVER_NAME:
+				return convertDriverNameToString(eDataType, instanceValue);
+			case RSATEConfigPackage.INTEGER:
+				return convertIntegerToString(eDataType, instanceValue);
 			case RSATEConfigPackage.TOKEN:
 				return convertTokenToString(eDataType, instanceValue);
 			default:
@@ -137,6 +148,16 @@ public class RSATEConfigFactoryImpl extends EFactoryImpl implements RSATEConfigF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DriverNameAndVersion createDriverNameAndVersion() {
+		DriverNameAndVersionImpl driverNameAndVersion = new DriverNameAndVersionImpl();
+		return driverNameAndVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Drivers createDrivers() {
 		DriversImpl drivers = new DriversImpl();
 		return drivers;
@@ -167,9 +188,65 @@ public class RSATEConfigFactoryImpl extends EFactoryImpl implements RSATEConfigF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Resouces createResouces() {
+		ResoucesImpl resouces = new ResoucesImpl();
+		return resouces;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Resource createResource() {
+		ResourceImpl resource = new ResourceImpl();
+		return resource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RSATEConfig createRSATEConfig() {
 		RSATEConfigImpl rsateConfig = new RSATEConfigImpl();
 		return rsateConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createDriverNameFromString(EDataType eDataType, String initialValue) {
+		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDriverNameToString(EDataType eDataType, Object instanceValue) {
+		return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.STRING, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createIntegerFromString(EDataType eDataType, String initialValue) {
+		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIntegerToString(EDataType eDataType, Object instanceValue) {
+		return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.TOKEN, instanceValue);
 	}
 
 	/**

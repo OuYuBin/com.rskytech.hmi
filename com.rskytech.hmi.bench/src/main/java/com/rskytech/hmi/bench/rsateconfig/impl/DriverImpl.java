@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.DriverImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.DriverImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +46,26 @@ public class DriverImpl extends MinimalEObjectImpl.Container implements Driver {
 	 * @ordered
 	 */
 	protected String version = VERSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +112,34 @@ public class DriverImpl extends MinimalEObjectImpl.Container implements Driver {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.DRIVER__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RSATEConfigPackage.DRIVER__VERSION:
 				return getVersion();
+			case RSATEConfigPackage.DRIVER__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +154,9 @@ public class DriverImpl extends MinimalEObjectImpl.Container implements Driver {
 		switch (featureID) {
 			case RSATEConfigPackage.DRIVER__VERSION:
 				setVersion((String)newValue);
+				return;
+			case RSATEConfigPackage.DRIVER__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +173,9 @@ public class DriverImpl extends MinimalEObjectImpl.Container implements Driver {
 			case RSATEConfigPackage.DRIVER__VERSION:
 				setVersion(VERSION_EDEFAULT);
 				return;
+			case RSATEConfigPackage.DRIVER__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +190,8 @@ public class DriverImpl extends MinimalEObjectImpl.Container implements Driver {
 		switch (featureID) {
 			case RSATEConfigPackage.DRIVER__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+			case RSATEConfigPackage.DRIVER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,6 +208,8 @@ public class DriverImpl extends MinimalEObjectImpl.Container implements Driver {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (version: ");
 		result.append(version);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

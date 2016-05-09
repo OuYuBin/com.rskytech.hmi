@@ -74,7 +74,7 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock implements 
 	protected void createMasterPart(final IManagedForm managedForm, Composite parent) {
 		FormToolkit formToolkit = managedForm.getToolkit();
 		Section section = formToolkit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
-		section.setText("角色列表");
+		section.setText("用户组列表");
 		section.clientVerticalSpacing = 0;
 		section.marginWidth = 5;
 		section.marginHeight = 5;
@@ -83,7 +83,7 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock implements 
 		ToolBar toolbar = toolBarManager.createControl(section);
 		toolbar.setCursor(Display.getDefault().getSystemCursor(SWT.CURSOR_HAND));
 
-		toolBarManager.add(new Action("新增角色", SWT.CHECK) {
+		toolBarManager.add(new Action("新增用户组", SWT.CHECK) {
 
 			@Override
 			public ImageDescriptor getImageDescriptor() {
@@ -97,7 +97,7 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock implements 
 				UsersConfiguration usersConfiguration = (UsersConfiguration) resource.getContents().get(0);
 				EditingDomain editingDomain = rskyCommonFormPage.getEditingDomain();
 				Profile profile = UsersFactory.eINSTANCE.createProfile();
-				profile.setName("新角色");
+				profile.setName("新用户组");
 
 				AddCommand addCommand = new AddCommand(editingDomain, usersConfiguration,
 						UsersPackage.eINSTANCE.getUsersConfiguration_Profile(), profile);
@@ -107,7 +107,7 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock implements 
 
 		});
 
-		toolBarManager.add(new Action("删除角色", SWT.CHECK) {
+		toolBarManager.add(new Action("删除用户组", SWT.CHECK) {
 
 			@Override
 			public ImageDescriptor getImageDescriptor() {
@@ -139,7 +139,7 @@ public class UserProfileMasterDetailBlock extends MasterDetailsBlock implements 
 		// --搜索
 		final Text searchText = formToolkit.createText(client, "",
 				SWT.BORDER | SWT.SEARCH | SWT.ICON_SEARCH | SWT.CANCEL);
-		searchText.setMessage("搜索: 角色");
+		searchText.setMessage("搜索: 用户组");
 		searchText.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
 		searchText.addKeyListener(new KeyAdapter() {
 			@Override

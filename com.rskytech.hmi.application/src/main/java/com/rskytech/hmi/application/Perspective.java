@@ -4,6 +4,7 @@ import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 import org.eclipse.ui.navigator.resources.ProjectExplorer;
 
+import com.rskytech.hmi.bench.ui.view.BenchViewPart;
 import com.rskytech.hmi.navigator.TestProjectNavigator;
 
 public class Perspective implements IPerspectiveFactory {

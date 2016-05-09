@@ -7,6 +7,7 @@ import com.rskytech.hmi.bench.rsateconfig.Drivers;
 import com.rskytech.hmi.bench.rsateconfig.Nodes;
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage;
 
+import com.rskytech.hmi.bench.rsateconfig.Resouces;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getDrivers <em>Drivers</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getResouces <em>Resouces</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +52,16 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	 * @ordered
 	 */
 	protected Drivers drivers;
+
+	/**
+	 * The cached value of the '{@link #getResouces() <em>Resouces</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResouces()
+	 * @generated
+	 * @ordered
+	 */
+	protected Resouces resouces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,6 +173,49 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Resouces getResouces() {
+		return resouces;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetResouces(Resouces newResouces, NotificationChain msgs) {
+		Resouces oldResouces = resouces;
+		resouces = newResouces;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__RESOUCES, oldResouces, newResouces);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResouces(Resouces newResouces) {
+		if (newResouces != resouces) {
+			NotificationChain msgs = null;
+			if (resouces != null)
+				msgs = ((InternalEObject)resouces).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.BENCH__RESOUCES, null, msgs);
+			if (newResouces != null)
+				msgs = ((InternalEObject)newResouces).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.BENCH__RESOUCES, null, msgs);
+			msgs = basicSetResouces(newResouces, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__RESOUCES, newResouces, newResouces));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -168,6 +223,8 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return basicSetNodes(null, msgs);
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				return basicSetDrivers(null, msgs);
+			case RSATEConfigPackage.BENCH__RESOUCES:
+				return basicSetResouces(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -184,6 +241,8 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return getNodes();
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				return getDrivers();
+			case RSATEConfigPackage.BENCH__RESOUCES:
+				return getResouces();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,6 +260,9 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return;
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				setDrivers((Drivers)newValue);
+				return;
+			case RSATEConfigPackage.BENCH__RESOUCES:
+				setResouces((Resouces)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -220,6 +282,9 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				setDrivers((Drivers)null);
 				return;
+			case RSATEConfigPackage.BENCH__RESOUCES:
+				setResouces((Resouces)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -236,6 +301,8 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return nodes != null;
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				return drivers != null;
+			case RSATEConfigPackage.BENCH__RESOUCES:
+				return resouces != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -49,6 +49,15 @@ public interface RSATEConfigFactory extends EFactory {
 	Driver createDriver();
 
 	/**
+	 * Returns a new object of class '<em>Driver Name And Version</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Driver Name And Version</em>'.
+	 * @generated
+	 */
+	DriverNameAndVersion createDriverNameAndVersion();
+
+	/**
 	 * Returns a new object of class '<em>Drivers</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,6 +83,24 @@ public interface RSATEConfigFactory extends EFactory {
 	 * @generated
 	 */
 	Nodes createNodes();
+
+	/**
+	 * Returns a new object of class '<em>Resouces</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Resouces</em>'.
+	 * @generated
+	 */
+	Resouces createResouces();
+
+	/**
+	 * Returns a new object of class '<em>Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Resource</em>'.
+	 * @generated
+	 */
+	Resource createResource();
 
 	/**
 	 * Returns a new object of class '<em>RSATE Config</em>'.

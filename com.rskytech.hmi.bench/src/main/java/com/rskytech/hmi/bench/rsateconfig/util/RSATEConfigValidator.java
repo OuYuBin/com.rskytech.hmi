@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
 
 /**
@@ -102,14 +103,24 @@ public class RSATEConfigValidator extends EObjectValidator {
 				return validateDocumentRoot((DocumentRoot)value, diagnostics, context);
 			case RSATEConfigPackage.DRIVER:
 				return validateDriver((Driver)value, diagnostics, context);
+			case RSATEConfigPackage.DRIVER_NAME_AND_VERSION:
+				return validateDriverNameAndVersion((DriverNameAndVersion)value, diagnostics, context);
 			case RSATEConfigPackage.DRIVERS:
 				return validateDrivers((Drivers)value, diagnostics, context);
 			case RSATEConfigPackage.NODE:
 				return validateNode((Node)value, diagnostics, context);
 			case RSATEConfigPackage.NODES:
 				return validateNodes((Nodes)value, diagnostics, context);
+			case RSATEConfigPackage.RESOUCES:
+				return validateResouces((Resouces)value, diagnostics, context);
+			case RSATEConfigPackage.RESOURCE:
+				return validateResource((Resource)value, diagnostics, context);
 			case RSATEConfigPackage.RSATE_CONFIG:
 				return validateRSATEConfig((RSATEConfig)value, diagnostics, context);
+			case RSATEConfigPackage.DRIVER_NAME:
+				return validateDriverName((String)value, diagnostics, context);
+			case RSATEConfigPackage.INTEGER:
+				return validateInteger((String)value, diagnostics, context);
 			case RSATEConfigPackage.TOKEN:
 				return validateToken((String)value, diagnostics, context);
 			default:
@@ -149,6 +160,15 @@ public class RSATEConfigValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateDriverNameAndVersion(DriverNameAndVersion driverNameAndVersion, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(driverNameAndVersion, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateDrivers(Drivers drivers, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(drivers, diagnostics, context);
 	}
@@ -176,8 +196,92 @@ public class RSATEConfigValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateResouces(Resouces resouces, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(resouces, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResource(Resource resource, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(resource, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateRSATEConfig(RSATEConfig rsateConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(rsateConfig, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDriverName(String driverName, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validateDriverName_Pattern(driverName, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateDriverName_Pattern
+	 */
+	public static final  PatternMatcher [][] DRIVER_NAME__PATTERN__VALUES =
+		new PatternMatcher [][] {
+			new PatternMatcher [] {
+				XMLTypeUtil.createPatternMatcher("[\\w_\\-]+")
+			}
+		};
+
+	/**
+	 * Validates the Pattern constraint of '<em>Driver Name</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDriverName_Pattern(String driverName, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validatePattern(RSATEConfigPackage.Literals.DRIVER_NAME, driverName, DRIVER_NAME__PATTERN__VALUES, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInteger(String integer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validateInteger_Pattern(integer, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateInteger_Pattern
+	 */
+	public static final  PatternMatcher [][] INTEGER__PATTERN__VALUES =
+		new PatternMatcher [][] {
+			new PatternMatcher [] {
+				XMLTypeUtil.createPatternMatcher("\\d+")
+			}
+		};
+
+	/**
+	 * Validates the Pattern constraint of '<em>Integer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInteger_Pattern(String integer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validatePattern(RSATEConfigPackage.Literals.INTEGER, integer, INTEGER__PATTERN__VALUES, diagnostics, context);
 	}
 
 	/**

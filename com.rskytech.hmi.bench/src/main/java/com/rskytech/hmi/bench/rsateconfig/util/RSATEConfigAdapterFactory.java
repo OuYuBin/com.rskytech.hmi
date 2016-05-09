@@ -80,6 +80,10 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 				return createDriverAdapter();
 			}
 			@Override
+			public Adapter caseDriverNameAndVersion(DriverNameAndVersion object) {
+				return createDriverNameAndVersionAdapter();
+			}
+			@Override
 			public Adapter caseDrivers(Drivers object) {
 				return createDriversAdapter();
 			}
@@ -90,6 +94,14 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNodes(Nodes object) {
 				return createNodesAdapter();
+			}
+			@Override
+			public Adapter caseResouces(Resouces object) {
+				return createResoucesAdapter();
+			}
+			@Override
+			public Adapter caseResource(Resource object) {
+				return createResourceAdapter();
 			}
 			@Override
 			public Adapter caseRSATEConfig(RSATEConfig object) {
@@ -158,6 +170,20 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.DriverNameAndVersion <em>Driver Name And Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.bench.rsateconfig.DriverNameAndVersion
+	 * @generated
+	 */
+	public Adapter createDriverNameAndVersionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.Drivers <em>Drivers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -196,6 +222,34 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNodesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.Resouces <em>Resouces</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Resouces
+	 * @generated
+	 */
+	public Adapter createResoucesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.Resource <em>Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Resource
+	 * @generated
+	 */
+	public Adapter createResourceAdapter() {
 		return null;
 	}
 

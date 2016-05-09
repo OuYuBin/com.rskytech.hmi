@@ -15,19 +15,42 @@
   <nested inputs="bundleentry://1540.fwk722306493/cache/www.w3.org/2001/XMLSchema.xsd#//token;XSDSimpleTypeDefinition=29"
       outputs="http://www.eclipse.org/emf/2003/XMLType#//Token"/>
   <nested inputs="RSATEConfig.xsd#//Token;XSDSimpleTypeDefinition" outputs="RSATEConfig.ecore#//Token"/>
+  <nested inputs="RSATEConfig.xsd#//DriverName;XSDSimpleTypeDefinition=2" outputs="RSATEConfig.ecore#//DriverName"/>
   <nested inputs="RSATEConfig.xsd#//Driver;XSDComplexTypeDefinition=5" outputs="RSATEConfig.ecore#//Driver">
     <nested inputs="RSATEConfig.xsd#//Driver;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle"
         outputs="RSATEConfig.ecore#//Driver/version"/>
+    <nested inputs="RSATEConfig.xsd#//Driver;XSDComplexTypeDefinition=5/XSDAttributeUse"
+        outputs="RSATEConfig.ecore#//Driver/name"/>
   </nested>
   <nested inputs="RSATEConfig.xsd#//Drivers;XSDComplexTypeDefinition=4" outputs="RSATEConfig.ecore#//Drivers">
     <nested inputs="RSATEConfig.xsd#//Drivers;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"
         outputs="RSATEConfig.ecore#//Drivers/driver"/>
+  </nested>
+  <nested inputs="RSATEConfig.xsd#//Integer;XSDSimpleTypeDefinition=1" outputs="RSATEConfig.ecore#//Integer"/>
+  <nested inputs="RSATEConfig.xsd#//DriverNameAndVersion;XSDComplexTypeDefinition=8"
+      outputs="RSATEConfig.ecore#//DriverNameAndVersion">
+    <nested inputs="RSATEConfig.xsd#//DriverNameAndVersion;XSDComplexTypeDefinition=8/XSDAttributeUse"
+        outputs="RSATEConfig.ecore#//DriverNameAndVersion/name"/>
+    <nested inputs="RSATEConfig.xsd#//DriverNameAndVersion;XSDComplexTypeDefinition=8/XSDAttributeUse=1"
+        outputs="RSATEConfig.ecore#//DriverNameAndVersion/version"/>
+  </nested>
+  <nested inputs="RSATEConfig.xsd#//Resource;XSDComplexTypeDefinition=7" outputs="RSATEConfig.ecore#//Resource">
+    <nested inputs="RSATEConfig.xsd#//Resource;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="RSATEConfig.ecore#//Resource/available"/>
+    <nested inputs="RSATEConfig.xsd#//Resource;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="RSATEConfig.ecore#//Resource/driver"/>
+  </nested>
+  <nested inputs="RSATEConfig.xsd#//Resouces;XSDComplexTypeDefinition=6" outputs="RSATEConfig.ecore#//Resouces">
+    <nested inputs="RSATEConfig.xsd#//Resouces;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="RSATEConfig.ecore#//Resouces/resource"/>
   </nested>
   <nested inputs="RSATEConfig.xsd#//Bench;XSDComplexTypeDefinition=1" outputs="RSATEConfig.ecore#//Bench">
     <nested inputs="RSATEConfig.xsd#//Bench;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"
         outputs="RSATEConfig.ecore#//Bench/nodes"/>
     <nested inputs="RSATEConfig.xsd#//Bench;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=1"
         outputs="RSATEConfig.ecore#//Bench/drivers"/>
+    <nested inputs="RSATEConfig.xsd#//Bench;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="RSATEConfig.ecore#//Bench/resouces"/>
   </nested>
   <nested inputs="RSATEConfig.xsd#//RSATEConfig;XSDComplexTypeDefinition" outputs="RSATEConfig.ecore#//RSATEConfig">
     <nested inputs="RSATEConfig.xsd#//RSATEConfig;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"

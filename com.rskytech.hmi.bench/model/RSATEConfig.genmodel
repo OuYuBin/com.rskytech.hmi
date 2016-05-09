@@ -9,11 +9,15 @@
   </genAnnotations>
   <foreignModel>RSATEConfig.xsd</foreignModel>
   <genPackages prefix="RSATEConfig" basePackage="com.rskytech.hmi.bench" resource="XML"
-      disposableProviderFactory="true" fileExtensions="xml" ecorePackage="RSATEConfig.ecore#/">
+      disposableProviderFactory="true" presentationPackageSuffix="editor" fileExtensions="xml"
+      ecorePackage="RSATEConfig.ecore#/">
+    <genDataTypes ecoreDataType="RSATEConfig.ecore#//DriverName"/>
+    <genDataTypes ecoreDataType="RSATEConfig.ecore#//Integer"/>
     <genDataTypes ecoreDataType="RSATEConfig.ecore#//Token"/>
     <genClasses ecoreClass="RSATEConfig.ecore#//Bench">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/nodes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/drivers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/resouces"/>
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//DocumentRoot">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//DocumentRoot/mixed"/>
@@ -23,6 +27,11 @@
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//Driver">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Driver/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Driver/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//DriverNameAndVersion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//DriverNameAndVersion/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//DriverNameAndVersion/version"/>
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//Drivers">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Drivers/driver"/>
@@ -32,6 +41,13 @@
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//Nodes">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Nodes/node"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Resouces">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Resouces/resource"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Resource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Resource/available"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Resource/driver"/>
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//RSATEConfig">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//RSATEConfig/bench"/>

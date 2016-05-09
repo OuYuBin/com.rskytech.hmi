@@ -123,7 +123,7 @@ public class UserRoleDetailPage extends AbstractFormPart implements IDetailsPage
 	private void createRestrictionsSection(Map<String,IActivity> activities, Composite composite) {
 		final Text searchText = toolKit.createText(composite, "",
 				SWT.BORDER | SWT.SEARCH | SWT.ICON_SEARCH | SWT.CANCEL);
-		searchText.setMessage("搜索: 角色");
+		searchText.setMessage("搜索: 权限约束");
 		searchText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
 		searchText.addKeyListener(new KeyAdapter() {

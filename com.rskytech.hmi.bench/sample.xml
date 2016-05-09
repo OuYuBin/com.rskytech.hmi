@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RSATEConfig>
+  <Bench>
+    <Nodes>
+      <Node/>
+      <Node/>
+    </Nodes>
+    <Drivers>
+      <Driver/>
+      <Driver/>
+    </Drivers>
+    <Resouces>
+      <Resource>
+        <Driver name="test" version="1.0"/>
+      </Resource>
+      <Resource>
+        <Driver/>
+      </Resource>
+    </Resouces>
+  </Bench>
+</RSATEConfig>

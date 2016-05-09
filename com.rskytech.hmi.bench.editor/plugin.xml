@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated RSATEConfig -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.rskytech.hmi.bench.rsateconfig.editor.RSATEConfigModelWizardID"
+            name="%_UI_RSATEConfigModelWizard_label"
+            class="com.rskytech.hmi.bench.rsateconfig.editor.RSATEConfigModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RSATEConfigModelFile.gif">
+         <description>%_UI_RSATEConfigModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated RSATEConfig -->
+      <editor
+            id="com.rskytech.hmi.bench.rsateconfig.editor.RSATEConfigEditorID"
+            name="%_UI_RSATEConfigEditor_label"
+            icon="icons/full/obj16/RSATEConfigModelFile.gif"
+            extensions="xml"
+            class="com.rskytech.hmi.bench.rsateconfig.editor.RSATEConfigEditor"
+            contributorClass="com.rskytech.hmi.bench.rsateconfig.editor.RSATEConfigActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

@@ -84,6 +84,12 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RSATEConfigPackage.DRIVER_NAME_AND_VERSION: {
+				DriverNameAndVersion driverNameAndVersion = (DriverNameAndVersion)theEObject;
+				T result = caseDriverNameAndVersion(driverNameAndVersion);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RSATEConfigPackage.DRIVERS: {
 				Drivers drivers = (Drivers)theEObject;
 				T result = caseDrivers(drivers);
@@ -99,6 +105,18 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 			case RSATEConfigPackage.NODES: {
 				Nodes nodes = (Nodes)theEObject;
 				T result = caseNodes(nodes);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RSATEConfigPackage.RESOUCES: {
+				Resouces resouces = (Resouces)theEObject;
+				T result = caseResouces(resouces);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RSATEConfigPackage.RESOURCE: {
+				Resource resource = (Resource)theEObject;
+				T result = caseResource(resource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -158,6 +176,21 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Driver Name And Version</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Driver Name And Version</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDriverNameAndVersion(DriverNameAndVersion object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Drivers</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -199,6 +232,36 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNodes(Nodes object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resouces</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resouces</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResouces(Resouces object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResource(Resource object) {
 		return null;
 	}
 

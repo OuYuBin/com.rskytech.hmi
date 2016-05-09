@@ -4,6 +4,15 @@
 	<xsd:complexType name="RSATEConfig">
 		<xsd:sequence>
 			<xsd:element name="Bench" type="Bench">
+				<!-- 设定唯一性约束 -->
+				<xsd:key name="DriverId">
+					<xsd:selector xpath="./Drivers/Driver"></xsd:selector>
+					<xsd:field xpath="@Name"></xsd:field>
+				</xsd:key>
+				<xsd:keyref name="DriverRef" refer="DriverId">
+					<xsd:selector xpath="./Resources/Resource/Driver" />
+					<xsd:field xpath="@Name"></xsd:field>
+				</xsd:keyref>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
@@ -12,6 +21,7 @@
 		<xsd:sequence>
 			<xsd:element maxOccurs="1" name="Nodes" type="Nodes"></xsd:element>
 			<xsd:element maxOccurs="1" name="Drivers" type="Drivers"></xsd:element>
+			<xsd:element maxOccurs="1" name="Resouces" type="Resouces"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -39,6 +49,35 @@
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
+		<xsd:attribute name="name" type="DriverName">
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="Resouces">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Resource" type="Resource">
+				<xsd:annotation>
+					<xsd:documentation>资源信息.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Resource">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Available"
+				type="Integer">
+				<xsd:annotation>
+					<xsd:documentation>资源是否可用标记.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Driver" type="DriverNameAndVersion">
+				<xsd:annotation>
+					<xsd:documentation>资源包含设备的名称及版本.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
 	</xsd:complexType>
 
 	<xsd:simpleType name="Token">
@@ -46,5 +85,22 @@
 			<xsd:minLength value="1"></xsd:minLength>
 		</xsd:restriction>
 	</xsd:simpleType>
+
+	<xsd:simpleType name="Integer">
+		<xsd:restriction base="xsd:token">
+			<xsd:pattern value="\d+"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="DriverName">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[\w_\-]+"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="DriverNameAndVersion">
+		<xsd:attribute name="name" type="Token" use="required"></xsd:attribute>
+		<xsd:attribute name="version" type="Token" use="required"></xsd:attribute>
+	</xsd:complexType>
 
 </xsd:schema>
