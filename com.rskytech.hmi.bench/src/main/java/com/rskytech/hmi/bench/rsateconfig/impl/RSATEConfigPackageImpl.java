@@ -240,6 +240,33 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getBench_IP() {
+		return (EAttribute)benchEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBench_Name() {
+		return (EAttribute)benchEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBench_Port() {
+		return (EAttribute)benchEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDocumentRoot() {
 		return documentRootEClass;
 	}
@@ -510,6 +537,9 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		createEReference(benchEClass, BENCH__NODES);
 		createEReference(benchEClass, BENCH__DRIVERS);
 		createEReference(benchEClass, BENCH__RESOUCES);
+		createEAttribute(benchEClass, BENCH__IP);
+		createEAttribute(benchEClass, BENCH__NAME);
+		createEAttribute(benchEClass, BENCH__PORT);
 
 		documentRootEClass = createEClass(DOCUMENT_ROOT);
 		createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
@@ -587,6 +617,9 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		initEReference(getBench_Nodes(), this.getNodes(), null, "nodes", null, 1, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBench_Drivers(), this.getDrivers(), null, "drivers", null, 1, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBench_Resouces(), this.getResouces(), null, "resouces", null, 1, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBench_IP(), theXMLTypePackage.getString(), "iP", null, 0, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBench_Name(), this.getToken(), "name", null, 0, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBench_Port(), theXMLTypePackage.getInt(), "port", null, 0, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -632,6 +665,8 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		// Create annotations
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
+		// http://www.eclipse.org/emf/2002/GenModel
+		createGenModelAnnotations();
 	}
 
 	/**
@@ -677,6 +712,30 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		   new String[] {
 			 "kind", "element",
 			 "name", "Resouces",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getBench_IP(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "IP",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getBench_Name(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "name",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getBench_Port(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "port",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
@@ -882,6 +941,46 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 			 "name", "Token",
 			 "baseType", "http://www.eclipse.org/emf/2003/XMLType#token",
 			 "minLength", "1"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";	
+		addAnnotation
+		  (getBench_Name(), 
+		   source, 
+		   new String[] {
+			 "documentation", "RTC\u4e3b\u7ed3\u70b9\u540d\u79f0"
+		   });	
+		addAnnotation
+		  (getDriver_Version(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u8bbe\u5907\u9a71\u52a8\u7248\u672c\u4fe1\u606f."
+		   });	
+		addAnnotation
+		  (getResouces_Resource(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u8d44\u6e90\u4fe1\u606f."
+		   });	
+		addAnnotation
+		  (getResource_Available(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u8d44\u6e90\u662f\u5426\u53ef\u7528\u6807\u8bb0."
+		   });	
+		addAnnotation
+		  (getResource_Driver(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u8d44\u6e90\u5305\u542b\u8bbe\u5907\u7684\u540d\u79f0\u53ca\u7248\u672c."
 		   });
 	}
 

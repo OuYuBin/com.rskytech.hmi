@@ -1,5 +1,6 @@
 package com.rskytech.hmi.common.editor.page;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.ui.forms.editor.FormEditor;
@@ -15,14 +16,17 @@ import com.rskytech.hmi.common.editor.IRskyCommonEditor;
 public class RskyCommonFormPage extends FormPage implements IRskyCommonFormPage {
 
 	private Resource resource;
-	
+
 	private EditingDomain editingDomain;
+
+	private AdapterFactory adapterFactory;
 
 	public RskyCommonFormPage(FormEditor editor, String id, String title) {
 		super(editor, id, title);
 		if (editor instanceof IRskyCommonEditor) {
 			this.resource = ((IRskyCommonEditor) editor).getResource();
-			this.editingDomain=((IRskyCommonEditor) editor).getEditingDomain();
+			this.editingDomain = ((IRskyCommonEditor) editor).getEditingDomain();
+			this.adapterFactory = ((IRskyCommonEditor) editor).getAdapterFactory();
 		}
 	}
 
@@ -37,6 +41,11 @@ public class RskyCommonFormPage extends FormPage implements IRskyCommonFormPage 
 	@Override
 	public EditingDomain getEditingDomain() {
 		return editingDomain;
+	}
+
+	@Override
+	public AdapterFactory getAdapterFactory() {
+		return adapterFactory;
 	}
 
 }

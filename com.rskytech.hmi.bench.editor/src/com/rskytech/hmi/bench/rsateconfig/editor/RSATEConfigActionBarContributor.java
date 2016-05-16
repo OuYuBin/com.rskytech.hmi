@@ -215,7 +215,7 @@ public class RSATEConfigActionBarContributor
 	 */
 	@Override
 	public void setActiveEditor(IEditorPart part) {
-		super.setActiveEditor(part);
+		//super.setActiveEditor(part);
 		activeEditorPart = part;
 
 		// Switch to the new selection provider.

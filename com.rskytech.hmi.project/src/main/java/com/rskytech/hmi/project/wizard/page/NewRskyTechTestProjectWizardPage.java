@@ -39,7 +39,7 @@ public class NewRskyTechTestProjectWizardPage extends WizardPage {
 		Label name = new Label(composite, SWT.NONE);
 		name.setText("项目名称:");
 		name.setLayoutData(new GridData(GridData.BEGINNING, GridData.FILL, false, false));
-		projectNameText = new Text(composite, SWT.NONE);
+		projectNameText = new Text(composite, SWT.BORDER);
 		projectNameText.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, false));
 		setControl(composite);
 	}
