@@ -28,6 +28,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getDrivers <em>Drivers</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getResouces <em>Resouces</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getIP <em>IP</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getPort <em>Port</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +65,75 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	 * @ordered
 	 */
 	protected Resouces resouces;
+
+	/**
+	 * The default value of the '{@link #getIP() <em>IP</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIP()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIP() <em>IP</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIP()
+	 * @generated
+	 * @ordered
+	 */
+	protected String iP = IP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PORT_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected int port = PORT_EDEFAULT;
+
+	/**
+	 * This is true if the Port attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean portESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,6 +288,94 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getIP() {
+		return iP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIP(String newIP) {
+		String oldIP = iP;
+		iP = newIP;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__IP, oldIP, iP));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getPort() {
+		return port;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPort(int newPort) {
+		int oldPort = port;
+		port = newPort;
+		boolean oldPortESet = portESet;
+		portESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__PORT, oldPort, port, !oldPortESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetPort() {
+		int oldPort = port;
+		boolean oldPortESet = portESet;
+		port = PORT_EDEFAULT;
+		portESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, RSATEConfigPackage.BENCH__PORT, oldPort, PORT_EDEFAULT, oldPortESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPort() {
+		return portESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -243,6 +403,12 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return getDrivers();
 			case RSATEConfigPackage.BENCH__RESOUCES:
 				return getResouces();
+			case RSATEConfigPackage.BENCH__IP:
+				return getIP();
+			case RSATEConfigPackage.BENCH__NAME:
+				return getName();
+			case RSATEConfigPackage.BENCH__PORT:
+				return getPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -263,6 +429,15 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return;
 			case RSATEConfigPackage.BENCH__RESOUCES:
 				setResouces((Resouces)newValue);
+				return;
+			case RSATEConfigPackage.BENCH__IP:
+				setIP((String)newValue);
+				return;
+			case RSATEConfigPackage.BENCH__NAME:
+				setName((String)newValue);
+				return;
+			case RSATEConfigPackage.BENCH__PORT:
+				setPort((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -285,6 +460,15 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 			case RSATEConfigPackage.BENCH__RESOUCES:
 				setResouces((Resouces)null);
 				return;
+			case RSATEConfigPackage.BENCH__IP:
+				setIP(IP_EDEFAULT);
+				return;
+			case RSATEConfigPackage.BENCH__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case RSATEConfigPackage.BENCH__PORT:
+				unsetPort();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -303,8 +487,34 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return drivers != null;
 			case RSATEConfigPackage.BENCH__RESOUCES:
 				return resouces != null;
+			case RSATEConfigPackage.BENCH__IP:
+				return IP_EDEFAULT == null ? iP != null : !IP_EDEFAULT.equals(iP);
+			case RSATEConfigPackage.BENCH__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case RSATEConfigPackage.BENCH__PORT:
+				return isSetPort();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (iP: ");
+		result.append(iP);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", port: ");
+		if (portESet) result.append(port); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
 	}
 
 } //BenchImpl

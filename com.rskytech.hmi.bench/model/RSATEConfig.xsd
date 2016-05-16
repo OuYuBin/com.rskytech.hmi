@@ -23,6 +23,13 @@
 			<xsd:element maxOccurs="1" name="Drivers" type="Drivers"></xsd:element>
 			<xsd:element maxOccurs="1" name="Resouces" type="Resouces"></xsd:element>
 		</xsd:sequence>
+		<xsd:attribute name="name" type="Token">
+			<xsd:annotation>
+				<xsd:documentation>RTC主结点名称</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="IP" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="port" type="xsd:int"></xsd:attribute>
 	</xsd:complexType>
 
 	<xsd:complexType name="Nodes">

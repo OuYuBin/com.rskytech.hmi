@@ -96,13 +96,40 @@ public interface RSATEConfigPackage extends EPackage {
 	int BENCH__RESOUCES = 2;
 
 	/**
+	 * The feature id for the '<em><b>IP</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BENCH__IP = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BENCH__NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BENCH__PORT = 5;
+
+	/**
 	 * The number of structural features of the '<em>Bench</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BENCH_FEATURE_COUNT = 3;
+	int BENCH_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Bench</em>' class.
@@ -575,6 +602,39 @@ public interface RSATEConfigPackage extends EPackage {
 	EReference getBench_Resouces();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getIP <em>IP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>IP</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Bench#getIP()
+	 * @see #getBench()
+	 * @generated
+	 */
+	EAttribute getBench_IP();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Bench#getName()
+	 * @see #getBench()
+	 * @generated
+	 */
+	EAttribute getBench_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Port</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Bench#getPort()
+	 * @see #getBench()
+	 * @generated
+	 */
+	EAttribute getBench_Port();
+
+	/**
 	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.DocumentRoot <em>Document Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -921,6 +981,30 @@ public interface RSATEConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BENCH__RESOUCES = eINSTANCE.getBench_Resouces();
+
+		/**
+		 * The meta object literal for the '<em><b>IP</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BENCH__IP = eINSTANCE.getBench_IP();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BENCH__NAME = eINSTANCE.getBench_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BENCH__PORT = eINSTANCE.getBench_Port();
 
 		/**
 		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.DocumentRootImpl <em>Document Root</em>}' class.
