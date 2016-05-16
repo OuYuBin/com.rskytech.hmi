@@ -261,10 +261,11 @@ public class BenchViewPart extends ViewPart {
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
-	public <T> T getAdapter(Class<T> adapter) {
+	public Object getAdapter(Class adapter) {
 		if ((TreeViewer.class).equals(adapter)) {
-			return (T) ateTreeViewer;
+			return ateTreeViewer;
 		}
 		return super.getAdapter(adapter);
 	}

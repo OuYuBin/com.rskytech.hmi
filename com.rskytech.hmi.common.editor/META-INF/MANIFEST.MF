@@ -7,7 +7,6 @@ Bundle-Activator: com.rskytech.hmi.common.editor.Activator
 Bundle-Vendor: RSKYTECH
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.emf,
  org.eclipse.emf.ecore,
  org.eclipse.ui.forms,
  org.eclipse.emf.edit

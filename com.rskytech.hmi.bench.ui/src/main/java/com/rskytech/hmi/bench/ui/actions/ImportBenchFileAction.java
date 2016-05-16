@@ -74,7 +74,7 @@ public class ImportBenchFileAction extends Action {
 				}
 
 				fileWriter.flush();
-				TreeViewer treeViewer = adaptable.getAdapter(TreeViewer.class);
+				TreeViewer treeViewer = (TreeViewer) adaptable.getAdapter(TreeViewer.class);
 				treeViewer.refresh();
 				treeViewer.expandAll();
 			}
