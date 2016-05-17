@@ -3,18 +3,21 @@
 package com.rskytech.hmi.bench.rsateconfig.impl;
 
 import com.rskytech.hmi.bench.rsateconfig.Bench;
+import com.rskytech.hmi.bench.rsateconfig.Conf;
 import com.rskytech.hmi.bench.rsateconfig.DocumentRoot;
 import com.rskytech.hmi.bench.rsateconfig.Driver;
 import com.rskytech.hmi.bench.rsateconfig.DriverNameAndVersion;
 import com.rskytech.hmi.bench.rsateconfig.Drivers;
 import com.rskytech.hmi.bench.rsateconfig.Node;
 import com.rskytech.hmi.bench.rsateconfig.Nodes;
+import com.rskytech.hmi.bench.rsateconfig.Param;
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfig;
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfigFactory;
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage;
-
-import com.rskytech.hmi.bench.rsateconfig.Resouces;
 import com.rskytech.hmi.bench.rsateconfig.Resource;
+import com.rskytech.hmi.bench.rsateconfig.Resources;
+import com.rskytech.hmi.bench.rsateconfig.VirtualResource;
+import com.rskytech.hmi.bench.rsateconfig.VirtualResources;
 import com.rskytech.hmi.bench.rsateconfig.util.RSATEConfigValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -41,6 +44,13 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * @generated
 	 */
 	private EClass benchEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass confEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,7 +99,7 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass resoucesEClass = null;
+	private EClass paramEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,7 +113,28 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass resourcesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass rsateConfigEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass virtualResourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass virtualResourcesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +262,7 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBench_Resouces() {
+	public EReference getBench_Resources() {
 		return (EReference)benchEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -240,8 +271,8 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBench_IP() {
-		return (EAttribute)benchEClass.getEStructuralFeatures().get(3);
+	public EReference getBench_VirtualResources() {
+		return (EReference)benchEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -249,7 +280,7 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBench_Name() {
+	public EAttribute getBench_Ip() {
 		return (EAttribute)benchEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -258,8 +289,35 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBench_Port() {
+	public EAttribute getBench_Name() {
 		return (EAttribute)benchEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBench_Port() {
+		return (EAttribute)benchEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConf() {
+		return confEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConf_Param() {
+		return (EReference)confEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -393,8 +451,17 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNode_Name() {
+	public EAttribute getNode_Ip() {
 		return (EAttribute)nodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_Name() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -420,8 +487,8 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getResouces() {
-		return resoucesEClass;
+	public EClass getParam() {
+		return paramEClass;
 	}
 
 	/**
@@ -429,8 +496,17 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResouces_Resource() {
-		return (EReference)resoucesEClass.getEStructuralFeatures().get(0);
+	public EAttribute getParam_Name() {
+		return (EAttribute)paramEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParam_Value() {
+		return (EAttribute)paramEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -465,6 +541,42 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getResource_Conf() {
+		return (EReference)resourceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResource_Name() {
+		return (EAttribute)resourceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getResources() {
+		return resourcesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResources_Resource() {
+		return (EReference)resourcesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRSATEConfig() {
 		return rsateConfigEClass;
 	}
@@ -476,6 +588,51 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 */
 	public EReference getRSATEConfig_Bench() {
 		return (EReference)rsateConfigEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVirtualResource() {
+		return virtualResourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVirtualResource_Resource() {
+		return (EAttribute)virtualResourceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVirtualResource_Name() {
+		return (EAttribute)virtualResourceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVirtualResources() {
+		return virtualResourcesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVirtualResources_VirtualResource() {
+		return (EReference)virtualResourcesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -536,10 +693,14 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		benchEClass = createEClass(BENCH);
 		createEReference(benchEClass, BENCH__NODES);
 		createEReference(benchEClass, BENCH__DRIVERS);
-		createEReference(benchEClass, BENCH__RESOUCES);
+		createEReference(benchEClass, BENCH__RESOURCES);
+		createEReference(benchEClass, BENCH__VIRTUAL_RESOURCES);
 		createEAttribute(benchEClass, BENCH__IP);
 		createEAttribute(benchEClass, BENCH__NAME);
 		createEAttribute(benchEClass, BENCH__PORT);
+
+		confEClass = createEClass(CONF);
+		createEReference(confEClass, CONF__PARAM);
 
 		documentRootEClass = createEClass(DOCUMENT_ROOT);
 		createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
@@ -559,20 +720,34 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		createEReference(driversEClass, DRIVERS__DRIVER);
 
 		nodeEClass = createEClass(NODE);
+		createEAttribute(nodeEClass, NODE__IP);
 		createEAttribute(nodeEClass, NODE__NAME);
 
 		nodesEClass = createEClass(NODES);
 		createEReference(nodesEClass, NODES__NODE);
 
-		resoucesEClass = createEClass(RESOUCES);
-		createEReference(resoucesEClass, RESOUCES__RESOURCE);
+		paramEClass = createEClass(PARAM);
+		createEAttribute(paramEClass, PARAM__NAME);
+		createEAttribute(paramEClass, PARAM__VALUE);
 
 		resourceEClass = createEClass(RESOURCE);
 		createEAttribute(resourceEClass, RESOURCE__AVAILABLE);
 		createEReference(resourceEClass, RESOURCE__DRIVER);
+		createEReference(resourceEClass, RESOURCE__CONF);
+		createEAttribute(resourceEClass, RESOURCE__NAME);
+
+		resourcesEClass = createEClass(RESOURCES);
+		createEReference(resourcesEClass, RESOURCES__RESOURCE);
 
 		rsateConfigEClass = createEClass(RSATE_CONFIG);
 		createEReference(rsateConfigEClass, RSATE_CONFIG__BENCH);
+
+		virtualResourceEClass = createEClass(VIRTUAL_RESOURCE);
+		createEAttribute(virtualResourceEClass, VIRTUAL_RESOURCE__RESOURCE);
+		createEAttribute(virtualResourceEClass, VIRTUAL_RESOURCE__NAME);
+
+		virtualResourcesEClass = createEClass(VIRTUAL_RESOURCES);
+		createEReference(virtualResourcesEClass, VIRTUAL_RESOURCES__VIRTUAL_RESOURCE);
 
 		// Create data types
 		driverNameEDataType = createEDataType(DRIVER_NAME);
@@ -616,10 +791,14 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		initEClass(benchEClass, Bench.class, "Bench", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBench_Nodes(), this.getNodes(), null, "nodes", null, 1, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBench_Drivers(), this.getDrivers(), null, "drivers", null, 1, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBench_Resouces(), this.getResouces(), null, "resouces", null, 1, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBench_IP(), theXMLTypePackage.getString(), "iP", null, 0, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBench_Resources(), this.getResources(), null, "resources", null, 1, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBench_VirtualResources(), this.getVirtualResources(), null, "virtualResources", null, 1, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBench_Ip(), theXMLTypePackage.getString(), "ip", null, 0, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBench_Name(), this.getToken(), "name", null, 0, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBench_Port(), theXMLTypePackage.getInt(), "port", null, 0, 1, Bench.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(confEClass, Conf.class, "Conf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConf_Param(), this.getParam(), null, "param", null, 0, -1, Conf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -639,20 +818,34 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		initEReference(getDrivers_Driver(), this.getDriver(), null, "driver", null, 1, -1, Drivers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNode_Ip(), theXMLTypePackage.getString(), "ip", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNode_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodesEClass, Nodes.class, "Nodes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNodes_Node(), this.getNode(), null, "node", null, 1, -1, Nodes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(resoucesEClass, Resouces.class, "Resouces", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getResouces_Resource(), this.getResource(), null, "resource", null, 1, -1, Resouces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(paramEClass, Param.class, "Param", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParam_Name(), this.getToken(), "name", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParam_Value(), this.getToken(), "value", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getResource_Available(), this.getInteger(), "available", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Driver(), this.getDriverNameAndVersion(), null, "driver", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_Conf(), this.getConf(), null, "conf", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(resourcesEClass, Resources.class, "Resources", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResources_Resource(), this.getResource(), null, "resource", null, 1, -1, Resources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rsateConfigEClass, RSATEConfig.class, "RSATEConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRSATEConfig_Bench(), this.getBench(), null, "bench", null, 1, 1, RSATEConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(virtualResourceEClass, VirtualResource.class, "VirtualResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVirtualResource_Resource(), theXMLTypePackage.getString(), "resource", null, 1, 1, VirtualResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVirtualResource_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, VirtualResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(virtualResourcesEClass, VirtualResources.class, "VirtualResources", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVirtualResources_VirtualResource(), this.getVirtualResource(), null, "virtualResource", null, 1, -1, VirtualResources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(driverNameEDataType, String.class, "DriverName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -707,19 +900,27 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getBench_Resouces(), 
+		  (getBench_Resources(), 
 		   source, 
 		   new String[] {
 			 "kind", "element",
-			 "name", "Resouces",
+			 "name", "Resources",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getBench_IP(), 
+		  (getBench_VirtualResources(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "VirtualResources",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getBench_Ip(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
-			 "name", "IP",
+			 "name", "ip",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
@@ -736,6 +937,21 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		   new String[] {
 			 "kind", "attribute",
 			 "name", "port",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (confEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Conf",
+			 "kind", "elementOnly"
+		   });	
+		addAnnotation
+		  (getConf_Param(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Param",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
@@ -786,7 +1002,7 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		   source, 
 		   new String[] {
 			 "kind", "element",
-			 "name", "Version",
+			 "name", "version",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
@@ -859,6 +1075,14 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 			 "kind", "empty"
 		   });	
 		addAnnotation
+		  (getNode_Ip(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "ip",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
 		  (getNode_Name(), 
 		   source, 
 		   new String[] {
@@ -882,18 +1106,26 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (resoucesEClass, 
+		  (paramEClass, 
 		   source, 
 		   new String[] {
-			 "name", "Resouces",
-			 "kind", "elementOnly"
+			 "name", "Param",
+			 "kind", "empty"
 		   });	
 		addAnnotation
-		  (getResouces_Resource(), 
+		  (getParam_Name(), 
 		   source, 
 		   new String[] {
-			 "kind", "element",
-			 "name", "Resource",
+			 "kind", "attribute",
+			 "name", "name",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getParam_Value(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "value",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
@@ -920,6 +1152,37 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
+		  (getResource_Conf(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Conf",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getResource_Name(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "name",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (resourcesEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Resources",
+			 "kind", "elementOnly"
+		   });	
+		addAnnotation
+		  (getResources_Resource(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Resource",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
 		  (rsateConfigEClass, 
 		   source, 
 		   new String[] {
@@ -941,6 +1204,44 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 			 "name", "Token",
 			 "baseType", "http://www.eclipse.org/emf/2003/XMLType#token",
 			 "minLength", "1"
+		   });	
+		addAnnotation
+		  (virtualResourceEClass, 
+		   source, 
+		   new String[] {
+			 "name", "VirtualResource",
+			 "kind", "elementOnly"
+		   });	
+		addAnnotation
+		  (getVirtualResource_Resource(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Resource",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getVirtualResource_Name(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "name",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (virtualResourcesEClass, 
+		   source, 
+		   new String[] {
+			 "name", "VirtualResources",
+			 "kind", "elementOnly"
+		   });	
+		addAnnotation
+		  (getVirtualResources_VirtualResource(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "VirtualResource",
+			 "namespace", "##targetNamespace"
 		   });
 	}
 
@@ -953,10 +1254,22 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	protected void createGenModelAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/GenModel";	
 		addAnnotation
+		  (getBench_Ip(), 
+		   source, 
+		   new String[] {
+			 "documentation", "IP\u5730\u5740."
+		   });	
+		addAnnotation
 		  (getBench_Name(), 
 		   source, 
 		   new String[] {
-			 "documentation", "RTC\u4e3b\u7ed3\u70b9\u540d\u79f0"
+			 "documentation", "RTC\u4e3b\u7ed3\u70b9\u540d\u79f0."
+		   });	
+		addAnnotation
+		  (getBench_Port(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u7aef\u53e3."
 		   });	
 		addAnnotation
 		  (getDriver_Version(), 
@@ -965,22 +1278,52 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 			 "documentation", "\u8bbe\u5907\u9a71\u52a8\u7248\u672c\u4fe1\u606f."
 		   });	
 		addAnnotation
-		  (getResouces_Resource(), 
+		  (getDriver_Name(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u8d44\u6e90\u4fe1\u606f."
+			 "documentation", "\u8bbe\u5907\u540d\u79f0."
+		   });	
+		addAnnotation
+		  (getNode_Ip(), 
+		   source, 
+		   new String[] {
+			 "documentation", "IP\u5730\u5740."
+		   });	
+		addAnnotation
+		  (getNode_Name(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u540d\u79f0."
 		   });	
 		addAnnotation
 		  (getResource_Available(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u8d44\u6e90\u662f\u5426\u53ef\u7528\u6807\u8bb0."
+			 "documentation", "\u8d44\u6e90\u662f\u5426\u53ef\u7528."
 		   });	
 		addAnnotation
 		  (getResource_Driver(), 
 		   source, 
 		   new String[] {
 			 "documentation", "\u8d44\u6e90\u5305\u542b\u8bbe\u5907\u7684\u540d\u79f0\u53ca\u7248\u672c."
+		   });	
+		addAnnotation
+		  (getResource_Conf(), 
+		   source, 
+		   new String[] {
+			 "documentation", ""
+		   });	
+		addAnnotation
+		  (getResources_Resource(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u8d44\u6e90\u4fe1\u606f."
+		   });	
+		addAnnotation
+		  (getVirtualResources_VirtualResource(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u865a\u62df\u8d44\u6e90\u4fe1\u606f."
 		   });
 	}
 

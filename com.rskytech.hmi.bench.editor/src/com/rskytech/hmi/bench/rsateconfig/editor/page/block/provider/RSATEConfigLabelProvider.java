@@ -1,7 +1,9 @@
-package com.rskytech.hmi.bench.rsateconfig.editor.provider;
+package com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider;
 
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
+
+import com.rskytech.hmi.bench.rsateconfig.editor.RSATEConfigEditorPlugin;
 
 /**
  * 
@@ -12,12 +14,12 @@ public class RSATEConfigLabelProvider extends LabelProvider {
 
 	@Override
 	public Image getImage(Object element) {
-		return super.getImage(element);
+		return RSATEConfigEditorPlugin.getPlugin().getImageRegistry().get(element.getClass().getSimpleName());
 	}
 
 	@Override
 	public String getText(Object element) {
-		return element.toString();
+		return element.getClass().getSimpleName();
 	}
 
 }

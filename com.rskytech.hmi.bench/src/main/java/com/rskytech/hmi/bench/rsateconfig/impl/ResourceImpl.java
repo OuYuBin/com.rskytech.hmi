@@ -2,6 +2,7 @@
  */
 package com.rskytech.hmi.bench.rsateconfig.impl;
 
+import com.rskytech.hmi.bench.rsateconfig.Conf;
 import com.rskytech.hmi.bench.rsateconfig.DriverNameAndVersion;
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage;
 import com.rskytech.hmi.bench.rsateconfig.Resource;
@@ -25,6 +26,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.ResourceImpl#getAvailable <em>Available</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.ResourceImpl#getDriver <em>Driver</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.ResourceImpl#getConf <em>Conf</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.ResourceImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +62,36 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * @ordered
 	 */
 	protected DriverNameAndVersion driver;
+
+	/**
+	 * The cached value of the '{@link #getConf() <em>Conf</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConf()
+	 * @generated
+	 * @ordered
+	 */
+	protected Conf conf;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,11 +181,77 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Conf getConf() {
+		return conf;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConf(Conf newConf, NotificationChain msgs) {
+		Conf oldConf = conf;
+		conf = newConf;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.RESOURCE__CONF, oldConf, newConf);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConf(Conf newConf) {
+		if (newConf != conf) {
+			NotificationChain msgs = null;
+			if (conf != null)
+				msgs = ((InternalEObject)conf).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.RESOURCE__CONF, null, msgs);
+			if (newConf != null)
+				msgs = ((InternalEObject)newConf).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.RESOURCE__CONF, null, msgs);
+			msgs = basicSetConf(newConf, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.RESOURCE__CONF, newConf, newConf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.RESOURCE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RSATEConfigPackage.RESOURCE__DRIVER:
 				return basicSetDriver(null, msgs);
+			case RSATEConfigPackage.RESOURCE__CONF:
+				return basicSetConf(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -169,6 +268,10 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return getAvailable();
 			case RSATEConfigPackage.RESOURCE__DRIVER:
 				return getDriver();
+			case RSATEConfigPackage.RESOURCE__CONF:
+				return getConf();
+			case RSATEConfigPackage.RESOURCE__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,6 +289,12 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return;
 			case RSATEConfigPackage.RESOURCE__DRIVER:
 				setDriver((DriverNameAndVersion)newValue);
+				return;
+			case RSATEConfigPackage.RESOURCE__CONF:
+				setConf((Conf)newValue);
+				return;
+			case RSATEConfigPackage.RESOURCE__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,6 +314,12 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 			case RSATEConfigPackage.RESOURCE__DRIVER:
 				setDriver((DriverNameAndVersion)null);
 				return;
+			case RSATEConfigPackage.RESOURCE__CONF:
+				setConf((Conf)null);
+				return;
+			case RSATEConfigPackage.RESOURCE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -221,6 +336,10 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return AVAILABLE_EDEFAULT == null ? available != null : !AVAILABLE_EDEFAULT.equals(available);
 			case RSATEConfigPackage.RESOURCE__DRIVER:
 				return driver != null;
+			case RSATEConfigPackage.RESOURCE__CONF:
+				return conf != null;
+			case RSATEConfigPackage.RESOURCE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -237,6 +356,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (available: ");
 		result.append(available);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

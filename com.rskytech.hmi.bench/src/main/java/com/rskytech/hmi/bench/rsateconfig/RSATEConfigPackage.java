@@ -87,22 +87,31 @@ public interface RSATEConfigPackage extends EPackage {
 	int BENCH__DRIVERS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Resouces</b></em>' containment reference.
+	 * The feature id for the '<em><b>Resources</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BENCH__RESOUCES = 2;
+	int BENCH__RESOURCES = 2;
 
 	/**
-	 * The feature id for the '<em><b>IP</b></em>' attribute.
+	 * The feature id for the '<em><b>Virtual Resources</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BENCH__IP = 3;
+	int BENCH__VIRTUAL_RESOURCES = 3;
+
+	/**
+	 * The feature id for the '<em><b>Ip</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BENCH__IP = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -111,7 +120,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENCH__NAME = 4;
+	int BENCH__NAME = 5;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -120,7 +129,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENCH__PORT = 5;
+	int BENCH__PORT = 6;
 
 	/**
 	 * The number of structural features of the '<em>Bench</em>' class.
@@ -129,7 +138,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENCH_FEATURE_COUNT = 6;
+	int BENCH_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Bench</em>' class.
@@ -141,6 +150,43 @@ public interface RSATEConfigPackage extends EPackage {
 	int BENCH_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ConfImpl <em>Conf</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.ConfImpl
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getConf()
+	 * @generated
+	 */
+	int CONF = 1;
+
+	/**
+	 * The feature id for the '<em><b>Param</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONF__PARAM = 0;
+
+	/**
+	 * The number of structural features of the '<em>Conf</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONF_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Conf</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONF_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.DocumentRootImpl <em>Document Root</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,7 +194,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getDocumentRoot()
 	 * @generated
 	 */
-	int DOCUMENT_ROOT = 1;
+	int DOCUMENT_ROOT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -212,7 +258,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getDriver()
 	 * @generated
 	 */
-	int DRIVER = 2;
+	int DRIVER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -258,7 +304,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getDriverNameAndVersion()
 	 * @generated
 	 */
-	int DRIVER_NAME_AND_VERSION = 3;
+	int DRIVER_NAME_AND_VERSION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -304,7 +350,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getDrivers()
 	 * @generated
 	 */
-	int DRIVERS = 4;
+	int DRIVERS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Driver</b></em>' containment reference list.
@@ -341,7 +387,16 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 5;
+	int NODE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Ip</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__IP = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -350,7 +405,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__NAME = 0;
+	int NODE__NAME = 1;
 
 	/**
 	 * The number of structural features of the '<em>Node</em>' class.
@@ -359,7 +414,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = 1;
+	int NODE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Node</em>' class.
@@ -378,7 +433,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getNodes()
 	 * @generated
 	 */
-	int NODES = 6;
+	int NODES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Node</b></em>' containment reference list.
@@ -408,41 +463,50 @@ public interface RSATEConfigPackage extends EPackage {
 	int NODES_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ResoucesImpl <em>Resouces</em>}' class.
+	 * The meta object id for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ParamImpl <em>Param</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see com.rskytech.hmi.bench.rsateconfig.impl.ResoucesImpl
-	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getResouces()
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.ParamImpl
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getParam()
 	 * @generated
 	 */
-	int RESOUCES = 7;
+	int PARAM = 8;
 
 	/**
-	 * The feature id for the '<em><b>Resource</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOUCES__RESOURCE = 0;
+	int PARAM__NAME = 0;
 
 	/**
-	 * The number of structural features of the '<em>Resouces</em>' class.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOUCES_FEATURE_COUNT = 1;
+	int PARAM__VALUE = 1;
 
 	/**
-	 * The number of operations of the '<em>Resouces</em>' class.
+	 * The number of structural features of the '<em>Param</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOUCES_OPERATION_COUNT = 0;
+	int PARAM_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Param</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAM_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ResourceImpl <em>Resource</em>}' class.
@@ -452,7 +516,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 8;
+	int RESOURCE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Available</b></em>' attribute.
@@ -473,13 +537,31 @@ public interface RSATEConfigPackage extends EPackage {
 	int RESOURCE__DRIVER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Conf</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__CONF = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = 2;
+	int RESOURCE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Resource</em>' class.
@@ -491,6 +573,43 @@ public interface RSATEConfigPackage extends EPackage {
 	int RESOURCE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ResourcesImpl <em>Resources</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.ResourcesImpl
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getResources()
+	 * @generated
+	 */
+	int RESOURCES = 10;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCES__RESOURCE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Resources</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCES_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Resources</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCES_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigImpl <em>RSATE Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -498,7 +617,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getRSATEConfig()
 	 * @generated
 	 */
-	int RSATE_CONFIG = 9;
+	int RSATE_CONFIG = 11;
 
 	/**
 	 * The feature id for the '<em><b>Bench</b></em>' containment reference.
@@ -528,6 +647,89 @@ public interface RSATEConfigPackage extends EPackage {
 	int RSATE_CONFIG_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.VirtualResourceImpl <em>Virtual Resource</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.VirtualResourceImpl
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getVirtualResource()
+	 * @generated
+	 */
+	int VIRTUAL_RESOURCE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIRTUAL_RESOURCE__RESOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIRTUAL_RESOURCE__NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Virtual Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIRTUAL_RESOURCE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Virtual Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIRTUAL_RESOURCE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.VirtualResourcesImpl <em>Virtual Resources</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.VirtualResourcesImpl
+	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getVirtualResources()
+	 * @generated
+	 */
+	int VIRTUAL_RESOURCES = 13;
+
+	/**
+	 * The feature id for the '<em><b>Virtual Resource</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIRTUAL_RESOURCES__VIRTUAL_RESOURCE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Virtual Resources</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIRTUAL_RESOURCES_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Virtual Resources</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIRTUAL_RESOURCES_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '<em>Driver Name</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -535,7 +737,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getDriverName()
 	 * @generated
 	 */
-	int DRIVER_NAME = 10;
+	int DRIVER_NAME = 14;
 
 	/**
 	 * The meta object id for the '<em>Integer</em>' data type.
@@ -545,7 +747,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getInteger()
 	 * @generated
 	 */
-	int INTEGER = 11;
+	int INTEGER = 15;
 
 	/**
 	 * The meta object id for the '<em>Token</em>' data type.
@@ -555,7 +757,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getToken()
 	 * @generated
 	 */
-	int TOKEN = 12;
+	int TOKEN = 16;
 
 
 	/**
@@ -591,26 +793,37 @@ public interface RSATEConfigPackage extends EPackage {
 	EReference getBench_Drivers();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getResouces <em>Resouces</em>}'.
+	 * Returns the meta object for the containment reference '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getResources <em>Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Resouces</em>'.
-	 * @see com.rskytech.hmi.bench.rsateconfig.Bench#getResouces()
+	 * @return the meta object for the containment reference '<em>Resources</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Bench#getResources()
 	 * @see #getBench()
 	 * @generated
 	 */
-	EReference getBench_Resouces();
+	EReference getBench_Resources();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getIP <em>IP</em>}'.
+	 * Returns the meta object for the containment reference '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getVirtualResources <em>Virtual Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>IP</em>'.
-	 * @see com.rskytech.hmi.bench.rsateconfig.Bench#getIP()
+	 * @return the meta object for the containment reference '<em>Virtual Resources</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Bench#getVirtualResources()
 	 * @see #getBench()
 	 * @generated
 	 */
-	EAttribute getBench_IP();
+	EReference getBench_VirtualResources();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getIp <em>Ip</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ip</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Bench#getIp()
+	 * @see #getBench()
+	 * @generated
+	 */
+	EAttribute getBench_Ip();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getName <em>Name</em>}'.
@@ -633,6 +846,27 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBench_Port();
+
+	/**
+	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.Conf <em>Conf</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conf</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Conf
+	 * @generated
+	 */
+	EClass getConf();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.rskytech.hmi.bench.rsateconfig.Conf#getParam <em>Param</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Param</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Conf#getParam()
+	 * @see #getConf()
+	 * @generated
+	 */
+	EReference getConf_Param();
 
 	/**
 	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.DocumentRoot <em>Document Root</em>}'.
@@ -784,6 +1018,17 @@ public interface RSATEConfigPackage extends EPackage {
 	EClass getNode();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Node#getIp <em>Ip</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ip</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Node#getIp()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EAttribute getNode_Ip();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Node#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -816,25 +1061,36 @@ public interface RSATEConfigPackage extends EPackage {
 	EReference getNodes_Node();
 
 	/**
-	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.Resouces <em>Resouces</em>}'.
+	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.Param <em>Param</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resouces</em>'.
-	 * @see com.rskytech.hmi.bench.rsateconfig.Resouces
+	 * @return the meta object for class '<em>Param</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Param
 	 * @generated
 	 */
-	EClass getResouces();
+	EClass getParam();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.rskytech.hmi.bench.rsateconfig.Resouces#getResource <em>Resource</em>}'.
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Param#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Resource</em>'.
-	 * @see com.rskytech.hmi.bench.rsateconfig.Resouces#getResource()
-	 * @see #getResouces()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Param#getName()
+	 * @see #getParam()
 	 * @generated
 	 */
-	EReference getResouces_Resource();
+	EAttribute getParam_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Param#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Param#getValue()
+	 * @see #getParam()
+	 * @generated
+	 */
+	EAttribute getParam_Value();
 
 	/**
 	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.Resource <em>Resource</em>}'.
@@ -869,6 +1125,49 @@ public interface RSATEConfigPackage extends EPackage {
 	EReference getResource_Driver();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link com.rskytech.hmi.bench.rsateconfig.Resource#getConf <em>Conf</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Conf</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Resource#getConf()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EReference getResource_Conf();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.Resource#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Resource#getName()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EAttribute getResource_Name();
+
+	/**
+	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.Resources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Resources</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Resources
+	 * @generated
+	 */
+	EClass getResources();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.rskytech.hmi.bench.rsateconfig.Resources#getResource <em>Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Resource</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Resources#getResource()
+	 * @see #getResources()
+	 * @generated
+	 */
+	EReference getResources_Resource();
+
+	/**
 	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.RSATEConfig <em>RSATE Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -888,6 +1187,59 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRSATEConfig_Bench();
+
+	/**
+	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.VirtualResource <em>Virtual Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Virtual Resource</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.VirtualResource
+	 * @generated
+	 */
+	EClass getVirtualResource();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.VirtualResource#getResource <em>Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Resource</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.VirtualResource#getResource()
+	 * @see #getVirtualResource()
+	 * @generated
+	 */
+	EAttribute getVirtualResource_Resource();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.VirtualResource#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.VirtualResource#getName()
+	 * @see #getVirtualResource()
+	 * @generated
+	 */
+	EAttribute getVirtualResource_Name();
+
+	/**
+	 * Returns the meta object for class '{@link com.rskytech.hmi.bench.rsateconfig.VirtualResources <em>Virtual Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Virtual Resources</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.VirtualResources
+	 * @generated
+	 */
+	EClass getVirtualResources();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.rskytech.hmi.bench.rsateconfig.VirtualResources#getVirtualResource <em>Virtual Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Virtual Resource</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.VirtualResources#getVirtualResource()
+	 * @see #getVirtualResources()
+	 * @generated
+	 */
+	EReference getVirtualResources_VirtualResource();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>Driver Name</em>}'.
@@ -975,20 +1327,28 @@ public interface RSATEConfigPackage extends EPackage {
 		EReference BENCH__DRIVERS = eINSTANCE.getBench_Drivers();
 
 		/**
-		 * The meta object literal for the '<em><b>Resouces</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Resources</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BENCH__RESOUCES = eINSTANCE.getBench_Resouces();
+		EReference BENCH__RESOURCES = eINSTANCE.getBench_Resources();
 
 		/**
-		 * The meta object literal for the '<em><b>IP</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Virtual Resources</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BENCH__IP = eINSTANCE.getBench_IP();
+		EReference BENCH__VIRTUAL_RESOURCES = eINSTANCE.getBench_VirtualResources();
+
+		/**
+		 * The meta object literal for the '<em><b>Ip</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BENCH__IP = eINSTANCE.getBench_Ip();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1005,6 +1365,24 @@ public interface RSATEConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BENCH__PORT = eINSTANCE.getBench_Port();
+
+		/**
+		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ConfImpl <em>Conf</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.ConfImpl
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getConf()
+		 * @generated
+		 */
+		EClass CONF = eINSTANCE.getConf();
+
+		/**
+		 * The meta object literal for the '<em><b>Param</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONF__PARAM = eINSTANCE.getConf_Param();
 
 		/**
 		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.DocumentRootImpl <em>Document Root</em>}' class.
@@ -1129,6 +1507,14 @@ public interface RSATEConfigPackage extends EPackage {
 		EClass NODE = eINSTANCE.getNode();
 
 		/**
+		 * The meta object literal for the '<em><b>Ip</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NODE__IP = eINSTANCE.getNode_Ip();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1155,22 +1541,30 @@ public interface RSATEConfigPackage extends EPackage {
 		EReference NODES__NODE = eINSTANCE.getNodes_Node();
 
 		/**
-		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ResoucesImpl <em>Resouces</em>}' class.
+		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ParamImpl <em>Param</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.rskytech.hmi.bench.rsateconfig.impl.ResoucesImpl
-		 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getResouces()
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.ParamImpl
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getParam()
 		 * @generated
 		 */
-		EClass RESOUCES = eINSTANCE.getResouces();
+		EClass PARAM = eINSTANCE.getParam();
 
 		/**
-		 * The meta object literal for the '<em><b>Resource</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RESOUCES__RESOURCE = eINSTANCE.getResouces_Resource();
+		EAttribute PARAM__NAME = eINSTANCE.getParam_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAM__VALUE = eINSTANCE.getParam_Value();
 
 		/**
 		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ResourceImpl <em>Resource</em>}' class.
@@ -1199,6 +1593,40 @@ public interface RSATEConfigPackage extends EPackage {
 		EReference RESOURCE__DRIVER = eINSTANCE.getResource_Driver();
 
 		/**
+		 * The meta object literal for the '<em><b>Conf</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE__CONF = eINSTANCE.getResource_Conf();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE__NAME = eINSTANCE.getResource_Name();
+
+		/**
+		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.ResourcesImpl <em>Resources</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.ResourcesImpl
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getResources()
+		 * @generated
+		 */
+		EClass RESOURCES = eINSTANCE.getResources();
+
+		/**
+		 * The meta object literal for the '<em><b>Resource</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCES__RESOURCE = eINSTANCE.getResources_Resource();
+
+		/**
 		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigImpl <em>RSATE Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1215,6 +1643,50 @@ public interface RSATEConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RSATE_CONFIG__BENCH = eINSTANCE.getRSATEConfig_Bench();
+
+		/**
+		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.VirtualResourceImpl <em>Virtual Resource</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.VirtualResourceImpl
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getVirtualResource()
+		 * @generated
+		 */
+		EClass VIRTUAL_RESOURCE = eINSTANCE.getVirtualResource();
+
+		/**
+		 * The meta object literal for the '<em><b>Resource</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIRTUAL_RESOURCE__RESOURCE = eINSTANCE.getVirtualResource_Resource();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIRTUAL_RESOURCE__NAME = eINSTANCE.getVirtualResource_Name();
+
+		/**
+		 * The meta object literal for the '{@link com.rskytech.hmi.bench.rsateconfig.impl.VirtualResourcesImpl <em>Virtual Resources</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.VirtualResourcesImpl
+		 * @see com.rskytech.hmi.bench.rsateconfig.impl.RSATEConfigPackageImpl#getVirtualResources()
+		 * @generated
+		 */
+		EClass VIRTUAL_RESOURCES = eINSTANCE.getVirtualResources();
+
+		/**
+		 * The meta object literal for the '<em><b>Virtual Resource</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VIRTUAL_RESOURCES__VIRTUAL_RESOURCE = eINSTANCE.getVirtualResources_VirtualResource();
 
 		/**
 		 * The meta object literal for the '<em>Driver Name</em>' data type.

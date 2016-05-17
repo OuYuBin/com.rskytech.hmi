@@ -72,6 +72,10 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 				return createBenchAdapter();
 			}
 			@Override
+			public Adapter caseConf(Conf object) {
+				return createConfAdapter();
+			}
+			@Override
 			public Adapter caseDocumentRoot(DocumentRoot object) {
 				return createDocumentRootAdapter();
 			}
@@ -96,16 +100,28 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 				return createNodesAdapter();
 			}
 			@Override
-			public Adapter caseResouces(Resouces object) {
-				return createResoucesAdapter();
+			public Adapter caseParam(Param object) {
+				return createParamAdapter();
 			}
 			@Override
 			public Adapter caseResource(Resource object) {
 				return createResourceAdapter();
 			}
 			@Override
+			public Adapter caseResources(Resources object) {
+				return createResourcesAdapter();
+			}
+			@Override
 			public Adapter caseRSATEConfig(RSATEConfig object) {
 				return createRSATEConfigAdapter();
+			}
+			@Override
+			public Adapter caseVirtualResource(VirtualResource object) {
+				return createVirtualResourceAdapter();
+			}
+			@Override
+			public Adapter caseVirtualResources(VirtualResources object) {
+				return createVirtualResourcesAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -138,6 +154,20 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBenchAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.Conf <em>Conf</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Conf
+	 * @generated
+	 */
+	public Adapter createConfAdapter() {
 		return null;
 	}
 
@@ -226,16 +256,16 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.Resouces <em>Resouces</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.Param <em>Param</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.rskytech.hmi.bench.rsateconfig.Resouces
+	 * @see com.rskytech.hmi.bench.rsateconfig.Param
 	 * @generated
 	 */
-	public Adapter createResoucesAdapter() {
+	public Adapter createParamAdapter() {
 		return null;
 	}
 
@@ -254,6 +284,20 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.Resources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.bench.rsateconfig.Resources
+	 * @generated
+	 */
+	public Adapter createResourcesAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.RSATEConfig <em>RSATE Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -264,6 +308,34 @@ public class RSATEConfigAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRSATEConfigAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.VirtualResource <em>Virtual Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.bench.rsateconfig.VirtualResource
+	 * @generated
+	 */
+	public Adapter createVirtualResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.bench.rsateconfig.VirtualResources <em>Virtual Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.bench.rsateconfig.VirtualResources
+	 * @generated
+	 */
+	public Adapter createVirtualResourcesAdapter() {
 		return null;
 	}
 

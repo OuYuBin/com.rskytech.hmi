@@ -7,7 +7,7 @@ import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 
-import com.rskytech.hmi.bench.rsateconfig.editor.page.block.RSATEConfigMasterDetailsBlock;
+import com.rskytech.hmi.bench.rsateconfig.editor.page.block.RSATEConfigDriverMasterDetailsBlock;
 import com.rskytech.hmi.common.editor.page.IRskyCommonFormPage;
 import com.rskytech.hmi.common.editor.page.RskyCommonFormPage;
 
@@ -16,23 +16,23 @@ import com.rskytech.hmi.common.editor.page.RskyCommonFormPage;
  * @author robin
  *
  */
-public class RSATEConfigFormPage extends RskyCommonFormPage implements IRskyCommonFormPage{
+public class RSATEConfigDriversFormPage extends RskyCommonFormPage implements IRskyCommonFormPage{
 	
-	private RSATEConfigMasterDetailsBlock rsateConfigMasterDetailsBlock;
+	private RSATEConfigDriverMasterDetailsBlock rsATEConfigDriverMasterDetailsBlock;
 
-	public RSATEConfigFormPage(FormEditor editor, String id, String title) {
+	public RSATEConfigDriversFormPage(FormEditor editor, String id, String title) {
 		super(editor, id, title);
 	}
 
 	@Override
 	protected void createFormContent(IManagedForm managedForm) {
 		ScrolledForm scrolledForm=managedForm.getForm();
-		scrolledForm.setText("硬件资源配置管理");
+		scrolledForm.setText("硬件驱动配置管理");
 		FormToolkit formToolkit=managedForm.getToolkit();
 		Form form=scrolledForm.getForm();
 		formToolkit.decorateFormHeading(form);
-		this.rsateConfigMasterDetailsBlock=new RSATEConfigMasterDetailsBlock(this);
-		rsateConfigMasterDetailsBlock.createContent(managedForm);
+		this.rsATEConfigDriverMasterDetailsBlock=new RSATEConfigDriverMasterDetailsBlock(this);
+		rsATEConfigDriverMasterDetailsBlock.createContent(managedForm);
 	}
 	
 	

@@ -2,11 +2,23 @@
  */
 package com.rskytech.hmi.bench.rsateconfig.editor;
 
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
+import org.osgi.framework.Bundle;
 
 /**
  * This is the central singleton for the RSATEConfig editor plugin.
@@ -85,6 +97,30 @@ public final class RSATEConfigEditorPlugin extends EMFPlugin {
 			// Remember the static instance.
 			//
 			plugin = this;
+		}
+		
+		@SuppressWarnings("unchecked")
+		@Override
+		protected void initializeImageRegistry(ImageRegistry registry) {
+			Bundle bundle = this.getBundle();
+			@SuppressWarnings("rawtypes")
+			Map map = new HashMap();
+			map.put("Bench", "icons/bench.gif");
+			map.put("Node","icons/node.gif");
+			map.put("Resources","icons/resources.gif");
+			map.put("Resource", "icons/resource.gif");
+			map.put("VirtualResources","icons/virtual_resources.gif");
+			map.put("VirtualResource", "icons/virtual_resource.gif");
+
+			for (@SuppressWarnings("rawtypes")
+			Iterator iter = map.entrySet().iterator(); iter.hasNext();) {
+				@SuppressWarnings("rawtypes")
+				Map.Entry entry = (Entry) iter.next();
+				IPath path = new Path((String) entry.getValue());
+				URL url = FileLocator.find(bundle, path, null);
+				ImageDescriptor desc = ImageDescriptor.createFromURL(url);
+				registry.put((String) entry.getKey(), desc);
+			}
 		}
 	}
 

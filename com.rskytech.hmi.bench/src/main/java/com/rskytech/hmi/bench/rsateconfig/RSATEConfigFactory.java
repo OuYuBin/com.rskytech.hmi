@@ -31,6 +31,15 @@ public interface RSATEConfigFactory extends EFactory {
 	Bench createBench();
 
 	/**
+	 * Returns a new object of class '<em>Conf</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conf</em>'.
+	 * @generated
+	 */
+	Conf createConf();
+
+	/**
 	 * Returns a new object of class '<em>Document Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,13 +94,13 @@ public interface RSATEConfigFactory extends EFactory {
 	Nodes createNodes();
 
 	/**
-	 * Returns a new object of class '<em>Resouces</em>'.
+	 * Returns a new object of class '<em>Param</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resouces</em>'.
+	 * @return a new object of class '<em>Param</em>'.
 	 * @generated
 	 */
-	Resouces createResouces();
+	Param createParam();
 
 	/**
 	 * Returns a new object of class '<em>Resource</em>'.
@@ -103,6 +112,15 @@ public interface RSATEConfigFactory extends EFactory {
 	Resource createResource();
 
 	/**
+	 * Returns a new object of class '<em>Resources</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Resources</em>'.
+	 * @generated
+	 */
+	Resources createResources();
+
+	/**
 	 * Returns a new object of class '<em>RSATE Config</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,6 +128,24 @@ public interface RSATEConfigFactory extends EFactory {
 	 * @generated
 	 */
 	RSATEConfig createRSATEConfig();
+
+	/**
+	 * Returns a new object of class '<em>Virtual Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Virtual Resource</em>'.
+	 * @generated
+	 */
+	VirtualResource createVirtualResource();
+
+	/**
+	 * Returns a new object of class '<em>Virtual Resources</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Virtual Resources</em>'.
+	 * @generated
+	 */
+	VirtualResources createVirtualResources();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -72,6 +72,12 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RSATEConfigPackage.CONF: {
+				Conf conf = (Conf)theEObject;
+				T result = caseConf(conf);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RSATEConfigPackage.DOCUMENT_ROOT: {
 				DocumentRoot documentRoot = (DocumentRoot)theEObject;
 				T result = caseDocumentRoot(documentRoot);
@@ -108,9 +114,9 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RSATEConfigPackage.RESOUCES: {
-				Resouces resouces = (Resouces)theEObject;
-				T result = caseResouces(resouces);
+			case RSATEConfigPackage.PARAM: {
+				Param param = (Param)theEObject;
+				T result = caseParam(param);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,9 +126,27 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RSATEConfigPackage.RESOURCES: {
+				Resources resources = (Resources)theEObject;
+				T result = caseResources(resources);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RSATEConfigPackage.RSATE_CONFIG: {
 				RSATEConfig rsateConfig = (RSATEConfig)theEObject;
 				T result = caseRSATEConfig(rsateConfig);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RSATEConfigPackage.VIRTUAL_RESOURCE: {
+				VirtualResource virtualResource = (VirtualResource)theEObject;
+				T result = caseVirtualResource(virtualResource);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RSATEConfigPackage.VIRTUAL_RESOURCES: {
+				VirtualResources virtualResources = (VirtualResources)theEObject;
+				T result = caseVirtualResources(virtualResources);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,6 +166,21 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBench(Bench object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conf</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conf</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConf(Conf object) {
 		return null;
 	}
 
@@ -236,17 +275,17 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resouces</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Param</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resouces</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Param</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseResouces(Resouces object) {
+	public T caseParam(Param object) {
 		return null;
 	}
 
@@ -266,6 +305,21 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resources</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resources</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResources(Resources object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>RSATE Config</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -277,6 +331,36 @@ public class RSATEConfigSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRSATEConfig(RSATEConfig object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Virtual Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Virtual Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVirtualResource(VirtualResource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Virtual Resources</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Virtual Resources</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVirtualResources(VirtualResources object) {
 		return null;
 	}
 
