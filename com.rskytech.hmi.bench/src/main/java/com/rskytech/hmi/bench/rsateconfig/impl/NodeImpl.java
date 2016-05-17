@@ -20,12 +20,33 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.NodeImpl#getIp <em>Ip</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.NodeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
+	/**
+	 * The default value of the '{@link #getIp() <em>Ip</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIp() <em>Ip</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIp()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ip = IP_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,6 +91,27 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getIp() {
+		return ip;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIp(String newIp) {
+		String oldIp = ip;
+		ip = newIp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.NODE__IP, oldIp, ip));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
@@ -94,6 +136,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case RSATEConfigPackage.NODE__IP:
+				return getIp();
 			case RSATEConfigPackage.NODE__NAME:
 				return getName();
 		}
@@ -108,6 +152,9 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case RSATEConfigPackage.NODE__IP:
+				setIp((String)newValue);
+				return;
 			case RSATEConfigPackage.NODE__NAME:
 				setName((String)newValue);
 				return;
@@ -123,6 +170,9 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case RSATEConfigPackage.NODE__IP:
+				setIp(IP_EDEFAULT);
+				return;
 			case RSATEConfigPackage.NODE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -138,6 +188,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case RSATEConfigPackage.NODE__IP:
+				return IP_EDEFAULT == null ? ip != null : !IP_EDEFAULT.equals(ip);
 			case RSATEConfigPackage.NODE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
@@ -154,7 +206,9 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
+		result.append(" (ip: ");
+		result.append(ip);
+		result.append(", name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();

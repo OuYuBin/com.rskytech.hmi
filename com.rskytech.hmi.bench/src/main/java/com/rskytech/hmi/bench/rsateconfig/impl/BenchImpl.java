@@ -6,8 +6,8 @@ import com.rskytech.hmi.bench.rsateconfig.Bench;
 import com.rskytech.hmi.bench.rsateconfig.Drivers;
 import com.rskytech.hmi.bench.rsateconfig.Nodes;
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage;
-
-import com.rskytech.hmi.bench.rsateconfig.Resouces;
+import com.rskytech.hmi.bench.rsateconfig.Resources;
+import com.rskytech.hmi.bench.rsateconfig.VirtualResources;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -27,8 +27,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getDrivers <em>Drivers</em>}</li>
- *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getResouces <em>Resouces</em>}</li>
- *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getIP <em>IP</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getResources <em>Resources</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getVirtualResources <em>Virtual Resources</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getIp <em>Ip</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.BenchImpl#getPort <em>Port</em>}</li>
  * </ul>
@@ -57,34 +58,44 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	protected Drivers drivers;
 
 	/**
-	 * The cached value of the '{@link #getResouces() <em>Resouces</em>}' containment reference.
+	 * The cached value of the '{@link #getResources() <em>Resources</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResouces()
+	 * @see #getResources()
 	 * @generated
 	 * @ordered
 	 */
-	protected Resouces resouces;
+	protected Resources resources;
 
 	/**
-	 * The default value of the '{@link #getIP() <em>IP</em>}' attribute.
+	 * The cached value of the '{@link #getVirtualResources() <em>Virtual Resources</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIP()
+	 * @see #getVirtualResources()
+	 * @generated
+	 * @ordered
+	 */
+	protected VirtualResources virtualResources;
+
+	/**
+	 * The default value of the '{@link #getIp() <em>Ip</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIp()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String IP_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getIP() <em>IP</em>}' attribute.
+	 * The cached value of the '{@link #getIp() <em>Ip</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIP()
+	 * @see #getIp()
 	 * @generated
 	 * @ordered
 	 */
-	protected String iP = IP_EDEFAULT;
+	protected String ip = IP_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -245,8 +256,8 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Resouces getResouces() {
-		return resouces;
+	public Resources getResources() {
+		return resources;
 	}
 
 	/**
@@ -254,11 +265,11 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetResouces(Resouces newResouces, NotificationChain msgs) {
-		Resouces oldResouces = resouces;
-		resouces = newResouces;
+	public NotificationChain basicSetResources(Resources newResources, NotificationChain msgs) {
+		Resources oldResources = resources;
+		resources = newResources;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__RESOUCES, oldResouces, newResouces);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__RESOURCES, oldResources, newResources);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -269,18 +280,18 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResouces(Resouces newResouces) {
-		if (newResouces != resouces) {
+	public void setResources(Resources newResources) {
+		if (newResources != resources) {
 			NotificationChain msgs = null;
-			if (resouces != null)
-				msgs = ((InternalEObject)resouces).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.BENCH__RESOUCES, null, msgs);
-			if (newResouces != null)
-				msgs = ((InternalEObject)newResouces).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.BENCH__RESOUCES, null, msgs);
-			msgs = basicSetResouces(newResouces, msgs);
+			if (resources != null)
+				msgs = ((InternalEObject)resources).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.BENCH__RESOURCES, null, msgs);
+			if (newResources != null)
+				msgs = ((InternalEObject)newResources).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.BENCH__RESOURCES, null, msgs);
+			msgs = basicSetResources(newResources, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__RESOUCES, newResouces, newResouces));
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__RESOURCES, newResources, newResources));
 	}
 
 	/**
@@ -288,8 +299,8 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getIP() {
-		return iP;
+	public VirtualResources getVirtualResources() {
+		return virtualResources;
 	}
 
 	/**
@@ -297,11 +308,54 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIP(String newIP) {
-		String oldIP = iP;
-		iP = newIP;
+	public NotificationChain basicSetVirtualResources(VirtualResources newVirtualResources, NotificationChain msgs) {
+		VirtualResources oldVirtualResources = virtualResources;
+		virtualResources = newVirtualResources;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES, oldVirtualResources, newVirtualResources);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVirtualResources(VirtualResources newVirtualResources) {
+		if (newVirtualResources != virtualResources) {
+			NotificationChain msgs = null;
+			if (virtualResources != null)
+				msgs = ((InternalEObject)virtualResources).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES, null, msgs);
+			if (newVirtualResources != null)
+				msgs = ((InternalEObject)newVirtualResources).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES, null, msgs);
+			msgs = basicSetVirtualResources(newVirtualResources, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES, newVirtualResources, newVirtualResources));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getIp() {
+		return ip;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIp(String newIp) {
+		String oldIp = ip;
+		ip = newIp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__IP, oldIP, iP));
+			eNotify(new ENotificationImpl(this, Notification.SET, RSATEConfigPackage.BENCH__IP, oldIp, ip));
 	}
 
 	/**
@@ -383,8 +437,10 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return basicSetNodes(null, msgs);
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				return basicSetDrivers(null, msgs);
-			case RSATEConfigPackage.BENCH__RESOUCES:
-				return basicSetResouces(null, msgs);
+			case RSATEConfigPackage.BENCH__RESOURCES:
+				return basicSetResources(null, msgs);
+			case RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES:
+				return basicSetVirtualResources(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -401,10 +457,12 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return getNodes();
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				return getDrivers();
-			case RSATEConfigPackage.BENCH__RESOUCES:
-				return getResouces();
+			case RSATEConfigPackage.BENCH__RESOURCES:
+				return getResources();
+			case RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES:
+				return getVirtualResources();
 			case RSATEConfigPackage.BENCH__IP:
-				return getIP();
+				return getIp();
 			case RSATEConfigPackage.BENCH__NAME:
 				return getName();
 			case RSATEConfigPackage.BENCH__PORT:
@@ -427,11 +485,14 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				setDrivers((Drivers)newValue);
 				return;
-			case RSATEConfigPackage.BENCH__RESOUCES:
-				setResouces((Resouces)newValue);
+			case RSATEConfigPackage.BENCH__RESOURCES:
+				setResources((Resources)newValue);
+				return;
+			case RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES:
+				setVirtualResources((VirtualResources)newValue);
 				return;
 			case RSATEConfigPackage.BENCH__IP:
-				setIP((String)newValue);
+				setIp((String)newValue);
 				return;
 			case RSATEConfigPackage.BENCH__NAME:
 				setName((String)newValue);
@@ -457,11 +518,14 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				setDrivers((Drivers)null);
 				return;
-			case RSATEConfigPackage.BENCH__RESOUCES:
-				setResouces((Resouces)null);
+			case RSATEConfigPackage.BENCH__RESOURCES:
+				setResources((Resources)null);
+				return;
+			case RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES:
+				setVirtualResources((VirtualResources)null);
 				return;
 			case RSATEConfigPackage.BENCH__IP:
-				setIP(IP_EDEFAULT);
+				setIp(IP_EDEFAULT);
 				return;
 			case RSATEConfigPackage.BENCH__NAME:
 				setName(NAME_EDEFAULT);
@@ -485,10 +549,12 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 				return nodes != null;
 			case RSATEConfigPackage.BENCH__DRIVERS:
 				return drivers != null;
-			case RSATEConfigPackage.BENCH__RESOUCES:
-				return resouces != null;
+			case RSATEConfigPackage.BENCH__RESOURCES:
+				return resources != null;
+			case RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES:
+				return virtualResources != null;
 			case RSATEConfigPackage.BENCH__IP:
-				return IP_EDEFAULT == null ? iP != null : !IP_EDEFAULT.equals(iP);
+				return IP_EDEFAULT == null ? ip != null : !IP_EDEFAULT.equals(ip);
 			case RSATEConfigPackage.BENCH__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RSATEConfigPackage.BENCH__PORT:
@@ -507,8 +573,8 @@ public class BenchImpl extends MinimalEObjectImpl.Container implements Bench {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (iP: ");
-		result.append(iP);
+		result.append(" (ip: ");
+		result.append(ip);
 		result.append(", name: ");
 		result.append(name);
 		result.append(", port: ");

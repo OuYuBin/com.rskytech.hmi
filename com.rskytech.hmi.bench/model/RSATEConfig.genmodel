@@ -17,10 +17,14 @@
     <genClasses ecoreClass="RSATEConfig.ecore#//Bench">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/nodes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/drivers"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/resouces"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Bench/iP"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/resources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/virtualResources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Bench/ip"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Bench/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Bench/port"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Conf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Conf/param"/>
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//DocumentRoot">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//DocumentRoot/mixed"/>
@@ -40,20 +44,34 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Drivers/driver"/>
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Node/ip"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Node/name"/>
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//Nodes">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Nodes/node"/>
     </genClasses>
-    <genClasses ecoreClass="RSATEConfig.ecore#//Resouces">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Resouces/resource"/>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Param">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Param/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Param/value"/>
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//Resource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Resource/available"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Resource/driver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Resource/conf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//Resource/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//Resources">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Resources/resource"/>
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//RSATEConfig">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//RSATEConfig/bench"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//VirtualResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//VirtualResource/resource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//VirtualResource/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RSATEConfig.ecore#//VirtualResources">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//VirtualResources/virtualResource"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

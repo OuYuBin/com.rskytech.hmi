@@ -3,8 +3,8 @@
 package com.rskytech.hmi.bench.rsateconfig.impl;
 
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage;
-import com.rskytech.hmi.bench.rsateconfig.Resouces;
 import com.rskytech.hmi.bench.rsateconfig.Resource;
+import com.rskytech.hmi.bench.rsateconfig.Resources;
 
 import java.util.Collection;
 
@@ -22,18 +22,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Resouces</b></em>'.
+ * An implementation of the model object '<em><b>Resources</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.ResoucesImpl#getResource <em>Resource</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.impl.ResourcesImpl#getResource <em>Resource</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ResoucesImpl extends MinimalEObjectImpl.Container implements Resouces {
+public class ResourcesImpl extends MinimalEObjectImpl.Container implements Resources {
 	/**
 	 * The cached value of the '{@link #getResource() <em>Resource</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public class ResoucesImpl extends MinimalEObjectImpl.Container implements Resouc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResoucesImpl() {
+	protected ResourcesImpl() {
 		super();
 	}
 
@@ -60,7 +60,7 @@ public class ResoucesImpl extends MinimalEObjectImpl.Container implements Resouc
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RSATEConfigPackage.Literals.RESOUCES;
+		return RSATEConfigPackage.Literals.RESOURCES;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class ResoucesImpl extends MinimalEObjectImpl.Container implements Resouc
 	 */
 	public EList<Resource> getResource() {
 		if (resource == null) {
-			resource = new EObjectContainmentEList<Resource>(Resource.class, this, RSATEConfigPackage.RESOUCES__RESOURCE);
+			resource = new EObjectContainmentEList<Resource>(Resource.class, this, RSATEConfigPackage.RESOURCES__RESOURCE);
 		}
 		return resource;
 	}
@@ -83,7 +83,7 @@ public class ResoucesImpl extends MinimalEObjectImpl.Container implements Resouc
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RSATEConfigPackage.RESOUCES__RESOURCE:
+			case RSATEConfigPackage.RESOURCES__RESOURCE:
 				return ((InternalEList<?>)getResource()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -97,7 +97,7 @@ public class ResoucesImpl extends MinimalEObjectImpl.Container implements Resouc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RSATEConfigPackage.RESOUCES__RESOURCE:
+			case RSATEConfigPackage.RESOURCES__RESOURCE:
 				return getResource();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -112,7 +112,7 @@ public class ResoucesImpl extends MinimalEObjectImpl.Container implements Resouc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RSATEConfigPackage.RESOUCES__RESOURCE:
+			case RSATEConfigPackage.RESOURCES__RESOURCE:
 				getResource().clear();
 				getResource().addAll((Collection<? extends Resource>)newValue);
 				return;
@@ -128,7 +128,7 @@ public class ResoucesImpl extends MinimalEObjectImpl.Container implements Resouc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RSATEConfigPackage.RESOUCES__RESOURCE:
+			case RSATEConfigPackage.RESOURCES__RESOURCE:
 				getResource().clear();
 				return;
 		}
@@ -143,10 +143,10 @@ public class ResoucesImpl extends MinimalEObjectImpl.Container implements Resouc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RSATEConfigPackage.RESOUCES__RESOURCE:
+			case RSATEConfigPackage.RESOURCES__RESOURCE:
 				return resource != null && !resource.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ResoucesImpl
+} //ResourcesImpl

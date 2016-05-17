@@ -15,8 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Bench#getNodes <em>Nodes</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Bench#getDrivers <em>Drivers</em>}</li>
- *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Bench#getResouces <em>Resouces</em>}</li>
- *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Bench#getIP <em>IP</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Bench#getResources <em>Resources</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Bench#getVirtualResources <em>Virtual Resources</em>}</li>
+ *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Bench#getIp <em>Ip</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Bench#getName <em>Name</em>}</li>
  *   <li>{@link com.rskytech.hmi.bench.rsateconfig.Bench#getPort <em>Port</em>}</li>
  * </ul>
@@ -81,65 +82,91 @@ public interface Bench extends EObject {
 	void setDrivers(Drivers value);
 
 	/**
-	 * Returns the value of the '<em><b>Resouces</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Resources</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Resouces</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Resources</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resouces</em>' containment reference.
-	 * @see #setResouces(Resouces)
-	 * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getBench_Resouces()
+	 * @return the value of the '<em>Resources</em>' containment reference.
+	 * @see #setResources(Resources)
+	 * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getBench_Resources()
 	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='Resouces' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='Resources' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Resouces getResouces();
+	Resources getResources();
 
 	/**
-	 * Sets the value of the '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getResouces <em>Resouces</em>}' containment reference.
+	 * Sets the value of the '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getResources <em>Resources</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resouces</em>' containment reference.
-	 * @see #getResouces()
+	 * @param value the new value of the '<em>Resources</em>' containment reference.
+	 * @see #getResources()
 	 * @generated
 	 */
-	void setResouces(Resouces value);
+	void setResources(Resources value);
 
 	/**
-	 * Returns the value of the '<em><b>IP</b></em>' attribute.
+	 * Returns the value of the '<em><b>Virtual Resources</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>IP</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Virtual Resources</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>IP</em>' attribute.
-	 * @see #setIP(String)
-	 * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getBench_IP()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
-	 *        extendedMetaData="kind='attribute' name='IP' namespace='##targetNamespace'"
+	 * @return the value of the '<em>Virtual Resources</em>' containment reference.
+	 * @see #setVirtualResources(VirtualResources)
+	 * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getBench_VirtualResources()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='VirtualResources' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	String getIP();
+	VirtualResources getVirtualResources();
 
 	/**
-	 * Sets the value of the '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getIP <em>IP</em>}' attribute.
+	 * Sets the value of the '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getVirtualResources <em>Virtual Resources</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>IP</em>' attribute.
-	 * @see #getIP()
+	 * @param value the new value of the '<em>Virtual Resources</em>' containment reference.
+	 * @see #getVirtualResources()
 	 * @generated
 	 */
-	void setIP(String value);
+	void setVirtualResources(VirtualResources value);
+
+	/**
+	 * Returns the value of the '<em><b>Ip</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * IP地址.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Ip</em>' attribute.
+	 * @see #setIp(String)
+	 * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getBench_Ip()
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
+	 *        extendedMetaData="kind='attribute' name='ip' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	String getIp();
+
+	/**
+	 * Sets the value of the '{@link com.rskytech.hmi.bench.rsateconfig.Bench#getIp <em>Ip</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ip</em>' attribute.
+	 * @see #getIp()
+	 * @generated
+	 */
+	void setIp(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * RTC主结点名称
+	 * RTC主结点名称.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
@@ -168,6 +195,9 @@ public interface Bench extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 端口.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #isSetPort()
 	 * @see #unsetPort()

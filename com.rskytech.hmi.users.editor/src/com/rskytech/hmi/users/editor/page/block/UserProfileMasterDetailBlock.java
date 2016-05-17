@@ -1,11 +1,8 @@
 package com.rskytech.hmi.users.editor.page.block;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.command.AddCommand;
-import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.action.Action;
@@ -41,9 +38,7 @@ import com.rskytech.hmi.users.Profile;
 import com.rskytech.hmi.users.UsersConfiguration;
 import com.rskytech.hmi.users.UsersFactory;
 import com.rskytech.hmi.users.UsersPackage;
-import com.rskytech.hmi.users.edit.UsersEditPlugin;
 import com.rskytech.hmi.users.editor.UsersEditorPlugin;
-import com.rskytech.hmi.users.editor.page.block.provider.UserConfigDetailPageProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleContentProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleDetailPageProvider;
 import com.rskytech.hmi.users.editor.page.block.provider.UserRoleLabelProvider;

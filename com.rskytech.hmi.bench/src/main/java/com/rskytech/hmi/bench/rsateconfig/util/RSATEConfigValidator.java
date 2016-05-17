@@ -99,6 +99,8 @@ public class RSATEConfigValidator extends EObjectValidator {
 		switch (classifierID) {
 			case RSATEConfigPackage.BENCH:
 				return validateBench((Bench)value, diagnostics, context);
+			case RSATEConfigPackage.CONF:
+				return validateConf((Conf)value, diagnostics, context);
 			case RSATEConfigPackage.DOCUMENT_ROOT:
 				return validateDocumentRoot((DocumentRoot)value, diagnostics, context);
 			case RSATEConfigPackage.DRIVER:
@@ -111,12 +113,18 @@ public class RSATEConfigValidator extends EObjectValidator {
 				return validateNode((Node)value, diagnostics, context);
 			case RSATEConfigPackage.NODES:
 				return validateNodes((Nodes)value, diagnostics, context);
-			case RSATEConfigPackage.RESOUCES:
-				return validateResouces((Resouces)value, diagnostics, context);
+			case RSATEConfigPackage.PARAM:
+				return validateParam((Param)value, diagnostics, context);
 			case RSATEConfigPackage.RESOURCE:
 				return validateResource((Resource)value, diagnostics, context);
+			case RSATEConfigPackage.RESOURCES:
+				return validateResources((Resources)value, diagnostics, context);
 			case RSATEConfigPackage.RSATE_CONFIG:
 				return validateRSATEConfig((RSATEConfig)value, diagnostics, context);
+			case RSATEConfigPackage.VIRTUAL_RESOURCE:
+				return validateVirtualResource((VirtualResource)value, diagnostics, context);
+			case RSATEConfigPackage.VIRTUAL_RESOURCES:
+				return validateVirtualResources((VirtualResources)value, diagnostics, context);
 			case RSATEConfigPackage.DRIVER_NAME:
 				return validateDriverName((String)value, diagnostics, context);
 			case RSATEConfigPackage.INTEGER:
@@ -135,6 +143,15 @@ public class RSATEConfigValidator extends EObjectValidator {
 	 */
 	public boolean validateBench(Bench bench, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(bench, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConf(Conf conf, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(conf, diagnostics, context);
 	}
 
 	/**
@@ -196,8 +213,8 @@ public class RSATEConfigValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateResouces(Resouces resouces, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(resouces, diagnostics, context);
+	public boolean validateParam(Param param, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(param, diagnostics, context);
 	}
 
 	/**
@@ -214,8 +231,35 @@ public class RSATEConfigValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateResources(Resources resources, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(resources, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateRSATEConfig(RSATEConfig rsateConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(rsateConfig, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVirtualResource(VirtualResource virtualResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(virtualResource, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVirtualResources(VirtualResources virtualResources, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(virtualResources, diagnostics, context);
 	}
 
 	/**

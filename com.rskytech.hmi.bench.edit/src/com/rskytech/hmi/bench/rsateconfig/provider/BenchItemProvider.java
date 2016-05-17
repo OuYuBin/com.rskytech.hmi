@@ -16,12 +16,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -60,8 +62,77 @@ public class BenchItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIpPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Ip feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Bench_ip_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Bench_ip_feature", "_UI_Bench_type"),
+				 RSATEConfigPackage.Literals.BENCH__IP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Bench_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Bench_name_feature", "_UI_Bench_type"),
+				 RSATEConfigPackage.Literals.BENCH__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Bench_port_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Bench_port_feature", "_UI_Bench_type"),
+				 RSATEConfigPackage.Literals.BENCH__PORT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -78,7 +149,8 @@ public class BenchItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RSATEConfigPackage.Literals.BENCH__NODES);
 			childrenFeatures.add(RSATEConfigPackage.Literals.BENCH__DRIVERS);
-			childrenFeatures.add(RSATEConfigPackage.Literals.BENCH__RESOUCES);
+			childrenFeatures.add(RSATEConfigPackage.Literals.BENCH__RESOURCES);
+			childrenFeatures.add(RSATEConfigPackage.Literals.BENCH__VIRTUAL_RESOURCES);
 		}
 		return childrenFeatures;
 	}
@@ -115,7 +187,10 @@ public class BenchItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Bench_type");
+		String label = ((Bench)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Bench_type") :
+			getString("_UI_Bench_type") + " " + label;
 	}
 	
 
@@ -131,9 +206,15 @@ public class BenchItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Bench.class)) {
+			case RSATEConfigPackage.BENCH__IP:
+			case RSATEConfigPackage.BENCH__NAME:
+			case RSATEConfigPackage.BENCH__PORT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case RSATEConfigPackage.BENCH__NODES:
 			case RSATEConfigPackage.BENCH__DRIVERS:
-			case RSATEConfigPackage.BENCH__RESOUCES:
+			case RSATEConfigPackage.BENCH__RESOURCES:
+			case RSATEConfigPackage.BENCH__VIRTUAL_RESOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -163,8 +244,13 @@ public class BenchItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RSATEConfigPackage.Literals.BENCH__RESOUCES,
-				 RSATEConfigFactory.eINSTANCE.createResouces()));
+				(RSATEConfigPackage.Literals.BENCH__RESOURCES,
+				 RSATEConfigFactory.eINSTANCE.createResources()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RSATEConfigPackage.Literals.BENCH__VIRTUAL_RESOURCES,
+				 RSATEConfigFactory.eINSTANCE.createVirtualResources()));
 	}
 
 	/**

@@ -5,7 +5,7 @@ package com.rskytech.hmi.bench.rsateconfig.provider;
 
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfigFactory;
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage;
-import com.rskytech.hmi.bench.rsateconfig.Resouces;
+import com.rskytech.hmi.bench.rsateconfig.VirtualResources;
 
 import java.util.Collection;
 import java.util.List;
@@ -27,12 +27,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.rskytech.hmi.bench.rsateconfig.Resouces} object.
+ * This is the item provider adapter for a {@link com.rskytech.hmi.bench.rsateconfig.VirtualResources} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResoucesItemProvider 
+public class VirtualResourcesItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -46,7 +46,7 @@ public class ResoucesItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResoucesItemProvider(AdapterFactory adapterFactory) {
+	public VirtualResourcesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,7 +77,7 @@ public class ResoucesItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RSATEConfigPackage.Literals.RESOUCES__RESOURCE);
+			childrenFeatures.add(RSATEConfigPackage.Literals.VIRTUAL_RESOURCES__VIRTUAL_RESOURCE);
 		}
 		return childrenFeatures;
 	}
@@ -96,14 +96,14 @@ public class ResoucesItemProvider
 	}
 
 	/**
-	 * This returns Resouces.gif.
+	 * This returns VirtualResources.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Resouces"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/VirtualResources"));
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class ResoucesItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Resouces_type");
+		return getString("_UI_VirtualResources_type");
 	}
 	
 
@@ -129,8 +129,8 @@ public class ResoucesItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Resouces.class)) {
-			case RSATEConfigPackage.RESOUCES__RESOURCE:
+		switch (notification.getFeatureID(VirtualResources.class)) {
+			case RSATEConfigPackage.VIRTUAL_RESOURCES__VIRTUAL_RESOURCE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -150,8 +150,8 @@ public class ResoucesItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RSATEConfigPackage.Literals.RESOUCES__RESOURCE,
-				 RSATEConfigFactory.eINSTANCE.createResource()));
+				(RSATEConfigPackage.Literals.VIRTUAL_RESOURCES__VIRTUAL_RESOURCE,
+				 RSATEConfigFactory.eINSTANCE.createVirtualResource()));
 	}
 
 	/**

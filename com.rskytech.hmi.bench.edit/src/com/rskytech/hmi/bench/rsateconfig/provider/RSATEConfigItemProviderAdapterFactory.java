@@ -95,6 +95,29 @@ public class RSATEConfigItemProviderAdapterFactory extends RSATEConfigAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.bench.rsateconfig.Conf} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConfItemProvider confItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.rskytech.hmi.bench.rsateconfig.Conf}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConfAdapter() {
+		if (confItemProvider == null) {
+			confItemProvider = new ConfItemProvider(this);
+		}
+
+		return confItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.bench.rsateconfig.DocumentRoot} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -233,26 +256,26 @@ public class RSATEConfigItemProviderAdapterFactory extends RSATEConfigAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.bench.rsateconfig.Resouces} instances.
+	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.bench.rsateconfig.Param} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResoucesItemProvider resoucesItemProvider;
+	protected ParamItemProvider paramItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link com.rskytech.hmi.bench.rsateconfig.Resouces}.
+	 * This creates an adapter for a {@link com.rskytech.hmi.bench.rsateconfig.Param}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createResoucesAdapter() {
-		if (resoucesItemProvider == null) {
-			resoucesItemProvider = new ResoucesItemProvider(this);
+	public Adapter createParamAdapter() {
+		if (paramItemProvider == null) {
+			paramItemProvider = new ParamItemProvider(this);
 		}
 
-		return resoucesItemProvider;
+		return paramItemProvider;
 	}
 
 	/**
@@ -279,6 +302,29 @@ public class RSATEConfigItemProviderAdapterFactory extends RSATEConfigAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.bench.rsateconfig.Resources} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourcesItemProvider resourcesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.rskytech.hmi.bench.rsateconfig.Resources}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResourcesAdapter() {
+		if (resourcesItemProvider == null) {
+			resourcesItemProvider = new ResourcesItemProvider(this);
+		}
+
+		return resourcesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.bench.rsateconfig.RSATEConfig} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -299,6 +345,52 @@ public class RSATEConfigItemProviderAdapterFactory extends RSATEConfigAdapterFac
 		}
 
 		return rsateConfigItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.bench.rsateconfig.VirtualResource} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VirtualResourceItemProvider virtualResourceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.rskytech.hmi.bench.rsateconfig.VirtualResource}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVirtualResourceAdapter() {
+		if (virtualResourceItemProvider == null) {
+			virtualResourceItemProvider = new VirtualResourceItemProvider(this);
+		}
+
+		return virtualResourceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.bench.rsateconfig.VirtualResources} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VirtualResourcesItemProvider virtualResourcesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.rskytech.hmi.bench.rsateconfig.VirtualResources}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVirtualResourcesAdapter() {
+		if (virtualResourcesItemProvider == null) {
+			virtualResourcesItemProvider = new VirtualResourcesItemProvider(this);
+		}
+
+		return virtualResourcesItemProvider;
 	}
 
 	/**
@@ -401,15 +493,19 @@ public class RSATEConfigItemProviderAdapterFactory extends RSATEConfigAdapterFac
 	 */
 	public void dispose() {
 		if (benchItemProvider != null) benchItemProvider.dispose();
+		if (confItemProvider != null) confItemProvider.dispose();
 		if (documentRootItemProvider != null) documentRootItemProvider.dispose();
 		if (driverItemProvider != null) driverItemProvider.dispose();
 		if (driverNameAndVersionItemProvider != null) driverNameAndVersionItemProvider.dispose();
 		if (driversItemProvider != null) driversItemProvider.dispose();
 		if (nodeItemProvider != null) nodeItemProvider.dispose();
 		if (nodesItemProvider != null) nodesItemProvider.dispose();
-		if (resoucesItemProvider != null) resoucesItemProvider.dispose();
+		if (paramItemProvider != null) paramItemProvider.dispose();
 		if (resourceItemProvider != null) resourceItemProvider.dispose();
+		if (resourcesItemProvider != null) resourcesItemProvider.dispose();
 		if (rsateConfigItemProvider != null) rsateConfigItemProvider.dispose();
+		if (virtualResourceItemProvider != null) virtualResourceItemProvider.dispose();
+		if (virtualResourcesItemProvider != null) virtualResourcesItemProvider.dispose();
 	}
 
 }

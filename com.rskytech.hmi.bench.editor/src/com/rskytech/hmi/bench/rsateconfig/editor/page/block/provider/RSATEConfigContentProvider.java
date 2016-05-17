@@ -1,12 +1,14 @@
-package com.rskytech.hmi.bench.rsateconfig.editor.provider;
+package com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider;
 
 import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
 import com.rskytech.hmi.bench.rsateconfig.DocumentRoot;
+import com.rskytech.hmi.bench.rsateconfig.editor.model.IRSATEConfigContainerModel;
 
 /**
  * 
@@ -17,39 +19,38 @@ public class RSATEConfigContentProvider implements ITreeContentProvider {
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		if (inputElement instanceof DocumentRoot) {
-			return new Object[] { ((DocumentRoot) inputElement).getRSATEConfig() };
+		if (inputElement instanceof List) {
+			return ((List) inputElement).toArray();
 		}
 		return Collections.EMPTY_LIST.toArray();
 	}
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
-		return null;
+		if (parentElement instanceof IRSATEConfigContainerModel) {
+			return ((IRSATEConfigContainerModel) parentElement).getRSATEConfigModels().toArray();
+		}
+		return Collections.EMPTY_LIST.toArray();
 	}
 
 	@Override
 	public Object getParent(Object element) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public boolean hasChildren(Object element) {
-		// TODO Auto-generated method stub
-		return false;
+		return getChildren(element).length>0;
 	}
 
 }

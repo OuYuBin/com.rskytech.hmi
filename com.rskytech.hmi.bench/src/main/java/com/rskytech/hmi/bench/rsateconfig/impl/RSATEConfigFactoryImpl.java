@@ -61,15 +61,19 @@ public class RSATEConfigFactoryImpl extends EFactoryImpl implements RSATEConfigF
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case RSATEConfigPackage.BENCH: return createBench();
+			case RSATEConfigPackage.CONF: return createConf();
 			case RSATEConfigPackage.DOCUMENT_ROOT: return createDocumentRoot();
 			case RSATEConfigPackage.DRIVER: return createDriver();
 			case RSATEConfigPackage.DRIVER_NAME_AND_VERSION: return createDriverNameAndVersion();
 			case RSATEConfigPackage.DRIVERS: return createDrivers();
 			case RSATEConfigPackage.NODE: return createNode();
 			case RSATEConfigPackage.NODES: return createNodes();
-			case RSATEConfigPackage.RESOUCES: return createResouces();
+			case RSATEConfigPackage.PARAM: return createParam();
 			case RSATEConfigPackage.RESOURCE: return createResource();
+			case RSATEConfigPackage.RESOURCES: return createResources();
 			case RSATEConfigPackage.RSATE_CONFIG: return createRSATEConfig();
+			case RSATEConfigPackage.VIRTUAL_RESOURCE: return createVirtualResource();
+			case RSATEConfigPackage.VIRTUAL_RESOURCES: return createVirtualResources();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -121,6 +125,16 @@ public class RSATEConfigFactoryImpl extends EFactoryImpl implements RSATEConfigF
 	public Bench createBench() {
 		BenchImpl bench = new BenchImpl();
 		return bench;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Conf createConf() {
+		ConfImpl conf = new ConfImpl();
+		return conf;
 	}
 
 	/**
@@ -188,9 +202,9 @@ public class RSATEConfigFactoryImpl extends EFactoryImpl implements RSATEConfigF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Resouces createResouces() {
-		ResoucesImpl resouces = new ResoucesImpl();
-		return resouces;
+	public Param createParam() {
+		ParamImpl param = new ParamImpl();
+		return param;
 	}
 
 	/**
@@ -208,9 +222,39 @@ public class RSATEConfigFactoryImpl extends EFactoryImpl implements RSATEConfigF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Resources createResources() {
+		ResourcesImpl resources = new ResourcesImpl();
+		return resources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RSATEConfig createRSATEConfig() {
 		RSATEConfigImpl rsateConfig = new RSATEConfigImpl();
 		return rsateConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VirtualResource createVirtualResource() {
+		VirtualResourceImpl virtualResource = new VirtualResourceImpl();
+		return virtualResource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VirtualResources createVirtualResources() {
+		VirtualResourcesImpl virtualResources = new VirtualResourcesImpl();
+		return virtualResources;
 	}
 
 	/**
