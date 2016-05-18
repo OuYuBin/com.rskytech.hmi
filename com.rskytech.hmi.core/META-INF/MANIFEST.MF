@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Core
+Bundle-SymbolicName: com.rskytech.hmi.core
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.rskytech.hmi.core.Activator
+Bundle-Vendor: RSKYTECH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: com.rskytech.hmi.core,
+ com.rskytech.hmi.core.utils

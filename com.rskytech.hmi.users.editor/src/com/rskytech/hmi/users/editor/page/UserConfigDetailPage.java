@@ -145,9 +145,9 @@ public class UserConfigDetailPage extends AbstractFormPart implements IDetailsPa
 				SWT.MULTI | SWT.V_SCROLL | SWT.BORDER | SWT.FULL_SELECTION);
 		Table table = attrTableViewer.getTable();
 		gd = new GridData(GridData.FILL, GridData.FILL, true, true);
+		table.setLayoutData(gd);
 		table.setHeaderVisible(true);
 		table.setLinesVisible(true);
-		table.setLayoutData(gd);
 		createAttrTableViewerColumns(attrTableViewer);
 
 		// attrFilter = new AttrFilter();
