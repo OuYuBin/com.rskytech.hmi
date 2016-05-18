@@ -1,4 +1,4 @@
-package com.rskytech.hmi.bench.rsateconfig.editor.page.provider;
+package com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider;
 
 import java.util.List;
 

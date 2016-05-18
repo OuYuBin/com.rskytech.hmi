@@ -28,7 +28,6 @@
     <nested inputs="RSATEConfig.xsd#//Drivers;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"
         outputs="RSATEConfig.ecore#//Drivers/driver"/>
   </nested>
-  <nested inputs="RSATEConfig.xsd#//Integer;XSDSimpleTypeDefinition=1" outputs="RSATEConfig.ecore#//Integer"/>
   <nested inputs="RSATEConfig.xsd#//DriverNameAndVersion;XSDComplexTypeDefinition=10"
       outputs="RSATEConfig.ecore#//DriverNameAndVersion">
     <nested inputs="RSATEConfig.xsd#//DriverNameAndVersion;XSDComplexTypeDefinition=10/XSDAttributeUse"
@@ -93,4 +92,5 @@
         outputs="RSATEConfig.ecore#//RSATEConfig/bench"/>
   </nested>
   <nested inputs="RSATEConfig.xsd#//RSATEConfig;XSDElementDeclaration" outputs="RSATEConfig.ecore#//DocumentRoot/rSATEConfig"/>
+  <nested inputs="RSATEConfig.xsd#//Available;XSDSimpleTypeDefinition=1" outputs="RSATEConfig.ecore#//Available"/>
 </xsd2ecore:XSD2EcoreMappingRoot>

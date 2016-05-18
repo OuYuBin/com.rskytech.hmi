@@ -111,6 +111,8 @@ public final class RSATEConfigEditorPlugin extends EMFPlugin {
 			map.put("Resource", "icons/resource.gif");
 			map.put("VirtualResources","icons/virtual_resources.gif");
 			map.put("VirtualResource", "icons/virtual_resource.gif");
+			map.put("CheckBoxOn", "icons/Check_box_on.gif");
+			map.put("CheckBoxOff", "icons/check_box_off.gif");
 
 			for (@SuppressWarnings("rawtypes")
 			Iterator iter = map.entrySet().iterator(); iter.hasNext();) {

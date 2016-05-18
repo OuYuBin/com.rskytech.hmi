@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rsateconfig" nsURI="platform:/resource/com.rskytech.hmi.bench/model/RSATEConfig.xsd"
-    nsPrefix="com.rskytech.hmi.bench">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RSATEConfig" nsURI="platform:/resource/com.rskytech.hmi.bench/model/RSATEConfig.xsd"
+    nsPrefix="RSATEConfig">
   <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
     <details key="qualified" value="false"/>
   </eAnnotations>
+  <eClassifiers xsi:type="ecore:EDataType" name="Available" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Available"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#token"/>
+      <details key="pattern" value="\d+"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bench">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Bench"/>
@@ -195,13 +202,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.String">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="Integer"/>
-      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#token"/>
-      <details key="pattern" value="\d+"/>
-    </eAnnotations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Node">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Node"/>
@@ -267,7 +267,7 @@
       <details key="name" value="Resource"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="available" eType="#//Integer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="available" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="资源是否可用."/>
       </eAnnotations>
