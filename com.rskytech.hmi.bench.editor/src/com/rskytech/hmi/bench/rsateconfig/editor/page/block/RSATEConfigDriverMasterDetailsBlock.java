@@ -25,7 +25,7 @@ import com.rskytech.hmi.bench.rsateconfig.Drivers;
 import com.rskytech.hmi.bench.rsateconfig.RSATEConfig;
 import com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider.RSATEConfigContentProvider;
 import com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider.RSATEConfigDriverAdapterFactoryContentProvider;
-import com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider.RSATEConfigLabelProvider;
+import com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider.RSATEConfigStyledLabelProvider;
 import com.rskytech.hmi.bench.rsateconfig.editor.page.provider.RSATEConfigDetailPageProvider;
 import com.rskytech.hmi.bench.rsateconfig.impl.DocumentRootImpl;
 import com.rskytech.hmi.common.editor.page.IRskyCommonFormPage;

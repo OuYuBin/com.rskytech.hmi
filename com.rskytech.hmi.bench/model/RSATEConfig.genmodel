@@ -11,8 +11,8 @@
   <genPackages prefix="RSATEConfig" basePackage="com.rskytech.hmi.bench" resource="XML"
       disposableProviderFactory="true" presentationPackageSuffix="editor" fileExtensions="xml"
       ecorePackage="RSATEConfig.ecore#/">
-    <genDataTypes ecoreDataType="RSATEConfig.ecore#//Available"/>
     <genDataTypes ecoreDataType="RSATEConfig.ecore#//DriverName"/>
+    <genDataTypes ecoreDataType="RSATEConfig.ecore#//Integer"/>
     <genDataTypes ecoreDataType="RSATEConfig.ecore#//Token"/>
     <genClasses ecoreClass="RSATEConfig.ecore#//Bench">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//Bench/nodes"/>
@@ -68,6 +68,7 @@
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//VirtualResource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//VirtualResource/resource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSATEConfig.ecore#//VirtualResource/conf"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSATEConfig.ecore#//VirtualResource/name"/>
     </genClasses>
     <genClasses ecoreClass="RSATEConfig.ecore#//VirtualResources">

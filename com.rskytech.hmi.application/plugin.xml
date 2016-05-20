@@ -98,10 +98,10 @@
             class="com.rskytech.hmi.application.splashHandlers.LoginSplashHandler"
             id="com.rskytech.hmi.application.splashHandlers.interactive">
       </splashHandler>
-      <!--<splashHandlerProductBinding
+      <splashHandlerProductBinding
             productId="com.rskytech.hmi.application.product"
             splashId="com.rskytech.hmi.application.splashHandlers.interactive">
-      </splashHandlerProductBinding>-->
+      </splashHandlerProductBinding>
    </extension>
    <extension
          point="org.eclipse.ui.menus">

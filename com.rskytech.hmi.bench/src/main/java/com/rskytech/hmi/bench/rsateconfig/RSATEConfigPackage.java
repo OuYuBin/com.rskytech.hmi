@@ -666,13 +666,22 @@ public interface RSATEConfigPackage extends EPackage {
 	int VIRTUAL_RESOURCE__RESOURCE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Conf</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIRTUAL_RESOURCE__CONF = 1;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIRTUAL_RESOURCE__NAME = 1;
+	int VIRTUAL_RESOURCE__NAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>Virtual Resource</em>' class.
@@ -681,7 +690,7 @@ public interface RSATEConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIRTUAL_RESOURCE_FEATURE_COUNT = 2;
+	int VIRTUAL_RESOURCE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Virtual Resource</em>' class.
@@ -1210,6 +1219,17 @@ public interface RSATEConfigPackage extends EPackage {
 	EAttribute getVirtualResource_Resource();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link com.rskytech.hmi.bench.rsateconfig.VirtualResource#getConf <em>Conf</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Conf</em>'.
+	 * @see com.rskytech.hmi.bench.rsateconfig.VirtualResource#getConf()
+	 * @see #getVirtualResource()
+	 * @generated
+	 */
+	EReference getVirtualResource_Conf();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.bench.rsateconfig.VirtualResource#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1661,6 +1681,14 @@ public interface RSATEConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VIRTUAL_RESOURCE__RESOURCE = eINSTANCE.getVirtualResource_Resource();
+
+		/**
+		 * The meta object literal for the '<em><b>Conf</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VIRTUAL_RESOURCE__CONF = eINSTANCE.getVirtualResource_Conf();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

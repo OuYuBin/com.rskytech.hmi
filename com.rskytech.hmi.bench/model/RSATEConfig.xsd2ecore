@@ -2,7 +2,7 @@
 <xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="RSATEConfig.xsd#/" outputs="RSATEConfig.ecore#/"
     topToBottom="true">
-  <nested inputs="bundleentry://1540.fwk904131512/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+  <nested inputs="bundleentry://1919.fwk1773970438/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
       outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
   <nested inputs="RSATEConfig.xsd#//Node;XSDComplexTypeDefinition=3" outputs="RSATEConfig.ecore#//Node">
     <nested inputs="RSATEConfig.xsd#//Node;XSDComplexTypeDefinition=3/XSDAttributeUse=1"
@@ -14,7 +14,7 @@
     <nested inputs="RSATEConfig.xsd#//Nodes;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"
         outputs="RSATEConfig.ecore#//Nodes/node"/>
   </nested>
-  <nested inputs="bundleentry://1540.fwk904131512/cache/www.w3.org/2001/XMLSchema.xsd#//token;XSDSimpleTypeDefinition=29"
+  <nested inputs="bundleentry://1919.fwk1773970438/cache/www.w3.org/2001/XMLSchema.xsd#//token;XSDSimpleTypeDefinition=29"
       outputs="http://www.eclipse.org/emf/2003/XMLType#//Token"/>
   <nested inputs="RSATEConfig.xsd#//Token;XSDSimpleTypeDefinition" outputs="RSATEConfig.ecore#//Token"/>
   <nested inputs="RSATEConfig.xsd#//DriverName;XSDSimpleTypeDefinition=2" outputs="RSATEConfig.ecore#//DriverName"/>
@@ -28,6 +28,7 @@
     <nested inputs="RSATEConfig.xsd#//Drivers;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"
         outputs="RSATEConfig.ecore#//Drivers/driver"/>
   </nested>
+  <nested inputs="RSATEConfig.xsd#//Integer;XSDSimpleTypeDefinition=1" outputs="RSATEConfig.ecore#//Integer"/>
   <nested inputs="RSATEConfig.xsd#//DriverNameAndVersion;XSDComplexTypeDefinition=10"
       outputs="RSATEConfig.ecore#//DriverNameAndVersion">
     <nested inputs="RSATEConfig.xsd#//DriverNameAndVersion;XSDComplexTypeDefinition=10/XSDAttributeUse"
@@ -62,6 +63,8 @@
   <nested inputs="RSATEConfig.xsd#//VirtualResource;XSDComplexTypeDefinition=9" outputs="RSATEConfig.ecore#//VirtualResource">
     <nested inputs="RSATEConfig.xsd#//VirtualResource;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle"
         outputs="RSATEConfig.ecore#//VirtualResource/resource"/>
+    <nested inputs="RSATEConfig.xsd#//VirtualResource;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="RSATEConfig.ecore#//VirtualResource/conf"/>
     <nested inputs="RSATEConfig.xsd#//VirtualResource;XSDComplexTypeDefinition=9/XSDAttributeUse"
         outputs="RSATEConfig.ecore#//VirtualResource/name"/>
   </nested>
@@ -69,7 +72,7 @@
     <nested inputs="RSATEConfig.xsd#//VirtualResources;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle"
         outputs="RSATEConfig.ecore#//VirtualResources/virtualResource"/>
   </nested>
-  <nested inputs="bundleentry://1540.fwk904131512/cache/www.w3.org/2001/XMLSchema.xsd#//int;XSDSimpleTypeDefinition=44"
+  <nested inputs="bundleentry://1919.fwk1773970438/cache/www.w3.org/2001/XMLSchema.xsd#//int;XSDSimpleTypeDefinition=44"
       outputs="http://www.eclipse.org/emf/2003/XMLType#//Int"/>
   <nested inputs="RSATEConfig.xsd#//Bench;XSDComplexTypeDefinition=1" outputs="RSATEConfig.ecore#//Bench">
     <nested inputs="RSATEConfig.xsd#//Bench;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"
@@ -92,5 +95,4 @@
         outputs="RSATEConfig.ecore#//RSATEConfig/bench"/>
   </nested>
   <nested inputs="RSATEConfig.xsd#//RSATEConfig;XSDElementDeclaration" outputs="RSATEConfig.ecore#//DocumentRoot/rSATEConfig"/>
-  <nested inputs="RSATEConfig.xsd#//Available;XSDSimpleTypeDefinition=1" outputs="RSATEConfig.ecore#//Available"/>
 </xsd2ecore:XSD2EcoreMappingRoot>

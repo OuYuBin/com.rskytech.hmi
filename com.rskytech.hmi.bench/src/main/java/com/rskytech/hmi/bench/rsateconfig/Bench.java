@@ -140,7 +140,7 @@ public interface Bench extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * IP地址.
+	 * IP地址
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ip</em>' attribute.
 	 * @see #setIp(String)
@@ -166,7 +166,7 @@ public interface Bench extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * RTC主结点名称.
+	 * RTC主结点名称
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
@@ -196,7 +196,7 @@ public interface Bench extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 端口.
+	 * 端口
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #isSetPort()

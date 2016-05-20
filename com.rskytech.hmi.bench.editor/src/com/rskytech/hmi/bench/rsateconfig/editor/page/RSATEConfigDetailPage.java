@@ -37,6 +37,7 @@ import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
 
 import com.rskytech.hmi.bench.rsateconfig.DriverNameAndVersion;
+import com.rskytech.hmi.bench.rsateconfig.editor.model.Bench;
 import com.rskytech.hmi.bench.rsateconfig.editor.model.IRSATEConfigModel;
 import com.rskytech.hmi.bench.rsateconfig.editor.model.Resources;
 import com.rskytech.hmi.bench.rsateconfig.editor.model.VirtualResources;
@@ -101,7 +102,7 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 
 		if (input instanceof Resources || input instanceof VirtualResources) {
 			Section resourceSection = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
-			resourceSection.setText("Resource");
+			resourceSection.setText("资源");
 			TableWrapData twd = new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB);
 			twd.grabHorizontal = true;
 			twd.grabVertical = true;
@@ -116,6 +117,22 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 			SectionPart objectInfoSectionPart = new SectionPart(resourceSection);
 			getManagedForm().addPart(objectInfoSectionPart);
 
+		} else if (input instanceof Bench) {
+			Section resourceSection = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
+			resourceSection.setText("节点");
+			TableWrapData twd = new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB);
+			twd.grabHorizontal = true;
+			twd.grabVertical = true;
+			resourceSection.setLayoutData(twd);
+
+			Composite client = toolKit.createComposite(resourceSection, SWT.WRAP);
+			GridLayout gridLayout = new GridLayout();
+			client.setLayout(gridLayout);
+
+			createReferenceSection(input, client);
+			resourceSection.setClient(client);
+			SectionPart objectInfoSectionPart = new SectionPart(resourceSection);
+			getManagedForm().addPart(objectInfoSectionPart);
 		}
 
 	}
@@ -141,13 +158,18 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 		} else if (input instanceof VirtualResources) {
 			eObject = ((VirtualResources) input).getEObject();
 			contents = ((VirtualResources) input).getRSATEConfigModels();
+		} else if (input instanceof Bench) {
+			com.rskytech.hmi.bench.rsateconfig.Bench bench = (com.rskytech.hmi.bench.rsateconfig.Bench) ((Bench) input)
+					.getEObject();
+			eObject = bench.getNodes();
+			contents = ((Bench) input).getRSATEConfigModels();
 		}
 
 		EClass eClass = null;
 		EList<EReference> references = RSkyEcoreUtil.getReferences(eObject);
 		for (EReference reference : references) {
 			String name = reference.getName();
-			if (name.equals("resource") || name.equals("virtualResource")) {
+			if (name.equals("resource") || name.equals("virtualResource") || name.equals("node")) {
 				eClass = (EClass) reference.getEType();
 				break;
 			}
@@ -194,15 +216,19 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 			} else {
 				tableViewerColumn.getColumn().setText(name);
 				tableViewerColumn.setLabelProvider(new RSATEResourceTableNameColumnLabelProvider(eAttribute));
-				ColumnWeightData columnWeightData = new ColumnWeightData(2, 10, true);
+				int weight = 1;
+				if (name.equals("name")) {
+					weight = 2;
+				}
+				ColumnWeightData columnWeightData = new ColumnWeightData(weight, 10, true);
 				tableColumnLayout.setColumnData(tableViewerColumn.getColumn(), columnWeightData);
 			}
 		}
 
+		// --针对resource信息,分解子节点信息,已增加可视及易用性处理
 		EList<EReference> references = eClass.getEAllReferences();
 		for (EReference reference : references) {
 			String name = reference.getName();
-			// --分解子节点信息，已增加可视及易用性处理
 
 			// --分解驱动版本及位置信息
 			if (name.equals("driver")) {
@@ -235,7 +261,7 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 						tableViewerColumn.getColumn().setText("location");
 						tableViewerColumn.setLabelProvider(
 								new RSATEResourceTableNameColumnLabelProvider(confReference, "location"));
-						ColumnWeightData columnWeightData = new ColumnWeightData(2, 100, true);
+						ColumnWeightData columnWeightData = new ColumnWeightData(1, 100, true);
 						tableColumnLayout.setColumnData(tableViewerColumn.getColumn(), columnWeightData);
 						// --驱动所在
 						tableViewerColumn = new TableViewerColumn(tableViewer,
