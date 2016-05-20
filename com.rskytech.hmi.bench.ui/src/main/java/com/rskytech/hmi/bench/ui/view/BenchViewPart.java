@@ -117,7 +117,7 @@ public class BenchViewPart extends ViewPart {
 		ateTreeViewer = new TreeViewer(client, SWT.MULTI | SWT.BORDER | SWT.FULL_SELECTION);
 		Tree tree = ateTreeViewer.getTree();
 		// tree.setHeaderVisible(true);
-		tree.setLinesVisible(true);
+		//tree.setLinesVisible(true);
 		tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
 		ateTreeViewer.addDoubleClickListener(new IDoubleClickListener() {

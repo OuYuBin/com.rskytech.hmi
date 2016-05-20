@@ -6,7 +6,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 
+import com.rskytech.hmi.bench.rsateconfig.Bench;
 import com.rskytech.hmi.bench.rsateconfig.Conf;
+import com.rskytech.hmi.bench.rsateconfig.Node;
 import com.rskytech.hmi.bench.rsateconfig.Param;
 import com.rskytech.hmi.bench.rsateconfig.Resource;
 import com.rskytech.hmi.bench.rsateconfig.VirtualResource;
@@ -46,6 +48,8 @@ public class RSATEResourceTableNameColumnLabelProvider extends ColumnLabelProvid
 		} else if (element instanceof com.rskytech.hmi.bench.rsateconfig.editor.model.VirtualResource) {
 			eOwner = (VirtualResource) ((com.rskytech.hmi.bench.rsateconfig.editor.model.VirtualResource) element)
 					.getEObject();
+		} else if (element instanceof com.rskytech.hmi.bench.rsateconfig.editor.model.Node) {
+			eOwner = (Node) ((com.rskytech.hmi.bench.rsateconfig.editor.model.Node) element).getEObject();
 		}
 		if (eReference != null) {
 			if (eReference.getName().equals("param")) {

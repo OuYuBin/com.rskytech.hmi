@@ -1,5 +1,6 @@
 package com.rskytech.hmi.application;
 
+import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 import org.eclipse.ui.navigator.resources.ProjectExplorer;
@@ -17,15 +18,18 @@ public class Perspective implements IPerspectiveFactory {
 	public void createInitialLayout(IPageLayout layout) {
 		String editorArea = layout.getEditorArea();
 		layout.setEditorAreaVisible(true);
-		
-//		layout.addStandaloneView(NavigationView.ID,  false, IPageLayout.LEFT, 0.25f, editorArea);
-//		IFolderLayout folder = layout.createFolder("messages", IPageLayout.TOP, 0.5f, editorArea);
-//		folder.addPlaceholder(View.ID + ":*");
-//		folder.addView(View.ID);
-		
-		//layout.getViewLayout(NavigationView.ID).setCloseable(false);
-		layout.addView(TestProjectNavigator.VIEW_ID, IPageLayout.LEFT, 0.23f, editorArea);
-		
-		layout.addView(BenchViewPart.ID,IPageLayout.RIGHT,0.67f,editorArea);
+
+		// layout.addStandaloneView(NavigationView.ID, false, IPageLayout.LEFT,
+		// 0.25f, editorArea);
+		IFolderLayout topLeft = layout.createFolder("projects", IPageLayout.LEFT, 0.25f, editorArea);
+		// folder.addPlaceholder(View.ID + ":*");
+		topLeft.addView(TestProjectNavigator.VIEW_ID);
+
+		// layout.getViewLayout(NavigationView.ID).setCloseable(false);
+		// IFolderLayout topLeft=layout.addView(TestProjectNavigator.VIEW_ID,
+		// IPageLayout.LEFT, 0.23f, editorArea);
+		IFolderLayout bottomLeft = layout.createFolder("benches", IPageLayout.BOTTOM, 0.50f, "projects");
+
+		bottomLeft.addView(BenchViewPart.ID);
 	}
 }

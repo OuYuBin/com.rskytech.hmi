@@ -29,7 +29,7 @@ public interface Resource extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 资源是否可用.
+	 * 资源是否可用
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Available</em>' attribute.
 	 * @see #setAvailable(String)
@@ -55,7 +55,7 @@ public interface Resource extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 资源包含设备的名称及版本.
+	 * 资源包含设备的名称及版本
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Driver</em>' containment reference.
 	 * @see #setDriver(DriverNameAndVersion)

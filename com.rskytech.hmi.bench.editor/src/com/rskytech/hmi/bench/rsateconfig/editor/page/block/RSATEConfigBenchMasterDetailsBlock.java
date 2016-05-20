@@ -11,9 +11,12 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.forms.DetailsPart;
 import org.eclipse.ui.forms.IManagedForm;
@@ -24,7 +27,9 @@ import org.eclipse.ui.forms.widgets.Section;
 import com.rskytech.hmi.bench.rsateconfig.editor.model.Bench;
 import com.rskytech.hmi.bench.rsateconfig.editor.model.manager.RSATEConfigModelManager;
 import com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider.RSATEConfigContentProvider;
-import com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider.RSATEConfigLabelProvider;
+import com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider.RSATEConfigStyledLabelProvider;
+import com.rskytech.hmi.bench.rsateconfig.editor.page.block.provider.RSATEConfigStyledCellLabelProvider;
+import com.rskytech.hmi.bench.rsateconfig.editor.page.decorator.RSATEConfigModelLabelDecorator;
 import com.rskytech.hmi.bench.rsateconfig.editor.page.provider.RSATEConfigDetailPageProvider;
 import com.rskytech.hmi.common.editor.page.IRskyCommonFormPage;
 import com.rskytech.hmi.common.editor.page.block.AbstractRskyCommonMasterDetailsBlock;
@@ -61,6 +66,24 @@ public class RSATEConfigBenchMasterDetailsBlock extends AbstractRskyCommonMaster
 		// gridLayout.horizontalSpacing = 0;
 		composite.setLayout(gridLayout);
 
+		// --搜索
+		final Text searchText = formToolkit.createText(composite, "",
+				SWT.BORDER | SWT.SEARCH | SWT.ICON_SEARCH | SWT.CANCEL);
+		searchText.setMessage("搜索: 资源");
+		searchText.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
+		searchText.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent keyEvent) {
+				if (keyEvent.keyCode == SWT.ESC) {
+					// hostConfigFilter.setFilterText("");
+				} else {
+					// hostConfigFilter.setFilterText(searchText.getText());
+				}
+				// treeViewer.refresh();
+				// treeViewer.expandToLevel(2);
+			}
+		});
+
 		Tree tree = new Tree(composite, SWT.FULL_SELECTION);
 		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		gridData.widthHint = SWT.DEFAULT;
@@ -69,7 +92,10 @@ public class RSATEConfigBenchMasterDetailsBlock extends AbstractRskyCommonMaster
 
 		TreeViewer treeViewer = new TreeViewer(tree);
 		treeViewer.setContentProvider(new RSATEConfigContentProvider());
-		treeViewer.setLabelProvider(new RSATEConfigLabelProvider());
+		RSATEConfigStyledLabelProvider rsATEConfigLabelProvider = new RSATEConfigStyledLabelProvider();
+		RSATEConfigModelLabelDecorator rsATEConfigModelLabelDecorator = new RSATEConfigModelLabelDecorator();
+		treeViewer.setLabelProvider(
+				new RSATEConfigStyledCellLabelProvider(rsATEConfigLabelProvider, rsATEConfigModelLabelDecorator, null));
 		// --构建用户易于理解和正确描述的结构
 		Resource resource = this.getRskyCommonFormPage().getResource();
 		Object object = resource.getContents().get(0);
@@ -95,7 +121,7 @@ public class RSATEConfigBenchMasterDetailsBlock extends AbstractRskyCommonMaster
 	@Override
 	public void createContent(IManagedForm managedForm, Composite parent) {
 		super.createContent(managedForm, parent);
-		this.sashForm.setWeights(new int[] { 40, 60 });
+		this.sashForm.setWeights(new int[] { 35, 65 });
 	}
 
 	@Override

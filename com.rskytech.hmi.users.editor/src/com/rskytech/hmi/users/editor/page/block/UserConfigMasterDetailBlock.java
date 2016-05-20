@@ -189,7 +189,7 @@ public class UserConfigMasterDetailBlock extends MasterDetailsBlock {
 	@Override
 	public void createContent(IManagedForm managedForm, Composite parent) {
 		super.createContent(managedForm, parent);
-		this.sashForm.setWeights(new int[] { 30, 70 });
+		this.sashForm.setWeights(new int[] { 35, 65 });
 	}
 
 	@Override

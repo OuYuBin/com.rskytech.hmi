@@ -29,7 +29,7 @@ public interface Resources extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 资源信息.
+	 * 资源信息
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Resource</em>' containment reference list.
 	 * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getResources_Resource()

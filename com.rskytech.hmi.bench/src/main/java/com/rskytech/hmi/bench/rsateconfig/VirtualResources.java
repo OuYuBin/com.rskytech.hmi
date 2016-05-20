@@ -29,7 +29,7 @@ public interface VirtualResources extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 虚拟资源信息.
+	 * 虚拟资源信息
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Virtual Resource</em>' containment reference list.
 	 * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getVirtualResources_VirtualResource()

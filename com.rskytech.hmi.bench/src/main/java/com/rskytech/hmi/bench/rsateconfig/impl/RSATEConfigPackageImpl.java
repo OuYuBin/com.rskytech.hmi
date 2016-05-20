@@ -613,8 +613,17 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getVirtualResource_Conf() {
+		return (EReference)virtualResourceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getVirtualResource_Name() {
-		return (EAttribute)virtualResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)virtualResourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -744,6 +753,7 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 
 		virtualResourceEClass = createEClass(VIRTUAL_RESOURCE);
 		createEAttribute(virtualResourceEClass, VIRTUAL_RESOURCE__RESOURCE);
+		createEReference(virtualResourceEClass, VIRTUAL_RESOURCE__CONF);
 		createEAttribute(virtualResourceEClass, VIRTUAL_RESOURCE__NAME);
 
 		virtualResourcesEClass = createEClass(VIRTUAL_RESOURCES);
@@ -842,6 +852,7 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 
 		initEClass(virtualResourceEClass, VirtualResource.class, "VirtualResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVirtualResource_Resource(), theXMLTypePackage.getString(), "resource", null, 1, 1, VirtualResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVirtualResource_Conf(), this.getConf(), null, "conf", null, 0, 1, VirtualResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVirtualResource_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, VirtualResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(virtualResourcesEClass, VirtualResources.class, "VirtualResources", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1221,6 +1232,14 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
+		  (getVirtualResource_Conf(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Conf",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
 		  (getVirtualResource_Name(), 
 		   source, 
 		   new String[] {
@@ -1257,31 +1276,31 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		  (getBench_Ip(), 
 		   source, 
 		   new String[] {
-			 "documentation", "IP\u5730\u5740."
+			 "documentation", "IP\u5730\u5740"
 		   });	
 		addAnnotation
 		  (getBench_Name(), 
 		   source, 
 		   new String[] {
-			 "documentation", "RTC\u4e3b\u7ed3\u70b9\u540d\u79f0."
+			 "documentation", "RTC\u4e3b\u7ed3\u70b9\u540d\u79f0"
 		   });	
 		addAnnotation
 		  (getBench_Port(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u7aef\u53e3."
+			 "documentation", "\u7aef\u53e3"
 		   });	
 		addAnnotation
 		  (getDriver_Version(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u8bbe\u5907\u9a71\u52a8\u7248\u672c\u4fe1\u606f."
+			 "documentation", "\u8bbe\u5907\u9a71\u52a8\u7248\u672c\u4fe1\u606f"
 		   });	
 		addAnnotation
 		  (getDriver_Name(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u8bbe\u5907\u540d\u79f0."
+			 "documentation", "\u8bbe\u5907\u540d\u79f0"
 		   });	
 		addAnnotation
 		  (getNode_Ip(), 
@@ -1299,13 +1318,13 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		  (getResource_Available(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u8d44\u6e90\u662f\u5426\u53ef\u7528."
+			 "documentation", "\u8d44\u6e90\u662f\u5426\u53ef\u7528"
 		   });	
 		addAnnotation
 		  (getResource_Driver(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u8d44\u6e90\u5305\u542b\u8bbe\u5907\u7684\u540d\u79f0\u53ca\u7248\u672c."
+			 "documentation", "\u8d44\u6e90\u5305\u542b\u8bbe\u5907\u7684\u540d\u79f0\u53ca\u7248\u672c"
 		   });	
 		addAnnotation
 		  (getResource_Conf(), 
@@ -1317,13 +1336,13 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		  (getResources_Resource(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u8d44\u6e90\u4fe1\u606f."
+			 "documentation", "\u8d44\u6e90\u4fe1\u606f"
 		   });	
 		addAnnotation
 		  (getVirtualResources_VirtualResource(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u865a\u62df\u8d44\u6e90\u4fe1\u606f."
+			 "documentation", "\u865a\u62df\u8d44\u6e90\u4fe1\u606f"
 		   });
 	}
 
