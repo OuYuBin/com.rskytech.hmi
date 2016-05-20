@@ -14,9 +14,10 @@ import com.rskytech.hmi.bench.rsateconfig.VirtualResource;
 /**
  * 
  * @author robin
- *
+ * 
  */
-public class RSATEResourceTableNameColumnLabelProvider extends ColumnLabelProvider {
+public class RSATEResourceTableNameColumnLabelProvider extends
+		ColumnLabelProvider {
 
 	EStructuralFeature feature;
 
@@ -24,12 +25,14 @@ public class RSATEResourceTableNameColumnLabelProvider extends ColumnLabelProvid
 
 	String featureName;
 
-	public RSATEResourceTableNameColumnLabelProvider(EReference eReference, EStructuralFeature feature) {
+	public RSATEResourceTableNameColumnLabelProvider(EReference eReference,
+			EStructuralFeature feature) {
 		this(feature);
 		this.eReference = eReference;
 	}
 
-	public RSATEResourceTableNameColumnLabelProvider(EReference eReference, String featureName) {
+	public RSATEResourceTableNameColumnLabelProvider(EReference eReference,
+			String featureName) {
 		this.featureName = featureName;
 		this.eReference = eReference;
 	}
@@ -42,14 +45,16 @@ public class RSATEResourceTableNameColumnLabelProvider extends ColumnLabelProvid
 	public String getText(Object element) {
 		EObject eOwner = null;
 		if (element instanceof com.rskytech.hmi.bench.rsateconfig.editor.model.Resource) {
-			eOwner = (Resource) ((com.rskytech.hmi.bench.rsateconfig.editor.model.Resource) element).getEObject();
+			eOwner = (Resource) ((com.rskytech.hmi.bench.rsateconfig.editor.model.Resource) element)
+					.getEObject();
 		} else if (element instanceof com.rskytech.hmi.bench.rsateconfig.editor.model.VirtualResource) {
 			eOwner = (VirtualResource) ((com.rskytech.hmi.bench.rsateconfig.editor.model.VirtualResource) element)
 					.getEObject();
 		}
 		if (eReference != null) {
 			if (eReference.getName().equals("param")) {
-				Conf conf = (Conf) eOwner.eGet(eOwner.eClass().getEStructuralFeature("conf"));
+				Conf conf = (Conf) eOwner.eGet(eOwner.eClass()
+						.getEStructuralFeature("conf"));
 				EList<Param> params = conf.getParam();
 				for (Param param : params) {
 					if (param.getName().equals(featureName)) {
@@ -59,8 +64,13 @@ public class RSATEResourceTableNameColumnLabelProvider extends ColumnLabelProvid
 				return "";
 
 			}
-			EObject eObject = (EObject) eOwner.eGet((EStructuralFeature) eReference);
-			return (String) eObject.eGet(feature);
+			EObject eObject = (EObject) eOwner
+					.eGet((EStructuralFeature) eReference);
+			if (eObject != null)
+				return (String) eObject.eGet(feature) == null ? ""
+						: (String) eObject.eGet(feature);
+			else
+				return "";
 		} else {
 			return (String) eOwner.eGet(feature);
 		}
