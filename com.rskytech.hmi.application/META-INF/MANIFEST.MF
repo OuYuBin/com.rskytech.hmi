@@ -22,5 +22,6 @@ Require-Bundle: org.eclipse.ui,
  com.rskytech.hmi.bench.edit;bundle-version="1.0.0",
  com.rskytech.hmi.bench.editor;bundle-version="1.0.0",
  org.eclipse.ui.forms,
- com.rskytech.hmi.bench.ui;bundle-version="1.0.0"
+ com.rskytech.hmi.bench.ui;bundle-version="1.0.0",
+ com.rskytech.hmi.icd.ui;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

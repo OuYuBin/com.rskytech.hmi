@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: com.rskytech.hmi.icd.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.rskytech.hmi.icd.ui.Activator
+Bundle-Vendor: RSKYTECH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms;bundle-version="3.6.200",
+ org.eclipse.core.filesystem;bundle-version="1.5.0",
+ org.eclipse.ui.ide;bundle-version="3.11.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: com.rskytech.hmi.icd.ui.view

@@ -6,6 +6,7 @@ import org.eclipse.ui.IPerspectiveFactory;
 import org.eclipse.ui.navigator.resources.ProjectExplorer;
 
 import com.rskytech.hmi.bench.ui.view.BenchViewPart;
+import com.rskytech.hmi.icd.ui.view.ICDViewPart;
 import com.rskytech.hmi.navigator.TestProjectNavigator;
 
 public class Perspective implements IPerspectiveFactory {
@@ -25,11 +26,16 @@ public class Perspective implements IPerspectiveFactory {
 		// folder.addPlaceholder(View.ID + ":*");
 		topLeft.addView(TestProjectNavigator.VIEW_ID);
 
+		// IFolderLayout rightLeft = layout.createFolder("ICDS",
+		// IPageLayout.RIGHT, 0.75f, editorArea);
+		// // folder.addPlaceholder(View.ID + ":*");
+		// rightLeft.addView(ICDViewPart.VIEW_ID);
+
 		// layout.getViewLayout(NavigationView.ID).setCloseable(false);
 		// IFolderLayout topLeft=layout.addView(TestProjectNavigator.VIEW_ID,
 		// IPageLayout.LEFT, 0.23f, editorArea);
 		IFolderLayout bottomLeft = layout.createFolder("benches", IPageLayout.BOTTOM, 0.50f, "projects");
-
 		bottomLeft.addView(BenchViewPart.ID);
+		bottomLeft.addView(ICDViewPart.VIEW_ID);
 	}
 }

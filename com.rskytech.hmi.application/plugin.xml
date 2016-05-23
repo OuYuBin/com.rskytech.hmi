@@ -42,6 +42,13 @@
             name="测试硬件资源管理"
             restorable="true">
       </view>
+      <view
+            class="com.rskytech.hmi.icd.ui.view.ICDViewPart"
+            icon="icons/sample2.gif"
+            id="com.rskytech.hmi.icd.ui.view.ICDViewPart"
+            name="ICD View Part"
+            restorable="true">
+      </view>
    </extension>
    <extension
          point="org.eclipse.ui.commands">

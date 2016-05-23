@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated RSICDConfig -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigModelWizardID"
+            name="%_UI_RSICDConfigModelWizard_label"
+            class="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RSICDConfigModelFile.gif">
+         <description>%_UI_RSICDConfigModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated RSICDConfig -->
+      <editor
+            id="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigEditorID"
+            name="%_UI_RSICDConfigEditor_label"
+            icon="icons/full/obj16/RSICDConfigModelFile.gif"
+            extensions="rsicdconfig"
+            class="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigEditor"
+            contributorClass="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigActionBarContributor">
+      </editor>
+   </extension>
+</plugin>
