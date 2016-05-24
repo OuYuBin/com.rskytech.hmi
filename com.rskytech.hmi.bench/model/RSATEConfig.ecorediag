@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_ziplcB7zEea05rYITDNVTw" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_zsUe0B7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_ztLacB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_ztQ6AB7zEea05rYITDNVTw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_zuC9IB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Bench/ip"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuC9IR7zEea05rYITDNVTw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zuDkMB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Bench/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuDkMR7zEea05rYITDNVTw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zuELQB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Bench/port"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuELQR7zEea05rYITDNVTw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ztQ6AR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ztQ6Ah7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ztQ6Ax7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ztSvMB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ztSvMR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ztSvMh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ztSvMx7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zsUe0R7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//Bench"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zsUe0h7zEea05rYITDNVTw" x="423" y="487"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuFZYB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zuGAcB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zuGngB7zEea05rYITDNVTw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuGngR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuGngh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuGngx7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zuGnhB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuGnhR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuGnhh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuGnhx7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuFZYR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//Conf"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuFZYh7zEea05rYITDNVTw" x="533" y="128"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuHOkB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zuIcsB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zuIcsR7zEea05rYITDNVTw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_zuK48B7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//DocumentRoot/mixed"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuK48R7zEea05rYITDNVTw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuIcsh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuIcsx7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuIctB7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zuJDwB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuJDwR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuJDwh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuJDwx7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuHOkR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//DocumentRoot"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuHOkh7zEea05rYITDNVTw" x="382" y="735"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuMHEB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zuMuIB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zuNVMB7zEea05rYITDNVTw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_zuN8Qh7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Driver/version"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuOjUB7zEea05rYITDNVTw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zuPxcB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Driver/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuPxcR7zEea05rYITDNVTw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuNVMR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuNVMh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuNVMx7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zuNVNB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuNVNR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuN8QB7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuN8QR7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuMHER7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//Driver"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuMHEh7zEea05rYITDNVTw" x="110" y="256"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuSNsB7zEea05rYITDNVTw" type="1004">
+    <children xmi:type="notation:Node" xmi:id="_zuUC4B7zEea05rYITDNVTw" type="4008"/>
+    <children xmi:type="notation:Node" xmi:id="_zuUp8B7zEea05rYITDNVTw" type="4009"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuSNsR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EDataType" href="RSATEConfig.ecore#//DriverName"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuSNsh7zEea05rYITDNVTw"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuVRAB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zuWfIB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zuWfIR7zEea05rYITDNVTw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_zuXtQB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//DriverNameAndVersion/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuXtQR7zEea05rYITDNVTw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zuYUUB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//DriverNameAndVersion/version"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuYUUR7zEea05rYITDNVTw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuWfIh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuWfIx7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuWfJB7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zuXGMB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuXGMR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuXGMh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuXGMx7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuVRAR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//DriverNameAndVersion"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuVRAh7zEea05rYITDNVTw" x="695" y="128"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuY7YB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zuZicB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zuaJgB7zEea05rYITDNVTw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuaJgR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuaJgh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuaJgx7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zuaJhB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuawkB7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuawkR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuawkh7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuY7YR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//Drivers"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuY7Yh7zEea05rYITDNVTw" x="179" y="384"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zubXoB7zEea05rYITDNVTw" type="1004">
+    <children xmi:type="notation:Node" xmi:id="_zub-sB7zEea05rYITDNVTw" type="4008"/>
+    <children xmi:type="notation:Node" xmi:id="_zuclwB7zEea05rYITDNVTw" type="4009"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zubXoR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EDataType" href="RSATEConfig.ecore#//Integer"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zubXoh7zEea05rYITDNVTw" x="262"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuclwR7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zudz4B7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zudz4R7zEea05rYITDNVTw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_zufCAB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Node/ip"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zufCAR7zEea05rYITDNVTw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zufpEB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Node/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zufpER7zEea05rYITDNVTw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zudz4h7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zudz4x7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zudz5B7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zuea8B7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuea8R7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuea8h7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuea8x7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuclwh7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//Node"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuclwx7zEea05rYITDNVTw" x="331" y="256"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zugQIB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zuheQB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zuheQR7zEea05rYITDNVTw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuheQh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuheQx7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuheRB7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zuiFUB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuiFUR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuiFUh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuiFUx7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zugQIR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//Nodes"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zugQIh7zEea05rYITDNVTw" x="341" y="384"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuisYB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zuj6gB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zuj6gR7zEea05rYITDNVTw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_zulIoB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Param/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zulIoR7zEea05rYITDNVTw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zulvsB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Param/value"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zulvsR7zEea05rYITDNVTw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuj6gh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuj6gx7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuj6hB7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zukhkB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zukhkR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zukhkh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zukhkx7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuisYR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//Param"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuisYh7zEea05rYITDNVTw" x="524"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zumWwB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zunk4B7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zunk4R7zEea05rYITDNVTw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_zuozAB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Resource/available"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuozAR7zEea05rYITDNVTw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zupaEB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//Resource/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zupaER7zEea05rYITDNVTw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zunk4h7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zunk4x7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zunk5B7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zuoL8B7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuoL8R7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuoL8h7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuoL8x7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zumWwR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//Resource"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zumWwh7zEea05rYITDNVTw" x="707" y="256"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuqBIB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zurPQB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zurPQR7zEea05rYITDNVTw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zurPQh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zurPQx7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zurPRB7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zur2UB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zur2UR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zur2Uh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zur2Ux7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuqBIR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//Resources"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuqBIh7zEea05rYITDNVTw" x="693" y="384"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zusdYB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zutEcB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zutrgB7zEea05rYITDNVTw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zutrgR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zutrgh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zutrgx7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zutrhB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zutrhR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuuSkB7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuuSkR7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zusdYR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//RSATEConfig"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zusdYh7zEea05rYITDNVTw" x="431" y="632"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuu5oB7zEea05rYITDNVTw" type="1004">
+    <children xmi:type="notation:Node" xmi:id="_zuwHwB7zEea05rYITDNVTw" type="4008"/>
+    <children xmi:type="notation:Node" xmi:id="_zuwu0B7zEea05rYITDNVTw" type="4009"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuu5oR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EDataType" href="RSATEConfig.ecore#//Token"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuu5oh7zEea05rYITDNVTw" x="706"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zuwu0R7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zux88B7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zux88R7zEea05rYITDNVTw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_zuzyIB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//VirtualResource/resource"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zuzyIR7zEea05rYITDNVTw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zu1AQB7zEea05rYITDNVTw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RSATEConfig.ecore#//VirtualResource/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zu1AQR7zEea05rYITDNVTw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuykAB7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuykAR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuykAh7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zuzLEB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zuzLER7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zuzLEh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zuzLEx7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zuwu0h7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//VirtualResource"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuwu0x7zEea05rYITDNVTw" x="509" y="256"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zu1nUB7zEea05rYITDNVTw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_zu2OYB7zEea05rYITDNVTw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zu21cB7zEea05rYITDNVTw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zu21cR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zu21ch7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zu21cx7zEea05rYITDNVTw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zu3cgB7zEea05rYITDNVTw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zu3cgR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zu3cgh7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zu3cgx7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zu1nUR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RSATEConfig.ecore#//VirtualResources"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zu1nUh7zEea05rYITDNVTw" x="503" y="384"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zu5RsB7zEea05rYITDNVTw" type="1003">
+    <children xmi:type="notation:Node" xmi:id="_zu6f0B7zEea05rYITDNVTw" type="4007"/>
+    <children xmi:type="notation:Node" xmi:id="_zu7t8B7zEea05rYITDNVTw" type="5007">
+      <children xmi:type="notation:Node" xmi:id="_zu-KMB7zEea05rYITDNVTw" type="2007">
+        <element xmi:type="ecore:EStringToStringMapEntry" href="RSATEConfig.ecore#//%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%/@details.0"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zu-KMR7zEea05rYITDNVTw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zu8VAB7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zu8VAR7zEea05rYITDNVTw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zu8VAh7zEea05rYITDNVTw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zu5RsR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="14668776" lineColor="4210752"/>
+    <element xmi:type="ecore:EAnnotation" href="RSATEConfig.ecore#//%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zu5Rsh7zEea05rYITDNVTw" x="969"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_zitP0B7zEea05rYITDNVTw"/>
+  <element xmi:type="ecore:EPackage" href="RSATEConfig.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_zvK-gB7zEea05rYITDNVTw" type="3002" source="_zsUe0B7zEea05rYITDNVTw" target="_zugQIB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvOo4B7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvOo4R7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvThYB7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvThYR7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvMMoB7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvMMoR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Bench/nodes"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvMMoh7zEea05rYITDNVTw" points="[0, 0, 79, 60]$[-79, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Nq4YB7zEea05rYITDNVTw" id="(0.4,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NrfcB7zEea05rYITDNVTw" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvVWkB7zEea05rYITDNVTw" type="3002" source="_zsUe0B7zEea05rYITDNVTw" target="_zuY7YB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvWksB7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvWksR7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvWksh7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvWksx7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvV9oB7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvV9oR7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Bench/drivers"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvV9oh7zEea05rYITDNVTw" points="[0, 0, 217, 60]$[-217, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Nt7sB7zEea05rYITDNVTw" id="(0.2,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NuiwB7zEea05rYITDNVTw" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvXLwB7zEea05rYITDNVTw" type="3002" source="_zsUe0B7zEea05rYITDNVTw" target="_zuqBIB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvXy0B7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvXy0R7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvXy0h7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvXy0x7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvXLwR7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvXLwh7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Bench/resources"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvXLwx7zEea05rYITDNVTw" points="[0, 0, -225, 60]$[225, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NstkB7zEea05rYITDNVTw" id="(0.8,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NtUoB7zEea05rYITDNVTw" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvYZ4B7zEea05rYITDNVTw" type="3002" source="_zsUe0B7zEea05rYITDNVTw" target="_zu1nUB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvZA8B7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvZA8R7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvZA8h7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvZA8x7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvYZ4R7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvYZ4h7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Bench/virtualResources"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvYZ4x7zEea05rYITDNVTw" points="[0, 0, -73, 60]$[73, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NpDMB7zEea05rYITDNVTw" id="(0.6,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NpqQB7zEea05rYITDNVTw" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvZoAB7zEea05rYITDNVTw" type="3002" source="_zuFZYB7zEea05rYITDNVTw" target="_zuisYB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvaPEB7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvaPER7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvaPEh7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvaPEx7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvZoAR7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvZoAh7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Conf/param"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvZoAx7zEea05rYITDNVTw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0N1QcB7zEea05rYITDNVTw" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0N13gB7zEea05rYITDNVTw" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zva2IB7zEea05rYITDNVTw" type="3002" source="_zuHOkB7zEea05rYITDNVTw" target="_zusdYB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvbdMB7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvbdMR7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvcEQB7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvcEQR7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zva2IR7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zva2Ih7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//DocumentRoot/rSATEConfig"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zva2Ix7zEea05rYITDNVTw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Ny0MB7zEea05rYITDNVTw" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NzbQB7zEea05rYITDNVTw" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvcrUB7zEea05rYITDNVTw" type="3002" source="_zuY7YB7zEea05rYITDNVTw" target="_zuMHEB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvdSYB7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvdSYR7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvdSYh7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvdSYx7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvcrUR7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvcrUh7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Drivers/driver"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvcrUx7zEea05rYITDNVTw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NxmEB7zEea05rYITDNVTw" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NyNIB7zEea05rYITDNVTw" id="(0.7453416149068323,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvd5cB7zEea05rYITDNVTw" type="3002" source="_zugQIB7zEea05rYITDNVTw" target="_zuclwR7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zveggB7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zveggR7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zveggh7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zveggx7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvd5cR7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvd5ch7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Nodes/node"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvd5cx7zEea05rYITDNVTw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NwX8B7zEea05rYITDNVTw" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Nw_AB7zEea05rYITDNVTw" id="(0.5169491525423728,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvfHkB7zEea05rYITDNVTw" type="3002" source="_zumWwB7zEea05rYITDNVTw" target="_zuVRAB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvfuoB7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvfuoR7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvfuoh7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvfuox7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvfHkR7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvfHkh7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Resource/driver"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvfHkx7zEea05rYITDNVTw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Nmm8B7zEea05rYITDNVTw" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NnOAB7zEea05rYITDNVTw" id="(0.49710982658959535,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvgVsB7zEea05rYITDNVTw" type="3002" source="_zumWwB7zEea05rYITDNVTw" target="_zuFZYB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvg8wB7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvg8wR7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvg8wh7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvg8wx7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvgVsR7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvgVsh7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Resource/conf"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvgVsx7zEea05rYITDNVTw" points="[0, 0, 135, 85]$[-119, -61, 16, 24]$[-135, -85, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Nn1EB7zEea05rYITDNVTw" id="(0.25,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NocIB7zEea05rYITDNVTw" id="(0.7450980392156863,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvhj0B7zEea05rYITDNVTw" type="3002" source="_zuqBIB7zEea05rYITDNVTw" target="_zumWwB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zviK4B7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zviK4R7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zviK4h7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zviK4x7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvhj0R7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvhj0h7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//Resources/resource"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvhj0x7zEea05rYITDNVTw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NvJ0B7zEea05rYITDNVTw" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Nvw4B7zEea05rYITDNVTw" id="(0.25,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvix8B7zEea05rYITDNVTw" type="3002" source="_zusdYB7zEea05rYITDNVTw" target="_zsUe0B7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvix9B7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvix9R7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvjZAB7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvjZAR7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvix8R7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvix8h7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//RSATEConfig/bench"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvix8x7zEea05rYITDNVTw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NhucB7zEea05rYITDNVTw" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Ni8kB7zEea05rYITDNVTw" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvjZAh7zEea05rYITDNVTw" type="3002" source="_zuwu0R7zEea05rYITDNVTw" target="_zuFZYB7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvkAEx7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvkAFB7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvknIB7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvknIR7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvkAEB7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvkAER7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//VirtualResource/conf"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvkAEh7zEea05rYITDNVTw" points="[0, 0, 0, 85]$[0, -85, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NlY0B7zEea05rYITDNVTw" id="(0.5434782608695652,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0NlY0R7zEea05rYITDNVTw" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zvknIh7zEea05rYITDNVTw" type="3002" source="_zu1nUB7zEea05rYITDNVTw" target="_zuwu0R7zEea05rYITDNVTw">
+    <children xmi:type="notation:Node" xmi:id="_zvlOMB7zEea05rYITDNVTw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvlOMR7zEea05rYITDNVTw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zvl1QB7zEea05rYITDNVTw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zvl1QR7zEea05rYITDNVTw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zvknIx7zEea05rYITDNVTw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zvknJB7zEea05rYITDNVTw" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RSATEConfig.ecore#//VirtualResources/virtualResource"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zvknJR7zEea05rYITDNVTw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0N0CUB7zEea05rYITDNVTw" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0N0pYB7zEea05rYITDNVTw" id="(0.427536231884058,1.0)"/>
+  </edges>
+</notation:Diagram>

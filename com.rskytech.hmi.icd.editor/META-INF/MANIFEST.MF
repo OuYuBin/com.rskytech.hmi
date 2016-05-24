@@ -4,17 +4,17 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: com.rskytech.hmi.icd.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: com.rskytech.hmi.icd.rsicdconfig.editor.RSICDEditorPlugin$Implementation
+Bundle-Activator: com.rskytech.hmi.icd.model.editor.RSICDEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: com.rskytech.hmi.icd.rsicdconfig.editor
+Export-Package: com.rskytech.hmi.icd.model.editor
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  com.rskytech.hmi.icd.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- com.rskytech.hmi.common.editor;bundle-version="1.0.0",
- org.eclipse.ui.forms;bundle-version="3.6.200"
+ org.eclipse.ui.forms,
+ com.rskytech.hmi.common.editor
+Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy

@@ -4,10 +4,10 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: com.rskytech.hmi.icd.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: com.rskytech.hmi.icd.rsicdconfig.provider.RSICDEditPlugin$Implementation
+Bundle-Activator: com.rskytech.hmi.icd.model.provider.RSICDEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: com.rskytech.hmi.icd.rsicdconfig.provider
+Export-Package: com.rskytech.hmi.icd.model.provider
 Require-Bundle: org.eclipse.core.runtime,
  com.rskytech.hmi.icd;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport

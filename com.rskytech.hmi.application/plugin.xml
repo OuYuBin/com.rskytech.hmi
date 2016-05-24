@@ -105,10 +105,6 @@
             class="com.rskytech.hmi.application.splashHandlers.LoginSplashHandler"
             id="com.rskytech.hmi.application.splashHandlers.interactive">
       </splashHandler>
-      <splashHandlerProductBinding
-            productId="com.rskytech.hmi.application.product"
-            splashId="com.rskytech.hmi.application.splashHandlers.interactive">
-      </splashHandlerProductBinding>
    </extension>
    <extension
          point="org.eclipse.ui.menus">

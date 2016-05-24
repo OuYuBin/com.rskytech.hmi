@@ -2,24 +2,25 @@
 <?eclipse version="3.0"?>
 
 <!--
+ <copyright>
+ </copyright>
+
+ $Id$
 -->
 
 <plugin>
 
-
-
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated RSICDConfig -->
       <package
             uri="platform:/resource/com.rskytech.hmi.icd/model/RSICDConfig.xsd"
-            class="com.rskytech.hmi.icd.rsicdconfig.RSICDConfigPackage"
+            class="com.rskytech.hmi.icd.model.RSICDConfigPackage"
             genModel="model/RSICDConfig.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated RSICDConfig -->
       <parser
-            type="rsicdconfig"
-            class="com.rskytech.hmi.icd.rsicdconfig.util.RSICDConfigResourceFactoryImpl"/>
+            type="icd"
+            class="com.rskytech.hmi.icd.model.util.RSICDConfigResourceFactoryImpl"/>
    </extension>
+
 </plugin>

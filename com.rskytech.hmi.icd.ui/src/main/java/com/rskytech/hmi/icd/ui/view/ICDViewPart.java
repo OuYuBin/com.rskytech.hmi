@@ -53,31 +53,40 @@ public class ICDViewPart extends ViewPart {
 		formToolkit.decorateFormHeading(form);
 		form.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 
-//		Composite client = formToolkit.createComposite(parent, SWT.NONE);
-//		client.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		
-		
-		TreeViewer icdTreeViewer = new TreeViewer(parent, SWT.MULTI | SWT.BORDER | SWT.FULL_SELECTION);
-		icdTreeViewer.getTree().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		// Composite client = formToolkit.createComposite(parent, SWT.NONE);
+		// client.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
+		TreeViewer icdTreeViewer = new TreeViewer(parent, SWT.MULTI
+				| SWT.BORDER | SWT.FULL_SELECTION);
+		icdTreeViewer.getTree().setLayoutData(
+				new GridData(SWT.FILL, SWT.FILL, true, true));
 		icdTreeViewer.addDoubleClickListener(new IDoubleClickListener() {
 
 			@Override
 			public void doubleClick(DoubleClickEvent event) {
-				File file = new File("/home/robin/下载/My.rsicdconfig");
-				IFileStore fileStore = EFS.getLocalFileSystem().getStore(file.toURI());
-				IEditorInput input = new FileStoreEditorInput(fileStore);
-				try {
-					ICDViewPart.this.getSite().getWorkbenchWindow().getActivePage().openEditor(input,
-							"com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigEditorID");
-				} catch (PartInitException e) {
-					e.printStackTrace();
+				File file = new File("/home/robin/Downloads/icd.icd");
+				if (file.exists()) {
+					IFileStore fileStore = EFS.getLocalFileSystem().getStore(
+							file.toURI());
+					IEditorInput input = new FileStoreEditorInput(fileStore);
+					try {
+						ICDViewPart.this
+								.getSite()
+								.getWorkbenchWindow()
+								.getActivePage()
+								.openEditor(input,
+										"com.rskytech.hmi.icd.model.editor.RSICDConfigEditorID");
+					} catch (PartInitException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 		});
 		icdTreeViewer.setContentProvider(new ITreeContentProvider() {
 
 			@Override
-			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+			public void inputChanged(Viewer viewer, Object oldInput,
+					Object newInput) {
 				// TODO Auto-generated method stub
 
 			}

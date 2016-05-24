@@ -4,15 +4,14 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: com.rskytech.hmi.icd;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: com.rskytech.hmi.icd.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime,
+Export-Package: com.rskytech.hmi.icd.model,
+ com.rskytech.hmi.icd.model.impl,
+ com.rskytech.hmi.icd.model.util
+Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;visibility:=reexport
-Export-Package: com.rskytech.hmi.icd,
- com.rskytech.hmi.icd.rsicdconfig,
- com.rskytech.hmi.icd.rsicdconfig.impl,
- com.rskytech.hmi.icd.rsicdconfig.util
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.ui
+Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy

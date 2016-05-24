@@ -2,21 +2,22 @@
 <?eclipse version="3.0"?>
 
 <!--
+ <copyright>
+ </copyright>
+
+ $Id$
 -->
 
 <plugin>
 
-
-
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated RSICDConfig -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigModelWizardID"
+            id="com.rskytech.hmi.icd.model.editor.RSICDConfigModelWizardID"
             name="%_UI_RSICDConfigModelWizard_label"
-            class="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigModelWizard"
+            class="com.rskytech.hmi.icd.model.editor.RSICDConfigModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/RSICDConfigModelFile.gif">
          <description>%_UI_RSICDConfigModelWizard_description</description>
@@ -25,14 +26,14 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated RSICDConfig -->
       <editor
-            id="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigEditorID"
+            id="com.rskytech.hmi.icd.model.editor.RSICDConfigEditorID"
             name="%_UI_RSICDConfigEditor_label"
             icon="icons/full/obj16/RSICDConfigModelFile.gif"
-            extensions="rsicdconfig"
-            class="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigEditor"
-            contributorClass="com.rskytech.hmi.icd.rsicdconfig.editor.RSICDConfigActionBarContributor">
+            extensions="icd"
+            class="com.rskytech.hmi.icd.model.editor.RSICDConfigEditor"
+            contributorClass="com.rskytech.hmi.icd.model.editor.RSICDConfigActionBarContributor">
       </editor>
    </extension>
+
 </plugin>

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+	ecore:package="com.rskytech.hmi.icd.model">
 	<xsd:element name="ICD" type="ICD">
 	</xsd:element>
-	<xsd:complexType name="ICD"></xsd:complexType>
-
+	<xsd:complexType name="ICD">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Device"
+				type="Device"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Device">
+		<xsd:complexContent>
+			<xsd:restriction base="ICDElement"></xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ICDElement">
+		<xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="comment" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="index" type="xsd:long"></xsd:attribute>
+	</xsd:complexType>
 </xsd:schema>

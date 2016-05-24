@@ -21,7 +21,7 @@ import com.rskytech.hmi.bench.rsateconfig.editor.model.Node;
 /**
  * 
  * @author robin
- *
+ * 
  */
 public class RSATEConfigStyledLabelProvider implements IStyledLabelProvider {
 
@@ -69,45 +69,56 @@ public class RSATEConfigStyledLabelProvider implements IStyledLabelProvider {
 	@Override
 	public StyledString getStyledText(Object element) {
 		Styler normalElementDecorationStyler = StyledString
-				.createColorRegistryStyler(JFacePreferences.DECORATIONS_COLOR, null);
+				.createColorRegistryStyler(JFacePreferences.DECORATIONS_COLOR,
+						null);
 		EObject eObject = ((IRSATEConfigModel) element).getEObject();
 		StyledString styledString = null;
 		StringBuffer decorationStringBuffer = new StringBuffer();
 
-		EStructuralFeature availableFeature = eObject.eClass().getEStructuralFeature("available");
+		EStructuralFeature availableFeature = eObject.eClass()
+				.getEStructuralFeature("available");
 		boolean isAvailiable = true;
 		if (availableFeature != null) {
-			isAvailiable = eObject.eGet(availableFeature) != null ? true : false;
+			isAvailiable = eObject.eGet(availableFeature) != null ? true
+					: false;
 		}
 
-		EStructuralFeature nameFeature = eObject.eClass().getEStructuralFeature("name");
+		EStructuralFeature nameFeature = eObject.eClass()
+				.getEStructuralFeature("name");
 		if (nameFeature != null) {
 			String name = (String) eObject.eGet(nameFeature);
 			if (!isAvailiable) {
 				styledString = new StyledString(name, availiableStyler);
-			}else{
-				styledString=new StyledString(name);
+			} else {
+				styledString = new StyledString(name);
 			}
 		} else {
 			styledString = new StyledString(element.getClass().getSimpleName());
 		}
 
-		EStructuralFeature ipFeature = eObject.eClass().getEStructuralFeature("ip");
+		EStructuralFeature ipFeature = eObject.eClass().getEStructuralFeature(
+				"ip");
 		if (ipFeature != null) {
 			String ip = (String) eObject.eGet(ipFeature);
 			decorationStringBuffer.append(":" + ip);
 		}
-		
-		EReference reference=(EReference) eObject.eClass().getEStructuralFeature("driver");
-		if(reference!=null){
-			DriverNameAndVersion driverNameAndVersion= (DriverNameAndVersion) eObject.eGet(reference);
-			String name=driverNameAndVersion.getName();
-			String version=driverNameAndVersion.getVersion();
-			decorationStringBuffer.append(" [" + name+":"+version+"]");
+
+		EReference reference = (EReference) eObject.eClass()
+				.getEStructuralFeature("driver");
+		if (reference != null) {
+			DriverNameAndVersion driverNameAndVersion = (DriverNameAndVersion) eObject
+					.eGet(reference);
+			if (driverNameAndVersion != null) {
+				String name = driverNameAndVersion.getName();
+				String version = driverNameAndVersion.getVersion();
+				if (name != null && version != null)
+					decorationStringBuffer.append(" [" + name + ":" + version
+							+ "]");
+			}
 		}
-		
-		
-		styledString.append(decorationStringBuffer.toString(), normalElementDecorationStyler);
+
+		styledString.append(decorationStringBuffer.toString(),
+				normalElementDecorationStyler);
 
 		return styledString;
 
@@ -115,7 +126,8 @@ public class RSATEConfigStyledLabelProvider implements IStyledLabelProvider {
 
 	@Override
 	public Image getImage(Object element) {
-		return RSATEConfigEditorPlugin.getPlugin().getImageRegistry().get(element.getClass().getSimpleName());
+		return RSATEConfigEditorPlugin.getPlugin().getImageRegistry()
+				.get(element.getClass().getSimpleName());
 	}
 
 }
