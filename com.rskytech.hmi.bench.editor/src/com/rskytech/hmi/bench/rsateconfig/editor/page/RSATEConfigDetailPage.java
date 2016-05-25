@@ -225,53 +225,55 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 			}
 		}
 
-		// --针对resource信息,分解子节点信息,已增加可视及易用性处理
-		EList<EReference> references = eClass.getEAllReferences();
-		for (EReference reference : references) {
-			String name = reference.getName();
+		if (eClass.getName().equals("Resource")) {
+			// --针对resource信息,分解子节点信息,已增加可视及易用性处理
+			EList<EReference> references = eClass.getEAllReferences();
+			for (EReference reference : references) {
+				String name = reference.getName();
 
-			// --分解驱动版本及位置信息
-			if (name.equals("driver")) {
-				attributes = ((EClass) reference.getEType()).getEAllAttributes();
-				for (EAttribute eAttribute : attributes) {
-					name = eAttribute.getName();
-					TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer,
-							SWT.CENTER | SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI);
-					if (name.equals("name")) {
-						tableViewerColumn.getColumn().setText("driver");
-					} else {
-						tableViewerColumn.getColumn().setText(name);
-					}
-					tableViewerColumn
-							.setLabelProvider(new RSATEResourceTableNameColumnLabelProvider(reference, eAttribute));
-					ColumnWeightData columnWeightData = null;
-					if (name.equals("name")) {
-						columnWeightData = new ColumnWeightData(2, 10, true);
-					} else {
-						columnWeightData = new ColumnWeightData(1, 10, true);
-					}
-					tableColumnLayout.setColumnData(tableViewerColumn.getColumn(), columnWeightData);
-				}
-			} else if (name.equals("conf")) {
-				EList<EReference> confReferences = ((EClass) reference.getEType()).getEReferences();
-				for (EReference confReference : confReferences) {
-					if (confReference.getName().equals("param")) {
+				// --分解驱动版本及位置信息
+				if (name.equals("driver")) {
+					attributes = ((EClass) reference.getEType()).getEAllAttributes();
+					for (EAttribute eAttribute : attributes) {
+						name = eAttribute.getName();
 						TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer,
 								SWT.CENTER | SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI);
-						tableViewerColumn.getColumn().setText("location");
-						tableViewerColumn.setLabelProvider(
-								new RSATEResourceTableNameColumnLabelProvider(confReference, "location"));
-						ColumnWeightData columnWeightData = new ColumnWeightData(1, 100, true);
+						if (name.equals("name")) {
+							tableViewerColumn.getColumn().setText("driver");
+						} else {
+							tableViewerColumn.getColumn().setText(name);
+						}
+						tableViewerColumn
+								.setLabelProvider(new RSATEResourceTableNameColumnLabelProvider(reference, eAttribute));
+						ColumnWeightData columnWeightData = null;
+						if (name.equals("name")) {
+							columnWeightData = new ColumnWeightData(2, 10, true);
+						} else {
+							columnWeightData = new ColumnWeightData(1, 10, true);
+						}
 						tableColumnLayout.setColumnData(tableViewerColumn.getColumn(), columnWeightData);
-						// --驱动所在
-						tableViewerColumn = new TableViewerColumn(tableViewer,
-								SWT.CENTER | SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI);
-						tableViewerColumn.getColumn().setText("driverPath");
-						tableViewerColumn.setLabelProvider(
-								new RSATEResourceTableNameColumnLabelProvider(confReference, "driver"));
-						columnWeightData = new ColumnWeightData(4, 100, true);
-						tableColumnLayout.setColumnData(tableViewerColumn.getColumn(), columnWeightData);
-						break;
+					}
+				} else if (name.equals("conf")) {
+					EList<EReference> confReferences = ((EClass) reference.getEType()).getEReferences();
+					for (EReference confReference : confReferences) {
+						if (confReference.getName().equals("param")) {
+							TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer,
+									SWT.CENTER | SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI);
+							tableViewerColumn.getColumn().setText("location");
+							tableViewerColumn.setLabelProvider(
+									new RSATEResourceTableNameColumnLabelProvider(confReference, "location"));
+							ColumnWeightData columnWeightData = new ColumnWeightData(1, 100, true);
+							tableColumnLayout.setColumnData(tableViewerColumn.getColumn(), columnWeightData);
+							// --驱动所在
+							tableViewerColumn = new TableViewerColumn(tableViewer,
+									SWT.CENTER | SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI);
+							tableViewerColumn.getColumn().setText("driverPath");
+							tableViewerColumn.setLabelProvider(
+									new RSATEResourceTableNameColumnLabelProvider(confReference, "driver"));
+							columnWeightData = new ColumnWeightData(4, 100, true);
+							tableColumnLayout.setColumnData(tableViewerColumn.getColumn(), columnWeightData);
+							break;
+						}
 					}
 				}
 			}

@@ -62,7 +62,7 @@ public class RSATEConfigBenchMasterDetailsBlock extends
 		section.marginWidth = 5;
 		section.marginHeight = 5;
 
-		Composite composite = formToolkit.createComposite(section, SWT.WRAP);
+		Composite composite = formToolkit.createComposite(section, SWT.WRAP|SWT.BORDER);
 		GridLayout gridLayout = new GridLayout();
 		//gridLayout.marginWidth = 0;
 		gridLayout.marginHeight = 2;
