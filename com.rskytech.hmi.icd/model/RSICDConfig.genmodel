@@ -10,7 +10,13 @@
   <genPackages prefix="RSICDConfig" basePackage="com.rskytech.hmi.icd" resource="XML"
       disposableProviderFactory="true" presentationPackageSuffix="editor" fileExtensions="xml"
       ecorePackage="RSICDConfig.ecore#/">
-    <genClasses ecoreClass="RSICDConfig.ecore#//Device"/>
+    <genClasses ecoreClass="RSICDConfig.ecore#//Bus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//Bus/channel"/>
+    </genClasses>
+    <genClasses ecoreClass="RSICDConfig.ecore#//Channel"/>
+    <genClasses ecoreClass="RSICDConfig.ecore#//Device">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//Device/channels"/>
+    </genClasses>
     <genClasses ecoreClass="RSICDConfig.ecore#//DocumentRoot">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute RSICDConfig.ecore#//DocumentRoot/mixed"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RSICDConfig.ecore#//DocumentRoot/xMLNSPrefixMap"/>
@@ -19,6 +25,7 @@
     </genClasses>
     <genClasses ecoreClass="RSICDConfig.ecore#//ICD">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//ICD/device"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//ICD/bus"/>
     </genClasses>
     <genClasses ecoreClass="RSICDConfig.ecore#//ICDElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSICDConfig.ecore#//ICDElement/comment"/>

@@ -76,6 +76,50 @@ public class RSICDConfigItemProviderAdapterFactory extends RSICDConfigAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.icd.model.Bus} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BusItemProvider busItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.rskytech.hmi.icd.model.Bus}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createBusAdapter() {
+		if (busItemProvider == null) {
+			busItemProvider = new BusItemProvider(this);
+		}
+
+		return busItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.icd.model.Channel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChannelItemProvider channelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.rskytech.hmi.icd.model.Channel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createChannelAdapter() {
+		if (channelItemProvider == null) {
+			channelItemProvider = new ChannelItemProvider(this);
+		}
+
+		return channelItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.icd.model.Device} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -259,6 +303,8 @@ public class RSICDConfigItemProviderAdapterFactory extends RSICDConfigAdapterFac
 	 * @generated
 	 */
 	public void dispose() {
+		if (busItemProvider != null) busItemProvider.dispose();
+		if (channelItemProvider != null) channelItemProvider.dispose();
 		if (deviceItemProvider != null) deviceItemProvider.dispose();
 		if (documentRootItemProvider != null) documentRootItemProvider.dispose();
 		if (icdItemProvider != null) icdItemProvider.dispose();

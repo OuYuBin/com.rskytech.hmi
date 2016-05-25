@@ -26,6 +26,24 @@ public interface RSICDConfigFactory extends EFactory {
 	RSICDConfigFactory eINSTANCE = com.rskytech.hmi.icd.model.impl.RSICDConfigFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Bus</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bus</em>'.
+	 * @generated
+	 */
+	Bus createBus();
+
+	/**
+	 * Returns a new object of class '<em>Channel</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Channel</em>'.
+	 * @generated
+	 */
+	Channel createChannel();
+
+	/**
 	 * Returns a new object of class '<em>Device</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -6,6 +6,8 @@
  */
 package com.rskytech.hmi.icd.model.impl;
 
+import com.rskytech.hmi.icd.model.Bus;
+import com.rskytech.hmi.icd.model.Channel;
 import com.rskytech.hmi.icd.model.Device;
 import com.rskytech.hmi.icd.model.DocumentRoot;
 import com.rskytech.hmi.icd.model.ICDElement;
@@ -28,6 +30,20 @@ import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
  * @generated
  */
 public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass busEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass channelEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -125,8 +141,44 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBus() {
+		return busEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBus_Channel() {
+		return (EReference)busEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getChannel() {
+		return channelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDevice() {
 		return deviceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDevice_Channels() {
+		return (EReference)deviceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -197,6 +249,15 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getICD_Bus() {
+		return (EReference)icdEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getICDElement() {
 		return icdElementEClass;
 	}
@@ -256,7 +317,13 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 		isCreated = true;
 
 		// Create classes and their features
+		busEClass = createEClass(BUS);
+		createEReference(busEClass, BUS__CHANNEL);
+
+		channelEClass = createEClass(CHANNEL);
+
 		deviceEClass = createEClass(DEVICE);
+		createEReference(deviceEClass, DEVICE__CHANNELS);
 
 		documentRootEClass = createEClass(DOCUMENT_ROOT);
 		createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
@@ -266,6 +333,7 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 
 		icdEClass = createEClass(ICD);
 		createEReference(icdEClass, ICD__DEVICE);
+		createEReference(icdEClass, ICD__BUS);
 
 		icdElementEClass = createEClass(ICD_ELEMENT);
 		createEAttribute(icdElementEClass, ICD_ELEMENT__COMMENT);
@@ -300,10 +368,17 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Add supertypes to classes
+		channelEClass.getESuperTypes().add(this.getICDElement());
 		deviceEClass.getESuperTypes().add(this.getICDElement());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(busEClass, Bus.class, "Bus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBus_Channel(), this.getChannel(), null, "channel", null, 0, -1, Bus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(channelEClass, Channel.class, "Channel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDevice_Channels(), this.getChannel(), null, "channels", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -313,6 +388,7 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 
 		initEClass(icdEClass, com.rskytech.hmi.icd.model.ICD.class, "ICD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getICD_Device(), this.getDevice(), null, "device", null, 0, -1, com.rskytech.hmi.icd.model.ICD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getICD_Bus(), this.getBus(), null, "bus", null, 0, 1, com.rskytech.hmi.icd.model.ICD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(icdElementEClass, ICDElement.class, "ICDElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getICDElement_Comment(), theXMLTypePackage.getString(), "comment", null, 0, 1, ICDElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -342,11 +418,41 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 			 "qualified", "false"
 		   });		
 		addAnnotation
+		  (busEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Bus",
+			 "kind", "elementOnly"
+		   });		
+		addAnnotation
+		  (getBus_Channel(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Channel",
+			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
+		  (channelEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Channel",
+			 "kind", "empty"
+		   });		
+		addAnnotation
 		  (deviceEClass, 
 		   source, 
 		   new String[] {
 			 "name", "Device",
 			 "kind", "empty"
+		   });		
+		addAnnotation
+		  (getDevice_Channels(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "channels",
+			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
 		  (documentRootEClass, 
@@ -397,6 +503,14 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 		   new String[] {
 			 "kind", "element",
 			 "name", "Device",
+			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
+		  (getICD_Bus(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Bus",
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation

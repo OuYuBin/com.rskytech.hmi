@@ -7,7 +7,7 @@
 package com.rskytech.hmi.icd.model.provider;
 
 
-import com.rskytech.hmi.icd.model.ICD;
+import com.rskytech.hmi.icd.model.Bus;
 import com.rskytech.hmi.icd.model.RSICDConfigFactory;
 import com.rskytech.hmi.icd.model.RSICDConfigPackage;
 
@@ -30,12 +30,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.rskytech.hmi.icd.model.ICD} object.
+ * This is the item provider adapter for a {@link com.rskytech.hmi.icd.model.Bus} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ICDItemProvider
+public class BusItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -49,7 +49,7 @@ public class ICDItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ICDItemProvider(AdapterFactory adapterFactory) {
+	public BusItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,8 +78,7 @@ public class ICDItemProvider
 	public Collection getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RSICDConfigPackage.Literals.ICD__DEVICE);
-			childrenFeatures.add(RSICDConfigPackage.Literals.ICD__BUS);
+			childrenFeatures.add(RSICDConfigPackage.Literals.BUS__CHANNEL);
 		}
 		return childrenFeatures;
 	}
@@ -97,13 +96,13 @@ public class ICDItemProvider
 	}
 
 	/**
-	 * This returns ICD.gif.
+	 * This returns Bus.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ICD"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Bus"));
 	}
 
 	/**
@@ -113,7 +112,7 @@ public class ICDItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		return getString("_UI_ICD_type");
+		return getString("_UI_Bus_type");
 	}
 
 	/**
@@ -126,9 +125,8 @@ public class ICDItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ICD.class)) {
-			case RSICDConfigPackage.ICD__DEVICE:
-			case RSICDConfigPackage.ICD__BUS:
+		switch (notification.getFeatureID(Bus.class)) {
+			case RSICDConfigPackage.BUS__CHANNEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -147,13 +145,8 @@ public class ICDItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RSICDConfigPackage.Literals.ICD__DEVICE,
-				 RSICDConfigFactory.eINSTANCE.createDevice()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RSICDConfigPackage.Literals.ICD__BUS,
-				 RSICDConfigFactory.eINSTANCE.createBus()));
+				(RSICDConfigPackage.Literals.BUS__CHANNEL,
+				 RSICDConfigFactory.eINSTANCE.createChannel()));
 	}
 
 	/**

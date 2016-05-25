@@ -6,12 +6,14 @@
  */
 package com.rskytech.hmi.icd.model.impl;
 
+import com.rskytech.hmi.icd.model.Bus;
 import com.rskytech.hmi.icd.model.Device;
 import com.rskytech.hmi.icd.model.ICD;
 import com.rskytech.hmi.icd.model.RSICDConfigPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.impl.ICDImpl#getDevice <em>Device</em>}</li>
+ *   <li>{@link com.rskytech.hmi.icd.model.impl.ICDImpl#getBus <em>Bus</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +51,16 @@ public class ICDImpl extends MinimalEObjectImpl.Container implements ICD {
 	 * @ordered
 	 */
 	protected EList device;
+
+	/**
+	 * The cached value of the '{@link #getBus() <em>Bus</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBus()
+	 * @generated
+	 * @ordered
+	 */
+	protected Bus bus;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,10 +97,55 @@ public class ICDImpl extends MinimalEObjectImpl.Container implements ICD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Bus getBus() {
+		return bus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBus(Bus newBus, NotificationChain msgs) {
+		Bus oldBus = bus;
+		bus = newBus;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RSICDConfigPackage.ICD__BUS, oldBus, newBus);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBus(Bus newBus) {
+		if (newBus != bus) {
+			NotificationChain msgs = null;
+			if (bus != null)
+				msgs = ((InternalEObject)bus).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RSICDConfigPackage.ICD__BUS, null, msgs);
+			if (newBus != null)
+				msgs = ((InternalEObject)newBus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RSICDConfigPackage.ICD__BUS, null, msgs);
+			msgs = basicSetBus(newBus, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RSICDConfigPackage.ICD__BUS, newBus, newBus));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RSICDConfigPackage.ICD__DEVICE:
 				return ((InternalEList)getDevice()).basicRemove(otherEnd, msgs);
+			case RSICDConfigPackage.ICD__BUS:
+				return basicSetBus(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -100,6 +159,8 @@ public class ICDImpl extends MinimalEObjectImpl.Container implements ICD {
 		switch (featureID) {
 			case RSICDConfigPackage.ICD__DEVICE:
 				return getDevice();
+			case RSICDConfigPackage.ICD__BUS:
+				return getBus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,6 +176,9 @@ public class ICDImpl extends MinimalEObjectImpl.Container implements ICD {
 				getDevice().clear();
 				getDevice().addAll((Collection)newValue);
 				return;
+			case RSICDConfigPackage.ICD__BUS:
+				setBus((Bus)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -129,6 +193,9 @@ public class ICDImpl extends MinimalEObjectImpl.Container implements ICD {
 			case RSICDConfigPackage.ICD__DEVICE:
 				getDevice().clear();
 				return;
+			case RSICDConfigPackage.ICD__BUS:
+				setBus((Bus)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,6 +209,8 @@ public class ICDImpl extends MinimalEObjectImpl.Container implements ICD {
 		switch (featureID) {
 			case RSICDConfigPackage.ICD__DEVICE:
 				return device != null && !device.isEmpty();
+			case RSICDConfigPackage.ICD__BUS:
+				return bus != null;
 		}
 		return super.eIsSet(featureID);
 	}

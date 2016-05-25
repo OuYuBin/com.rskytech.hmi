@@ -87,6 +87,19 @@ public class RSICDConfigSwitch {
 	 */
 	protected Object doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case RSICDConfigPackage.BUS: {
+				Bus bus = (Bus)theEObject;
+				Object result = caseBus(bus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RSICDConfigPackage.CHANNEL: {
+				Channel channel = (Channel)theEObject;
+				Object result = caseChannel(channel);
+				if (result == null) result = caseICDElement(channel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RSICDConfigPackage.DEVICE: {
 				Device device = (Device)theEObject;
 				Object result = caseDevice(device);
@@ -114,6 +127,36 @@ public class RSICDConfigSwitch {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bus</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bus</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseBus(Bus object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Channel</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Channel</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseChannel(Channel object) {
+		return null;
 	}
 
 	/**

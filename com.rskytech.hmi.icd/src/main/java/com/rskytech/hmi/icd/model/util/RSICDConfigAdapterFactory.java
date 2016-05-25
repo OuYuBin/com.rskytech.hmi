@@ -70,6 +70,12 @@ public class RSICDConfigAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected RSICDConfigSwitch modelSwitch =
 		new RSICDConfigSwitch() {
+			public Object caseBus(Bus object) {
+				return createBusAdapter();
+			}
+			public Object caseChannel(Channel object) {
+				return createChannelAdapter();
+			}
 			public Object caseDevice(Device object) {
 				return createDeviceAdapter();
 			}
@@ -99,6 +105,34 @@ public class RSICDConfigAdapterFactory extends AdapterFactoryImpl {
 		return (Adapter)modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.icd.model.Bus <em>Bus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.icd.model.Bus
+	 * @generated
+	 */
+	public Adapter createBusAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.icd.model.Channel <em>Channel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.icd.model.Channel
+	 * @generated
+	 */
+	public Adapter createChannelAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.icd.model.Device <em>Device</em>}'.

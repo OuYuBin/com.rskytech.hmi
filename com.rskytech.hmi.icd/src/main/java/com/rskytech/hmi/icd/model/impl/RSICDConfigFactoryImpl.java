@@ -59,6 +59,8 @@ public class RSICDConfigFactoryImpl extends EFactoryImpl implements RSICDConfigF
 	 */
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case RSICDConfigPackage.BUS: return createBus();
+			case RSICDConfigPackage.CHANNEL: return createChannel();
 			case RSICDConfigPackage.DEVICE: return createDevice();
 			case RSICDConfigPackage.DOCUMENT_ROOT: return createDocumentRoot();
 			case RSICDConfigPackage.ICD: return createICD();
@@ -66,6 +68,26 @@ public class RSICDConfigFactoryImpl extends EFactoryImpl implements RSICDConfigF
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bus createBus() {
+		BusImpl bus = new BusImpl();
+		return bus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Channel createChannel() {
+		ChannelImpl channel = new ChannelImpl();
+		return channel;
 	}
 
 	/**

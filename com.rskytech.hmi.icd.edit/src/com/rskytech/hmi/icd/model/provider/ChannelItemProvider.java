@@ -7,16 +7,14 @@
 package com.rskytech.hmi.icd.model.provider;
 
 
-import com.rskytech.hmi.icd.model.Device;
+import com.rskytech.hmi.icd.model.Channel;
 
-import com.rskytech.hmi.icd.model.RSICDConfigPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -24,12 +22,12 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
- * This is the item provider adapter for a {@link com.rskytech.hmi.icd.model.Device} object.
+ * This is the item provider adapter for a {@link com.rskytech.hmi.icd.model.Channel} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DeviceItemProvider
+public class ChannelItemProvider
 	extends ICDElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -43,7 +41,7 @@ public class DeviceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeviceItemProvider(AdapterFactory adapterFactory) {
+	public ChannelItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,41 +55,18 @@ public class DeviceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addChannelsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Channels feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addChannelsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Device_channels_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Device_channels_feature", "_UI_Device_type"),
-				 RSICDConfigPackage.Literals.DEVICE__CHANNELS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Device.gif.
+	 * This returns Channel.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Device"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Channel"));
 	}
 
 	/**
@@ -101,10 +76,10 @@ public class DeviceItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((Device)object).getName();
+		String label = ((Channel)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Device_type") :
-			getString("_UI_Device_type") + " " + label;
+			getString("_UI_Channel_type") :
+			getString("_UI_Channel_type") + " " + label;
 	}
 
 	/**
