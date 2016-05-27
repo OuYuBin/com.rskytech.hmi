@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.rskytech.hmi.protocol.extension.protocal">
+      <protocol
+            id="com.rskytech.hmi.protocol.m1553.protocol"
+            name="M1553B Remote Terminal">
+         <const>
+            <node>
+               <attr
+                     name="Direction"
+                     type="enum"
+                     value="[TX,RX]">
+                  attr body text
+               </attr>
+               <attr
+                     name="SubType"
+                     type="string"
+                     value="RT">
+               </attr></node>
+         </const>
+      </protocol>
+   </extension>
+
+</plugin>

@@ -15,12 +15,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.ICDElement#getComment <em>Comment</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.ICDElement#getIndex <em>Index</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.ICDElement#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.rskytech.hmi.icd.model.RSICDConfigPackage#getICDElement()
  * @model extendedMetaData="name='ICDElement' kind='empty'"

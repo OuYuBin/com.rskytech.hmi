@@ -7,14 +7,14 @@
 		<xsd:sequence>
 			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Device"
 				type="Device"></xsd:element>
-			<xsd:element minOccurs="0" maxOccurs="1" name="Bus"
-				type="Bus"></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="Bus" type="Bus"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 
 	<xsd:complexType name="Bus">
 		<xsd:sequence>
-			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Channel" type="Channel"></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Channel"
+				type="Channel"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -29,8 +29,19 @@
 
 	<xsd:complexType name="Channel">
 		<xsd:complexContent>
-			<xsd:restriction base="ICDElement"></xsd:restriction>
+			<xsd:extension base="ICDElement">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" maxOccurs="unbounded" name="config"
+						type="Config"></xsd:element>
+				</xsd:sequence>
+				<xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+			</xsd:extension>
 		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="Config">
+		<xsd:attribute name="property" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="value" type="xsd:string"></xsd:attribute>
 	</xsd:complexType>
 
 	<xsd:complexType name="ICDElement">

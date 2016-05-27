@@ -8,4 +8,17 @@
 
 
 
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated RSICDConfig -->
+      <factory
+            uri="platform:/resource/com.rskytech.hmi.icd/model/RSICDConfig.xsd"
+            class="com.rskytech.hmi.icd.model.provider.RSICDConfigItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
 </plugin>

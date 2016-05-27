@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.impl.ICDElementImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.impl.ICDElementImpl#getIndex <em>Index</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.impl.ICDElementImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

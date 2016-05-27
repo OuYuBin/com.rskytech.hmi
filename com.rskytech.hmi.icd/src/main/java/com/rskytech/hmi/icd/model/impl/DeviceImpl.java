@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.impl.DeviceImpl#getChannels <em>Channels</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

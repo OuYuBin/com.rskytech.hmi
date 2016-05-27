@@ -8,6 +8,7 @@ package com.rskytech.hmi.icd.model.impl;
 
 import com.rskytech.hmi.icd.model.Bus;
 import com.rskytech.hmi.icd.model.Channel;
+import com.rskytech.hmi.icd.model.Config;
 import com.rskytech.hmi.icd.model.Device;
 import com.rskytech.hmi.icd.model.DocumentRoot;
 import com.rskytech.hmi.icd.model.ICDElement;
@@ -43,6 +44,13 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 	 * @generated
 	 */
 	private EClass channelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass configEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,6 +169,51 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 	 */
 	public EClass getChannel() {
 		return channelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChannel_Config() {
+		return (EReference)channelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChannel_Type() {
+		return (EAttribute)channelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConfig() {
+		return configEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConfig_Property() {
+		return (EAttribute)configEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConfig_Value() {
+		return (EAttribute)configEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -321,6 +374,12 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 		createEReference(busEClass, BUS__CHANNEL);
 
 		channelEClass = createEClass(CHANNEL);
+		createEReference(channelEClass, CHANNEL__CONFIG);
+		createEAttribute(channelEClass, CHANNEL__TYPE);
+
+		configEClass = createEClass(CONFIG);
+		createEAttribute(configEClass, CONFIG__PROPERTY);
+		createEAttribute(configEClass, CONFIG__VALUE);
 
 		deviceEClass = createEClass(DEVICE);
 		createEReference(deviceEClass, DEVICE__CHANNELS);
@@ -376,6 +435,12 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 		initEReference(getBus_Channel(), this.getChannel(), null, "channel", null, 0, -1, Bus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(channelEClass, Channel.class, "Channel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChannel_Config(), this.getConfig(), null, "config", null, 0, -1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChannel_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(configEClass, Config.class, "Config", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConfig_Property(), theXMLTypePackage.getString(), "property", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConfig_Value(), theXMLTypePackage.getString(), "value", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDevice_Channels(), this.getChannel(), null, "channels", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -410,20 +475,20 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
 		addAnnotation
 		  (this, 
 		   source, 
 		   new String[] {
 			 "qualified", "false"
-		   });		
+		   });	
 		addAnnotation
 		  (busEClass, 
 		   source, 
 		   new String[] {
 			 "name", "Bus",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getBus_Channel(), 
 		   source, 
@@ -431,21 +496,60 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 			 "kind", "element",
 			 "name", "Channel",
 			 "namespace", "##targetNamespace"
-		   });		
+		   });	
 		addAnnotation
 		  (channelEClass, 
 		   source, 
 		   new String[] {
 			 "name", "Channel",
+			 "kind", "elementOnly"
+		   });	
+		addAnnotation
+		  (getChannel_Config(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "config",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getChannel_Type(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "type",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (configEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Config",
 			 "kind", "empty"
-		   });		
+		   });	
+		addAnnotation
+		  (getConfig_Property(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "property",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getConfig_Value(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "value",
+			 "namespace", "##targetNamespace"
+		   });	
 		addAnnotation
 		  (deviceEClass, 
 		   source, 
 		   new String[] {
 			 "name", "Device",
 			 "kind", "empty"
-		   });		
+		   });	
 		addAnnotation
 		  (getDevice_Channels(), 
 		   source, 
@@ -453,35 +557,35 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 			 "kind", "attribute",
 			 "name", "channels",
 			 "namespace", "##targetNamespace"
-		   });		
+		   });	
 		addAnnotation
 		  (documentRootEClass, 
 		   source, 
 		   new String[] {
 			 "name", "",
 			 "kind", "mixed"
-		   });		
+		   });	
 		addAnnotation
 		  (getDocumentRoot_Mixed(), 
 		   source, 
 		   new String[] {
 			 "kind", "elementWildcard",
 			 "name", ":mixed"
-		   });		
+		   });	
 		addAnnotation
 		  (getDocumentRoot_XMLNSPrefixMap(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
 			 "name", "xmlns:prefix"
-		   });		
+		   });	
 		addAnnotation
 		  (getDocumentRoot_XSISchemaLocation(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
 			 "name", "xsi:schemaLocation"
-		   });		
+		   });	
 		addAnnotation
 		  (getDocumentRoot_ICD(), 
 		   source, 
@@ -489,14 +593,14 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 			 "kind", "element",
 			 "name", "ICD",
 			 "namespace", "##targetNamespace"
-		   });		
+		   });	
 		addAnnotation
 		  (icdEClass, 
 		   source, 
 		   new String[] {
 			 "name", "ICD",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getICD_Device(), 
 		   source, 
@@ -504,7 +608,7 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 			 "kind", "element",
 			 "name", "Device",
 			 "namespace", "##targetNamespace"
-		   });		
+		   });	
 		addAnnotation
 		  (getICD_Bus(), 
 		   source, 
@@ -512,14 +616,14 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 			 "kind", "element",
 			 "name", "Bus",
 			 "namespace", "##targetNamespace"
-		   });		
+		   });	
 		addAnnotation
 		  (icdElementEClass, 
 		   source, 
 		   new String[] {
 			 "name", "ICDElement",
 			 "kind", "empty"
-		   });		
+		   });	
 		addAnnotation
 		  (getICDElement_Comment(), 
 		   source, 
@@ -527,7 +631,7 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 			 "kind", "attribute",
 			 "name", "comment",
 			 "namespace", "##targetNamespace"
-		   });		
+		   });	
 		addAnnotation
 		  (getICDElement_Index(), 
 		   source, 
@@ -535,7 +639,7 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 			 "kind", "attribute",
 			 "name", "index",
 			 "namespace", "##targetNamespace"
-		   });		
+		   });	
 		addAnnotation
 		  (getICDElement_Name(), 
 		   source, 

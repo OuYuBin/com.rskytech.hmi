@@ -33,7 +33,7 @@ public interface Driver extends EObject {
 	 * @see #setVersion(String)
 	 * @see com.rskytech.hmi.bench.rsateconfig.RSATEConfigPackage#getDriver_Version()
 	 * @model dataType="com.rskytech.hmi.bench.rsateconfig.Token" required="true"
-	 *        extendedMetaData="kind='element' name='version' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='Version' namespace='##targetNamespace'"
 	 * @generated
 	 */
 	String getVersion();

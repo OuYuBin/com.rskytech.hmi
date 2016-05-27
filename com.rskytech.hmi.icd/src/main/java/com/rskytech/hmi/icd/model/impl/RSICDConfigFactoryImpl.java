@@ -31,7 +31,7 @@ public class RSICDConfigFactoryImpl extends EFactoryImpl implements RSICDConfigF
 	 */
 	public static RSICDConfigFactory init() {
 		try {
-			RSICDConfigFactory theRSICDConfigFactory = (RSICDConfigFactory)EPackage.Registry.INSTANCE.getEFactory("platform:/resource/com.rskytech.hmi.icd/model/RSICDConfig.xsd"); 
+			RSICDConfigFactory theRSICDConfigFactory = (RSICDConfigFactory)EPackage.Registry.INSTANCE.getEFactory(RSICDConfigPackage.eNS_URI);
 			if (theRSICDConfigFactory != null) {
 				return theRSICDConfigFactory;
 			}
@@ -61,6 +61,7 @@ public class RSICDConfigFactoryImpl extends EFactoryImpl implements RSICDConfigF
 		switch (eClass.getClassifierID()) {
 			case RSICDConfigPackage.BUS: return createBus();
 			case RSICDConfigPackage.CHANNEL: return createChannel();
+			case RSICDConfigPackage.CONFIG: return createConfig();
 			case RSICDConfigPackage.DEVICE: return createDevice();
 			case RSICDConfigPackage.DOCUMENT_ROOT: return createDocumentRoot();
 			case RSICDConfigPackage.ICD: return createICD();
@@ -88,6 +89,16 @@ public class RSICDConfigFactoryImpl extends EFactoryImpl implements RSICDConfigF
 	public Channel createChannel() {
 		ChannelImpl channel = new ChannelImpl();
 		return channel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Config createConfig() {
+		ConfigImpl config = new ConfigImpl();
+		return config;
 	}
 
 	/**

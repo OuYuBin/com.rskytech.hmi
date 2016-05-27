@@ -96,7 +96,7 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getICDElement()
 	 * @generated
 	 */
-	int ICD_ELEMENT = 5;
+	int ICD_ELEMENT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -172,13 +172,68 @@ public interface RSICDConfigPackage extends EPackage {
 	int CHANNEL__NAME = ICD_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Config</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANNEL__CONFIG = ICD_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANNEL__TYPE = ICD_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Channel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHANNEL_FEATURE_COUNT = ICD_ELEMENT_FEATURE_COUNT + 0;
+	int CHANNEL_FEATURE_COUNT = ICD_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link com.rskytech.hmi.icd.model.impl.ConfigImpl <em>Config</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.rskytech.hmi.icd.model.impl.ConfigImpl
+	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getConfig()
+	 * @generated
+	 */
+	int CONFIG = 2;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__PROPERTY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link com.rskytech.hmi.icd.model.impl.DeviceImpl <em>Device</em>}' class.
@@ -188,7 +243,7 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getDevice()
 	 * @generated
 	 */
-	int DEVICE = 2;
+	int DEVICE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -243,7 +298,7 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getDocumentRoot()
 	 * @generated
 	 */
-	int DOCUMENT_ROOT = 3;
+	int DOCUMENT_ROOT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -298,7 +353,7 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getICD()
 	 * @generated
 	 */
-	int ICD = 4;
+	int ICD = 5;
 
 	/**
 	 * The feature id for the '<em><b>Device</b></em>' containment reference list.
@@ -358,6 +413,60 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getChannel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.rskytech.hmi.icd.model.Channel#getConfig <em>Config</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Config</em>'.
+	 * @see com.rskytech.hmi.icd.model.Channel#getConfig()
+	 * @see #getChannel()
+	 * @generated
+	 */
+	EReference getChannel_Config();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.icd.model.Channel#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see com.rskytech.hmi.icd.model.Channel#getType()
+	 * @see #getChannel()
+	 * @generated
+	 */
+	EAttribute getChannel_Type();
+
+	/**
+	 * Returns the meta object for class '{@link com.rskytech.hmi.icd.model.Config <em>Config</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Config</em>'.
+	 * @see com.rskytech.hmi.icd.model.Config
+	 * @generated
+	 */
+	EClass getConfig();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.icd.model.Config#getProperty <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Property</em>'.
+	 * @see com.rskytech.hmi.icd.model.Config#getProperty()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EAttribute getConfig_Property();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.icd.model.Config#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see com.rskytech.hmi.icd.model.Config#getValue()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EAttribute getConfig_Value();
 
 	/**
 	 * Returns the meta object for class '{@link com.rskytech.hmi.icd.model.Device <em>Device</em>}'.
@@ -558,6 +667,48 @@ public interface RSICDConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CHANNEL = eINSTANCE.getChannel();
+
+		/**
+		 * The meta object literal for the '<em><b>Config</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHANNEL__CONFIG = eINSTANCE.getChannel_Config();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHANNEL__TYPE = eINSTANCE.getChannel_Type();
+
+		/**
+		 * The meta object literal for the '{@link com.rskytech.hmi.icd.model.impl.ConfigImpl <em>Config</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.rskytech.hmi.icd.model.impl.ConfigImpl
+		 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getConfig()
+		 * @generated
+		 */
+		EClass CONFIG = eINSTANCE.getConfig();
+
+		/**
+		 * The meta object literal for the '<em><b>Property</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFIG__PROPERTY = eINSTANCE.getConfig_Property();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFIG__VALUE = eINSTANCE.getConfig_Value();
 
 		/**
 		 * The meta object literal for the '{@link com.rskytech.hmi.icd.model.impl.DeviceImpl <em>Device</em>}' class.

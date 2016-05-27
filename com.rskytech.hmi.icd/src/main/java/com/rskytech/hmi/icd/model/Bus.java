@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.Bus#getChannel <em>Channel</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.rskytech.hmi.icd.model.RSICDConfigPackage#getBus()
  * @model extendedMetaData="name='Bus' kind='elementOnly'"

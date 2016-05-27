@@ -73,8 +73,13 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 		toolKit = getManagedForm().getToolkit();
 		TableWrapLayout tableWrapLayout = new TableWrapLayout();
 		parent.setLayout(tableWrapLayout);
+		EList<EAttribute> attributes = null;
+		if (input instanceof EObject) {
+			attributes = ((EObject) input).eClass().getEAllAttributes();
+		} else {
+			attributes = ((IRSATEConfigModel) input).getEObject().eClass().getEAllAttributes();
 
-		EList<EAttribute> attributes = ((IRSATEConfigModel) input).getEObject().eClass().getEAllAttributes();
+		}
 		if (!attributes.isEmpty()) {
 			Section section = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
 			section.setText("属性");

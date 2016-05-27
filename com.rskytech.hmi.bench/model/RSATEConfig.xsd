@@ -68,7 +68,7 @@
 
 	<xsd:complexType name="Driver">
 		<xsd:sequence>
-			<xsd:element name="version" type="Token">
+			<xsd:element name="Version" type="Token">
 				<xsd:annotation>
 					<xsd:documentation>设备驱动版本信息</xsd:documentation>
 				</xsd:annotation>

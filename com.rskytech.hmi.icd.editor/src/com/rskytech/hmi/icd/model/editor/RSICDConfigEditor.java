@@ -89,7 +89,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 
 import org.eclipse.ui.dialogs.SaveAsDialog;
-
+import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.ide.IGotoMarker;
 
 import org.eclipse.ui.part.FileEditorInput;
@@ -157,6 +157,7 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
+import com.rskytech.hmi.icd.model.editor.page.RSICDConfigGeneralFormPage;
 import com.rskytech.hmi.icd.model.provider.RSICDConfigItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
@@ -169,7 +170,7 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
  * @generated
  */
 public class RSICDConfigEditor
-	extends MultiPageEditorPart
+	extends FormEditor
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
@@ -984,13 +985,20 @@ public class RSICDConfigEditor
 		}
 	}
 
+	@Override
+	protected void createPages() {
+		super.createPages();
+	}
+	
+	private RSICDConfigGeneralFormPage rsICDConfigGeneralFormPage;
+	
 	/**
 	 * This is the method used by the framework to install your own controls.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPages() {
+	public void addPages() {
 		// Creates the model from the editor input
 		//
 		createModel();

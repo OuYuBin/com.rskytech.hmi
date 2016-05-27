@@ -16,10 +16,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.Device#getChannels <em>Channels</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.rskytech.hmi.icd.model.RSICDConfigPackage#getDevice()
  * @model extendedMetaData="name='Device' kind='empty'"

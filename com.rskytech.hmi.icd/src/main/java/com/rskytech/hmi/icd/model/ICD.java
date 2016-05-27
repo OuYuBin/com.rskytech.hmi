@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.ICD#getDevice <em>Device</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.ICD#getBus <em>Bus</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.rskytech.hmi.icd.model.RSICDConfigPackage#getICD()
  * @model extendedMetaData="name='ICD' kind='elementOnly'"

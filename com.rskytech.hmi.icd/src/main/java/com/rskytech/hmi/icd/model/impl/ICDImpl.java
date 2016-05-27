@@ -33,11 +33,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.impl.ICDImpl#getDevice <em>Device</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.impl.ICDImpl#getBus <em>Bus</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

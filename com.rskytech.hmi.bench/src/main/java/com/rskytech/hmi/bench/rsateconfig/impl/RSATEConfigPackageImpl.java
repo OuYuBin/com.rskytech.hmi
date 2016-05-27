@@ -1013,7 +1013,7 @@ public class RSATEConfigPackageImpl extends EPackageImpl implements RSATEConfigP
 		   source, 
 		   new String[] {
 			 "kind", "element",
-			 "name", "version",
+			 "name", "Version",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation

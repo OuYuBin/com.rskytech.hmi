@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: M1553
+Bundle-SymbolicName: com.rskytech.hmi.protocol.m1553;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.rskytech.hmi.protocol.m1553.Activator
+Bundle-Vendor: RSKYTECH
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.rskytech.hmi.protocol.extension
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

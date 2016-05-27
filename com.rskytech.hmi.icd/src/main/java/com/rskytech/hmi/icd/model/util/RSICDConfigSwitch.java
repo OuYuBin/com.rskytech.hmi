@@ -100,6 +100,12 @@ public class RSICDConfigSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RSICDConfigPackage.CONFIG: {
+				Config config = (Config)theEObject;
+				Object result = caseConfig(config);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RSICDConfigPackage.DEVICE: {
 				Device device = (Device)theEObject;
 				Object result = caseDevice(device);
@@ -156,6 +162,21 @@ public class RSICDConfigSwitch {
 	 * @generated
 	 */
 	public Object caseChannel(Channel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Config</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Config</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseConfig(Config object) {
 		return null;
 	}
 

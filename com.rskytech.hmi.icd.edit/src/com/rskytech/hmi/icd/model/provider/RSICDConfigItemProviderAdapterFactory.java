@@ -120,6 +120,28 @@ public class RSICDConfigItemProviderAdapterFactory extends RSICDConfigAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.icd.model.Config} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConfigItemProvider configItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.rskytech.hmi.icd.model.Config}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createConfigAdapter() {
+		if (configItemProvider == null) {
+			configItemProvider = new ConfigItemProvider(this);
+		}
+
+		return configItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link com.rskytech.hmi.icd.model.Device} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,6 +327,7 @@ public class RSICDConfigItemProviderAdapterFactory extends RSICDConfigAdapterFac
 	public void dispose() {
 		if (busItemProvider != null) busItemProvider.dispose();
 		if (channelItemProvider != null) channelItemProvider.dispose();
+		if (configItemProvider != null) configItemProvider.dispose();
 		if (deviceItemProvider != null) deviceItemProvider.dispose();
 		if (documentRootItemProvider != null) documentRootItemProvider.dispose();
 		if (icdItemProvider != null) icdItemProvider.dispose();

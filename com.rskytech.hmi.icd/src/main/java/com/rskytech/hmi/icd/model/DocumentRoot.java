@@ -19,13 +19,13 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.DocumentRoot#getMixed <em>Mixed</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.DocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.DocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.DocumentRoot#getICD <em>ICD</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.rskytech.hmi.icd.model.RSICDConfigPackage#getDocumentRoot()
  * @model extendedMetaData="name='' kind='mixed'"
