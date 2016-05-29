@@ -62,10 +62,10 @@ public class RSATEConfigBenchMasterDetailsBlock extends
 		section.marginWidth = 5;
 		section.marginHeight = 5;
 
-		Composite composite = formToolkit.createComposite(section, SWT.WRAP|SWT.BORDER);
+		Composite composite = formToolkit.createComposite(section, SWT.WRAP);
 		GridLayout gridLayout = new GridLayout();
 		//gridLayout.marginWidth = 0;
-		gridLayout.marginHeight = 2;
+		//gridLayout.marginHeight = 5;
 		// gridLayout.verticalSpacing = 0;
 		// gridLayout.horizontalSpacing = 0;
 		composite.setLayout(gridLayout);
@@ -89,7 +89,7 @@ public class RSATEConfigBenchMasterDetailsBlock extends
 			}
 		});
 
-		Tree tree = new Tree(composite, SWT.FULL_SELECTION);
+		Tree tree = new Tree(composite, SWT.FULL_SELECTION|SWT.BORDER);
 		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		gridData.widthHint = 20;
 		gridData.heightHint = 20;

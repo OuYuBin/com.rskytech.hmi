@@ -33,10 +33,11 @@ public class RSICDConfigMasterDetailsBlock extends AbstractRskyCommonMasterDetai
 
 	@Override
 	protected void createMasterPart(IManagedForm managedForm, Composite parent) {
-		// TODO Auto-generated method stub
 		FormToolkit formTookit = managedForm.getToolkit();
 		Section section = formTookit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
 		section.setText("ICD资源配置");
+		section.marginHeight=5;
+		section.marginWidth=5;
 
 		Composite client = formTookit.createComposite(section, SWT.WRAP);
 		GridLayout gridLayout = new GridLayout(1, false);
@@ -85,5 +86,14 @@ public class RSICDConfigMasterDetailsBlock extends AbstractRskyCommonMasterDetai
 		// TODO Auto-generated method stub
 
 	}
+
+	@Override
+	public void createContent(IManagedForm managedForm, Composite parent) {
+		// TODO Auto-generated method stub
+		super.createContent(managedForm, parent);
+		this.sashForm.setWeights(new int[]{35,65});
+	}
+	
+	
 
 }
