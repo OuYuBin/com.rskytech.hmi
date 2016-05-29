@@ -1002,6 +1002,15 @@ public class RSICDConfigEditor
 		// Creates the model from the editor input
 		//
 		createModel();
+		
+		rsICDConfigGeneralFormPage=new RSICDConfigGeneralFormPage(this, "rsICDConfigGeneralFormPage", "icd配置");
+		try {
+			int index=addPage(rsICDConfigGeneralFormPage);
+			setPageText(index, "概览");
+		} catch (PartInitException e) {
+			e.printStackTrace();
+		}
+		
 
 		// Only creates the other pages if there is something that can be edited
 		//
