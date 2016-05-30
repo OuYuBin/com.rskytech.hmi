@@ -19,6 +19,8 @@ import org.eclipse.ui.forms.widgets.Section;
 
 import com.rskytech.hmi.common.editor.page.IRskyCommonFormPage;
 import com.rskytech.hmi.common.editor.page.block.AbstractRskyCommonMasterDetailsBlock;
+import com.rskytech.hmi.icd.common.model.impl.ICD;
+import com.rskytech.hmi.icd.common.model.manager.RSICDConfigModelManager;
 
 /**
  * 
@@ -54,15 +56,17 @@ public class RSICDConfigMasterDetailsBlock extends AbstractRskyCommonMasterDetai
 		gridData.heightHint = 20;
 		tree.setLayoutData(gridData);
 
-//		TreeViewer treeViewer = new TreeViewer(tree);
+		TreeViewer treeViewer = new TreeViewer(tree);
 //		treeViewer.setContentProvider(new RSATEConfigContentProvider());
 //		RSATEConfigStyledLabelProvider rsATEConfigLabelProvider = new RSATEConfigStyledLabelProvider();
 //		RSATEConfigModelLabelDecorator rsATEConfigModelLabelDecorator = new RSATEConfigModelLabelDecorator();
 //		treeViewer.setLabelProvider(
 //				new RSATEConfigStyledCellLabelProvider(rsATEConfigLabelProvider, rsATEConfigModelLabelDecorator, null));
-//		// --构建用户易于理解和正确描述的结构
-//		Resource resource = this.getRskyCommonFormPage().getResource();
-//		Object object = resource.getContents().get(0);
+
+		
+		Resource resource = this.getRskyCommonFormPage().getResource();
+		EObject eObject = resource.getContents().get(0);
+		ICD icd=RSICDConfigModelManager.createICD(eObject);
 //		Bench bench = RSATEConfigModelManager.createBench((EObject) object);
 //		List list = new ArrayList();
 //		list.add(bench);

@@ -113,6 +113,7 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 			twd.grabHorizontal = true;
 			twd.grabVertical = true;
 			resourceSection.setLayoutData(twd);
+			resourceSection.clientVerticalSpacing=0;
 
 			Composite client = toolKit.createComposite(resourceSection, SWT.WRAP);
 			GridLayout gridLayout = new GridLayout();

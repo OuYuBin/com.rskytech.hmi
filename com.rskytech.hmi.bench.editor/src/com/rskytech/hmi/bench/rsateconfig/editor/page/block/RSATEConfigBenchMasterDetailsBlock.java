@@ -72,8 +72,7 @@ public class RSATEConfigBenchMasterDetailsBlock extends
 		formToolkit.paintBordersFor(composite);
 
 		// --搜索
-		final Text searchText = formToolkit.createText(composite, "",
-				SWT.BORDER | SWT.SEARCH | SWT.ICON_SEARCH | SWT.CANCEL);
+		final Text searchText = formToolkit.createText(composite, "", SWT.SEARCH | SWT.ICON_SEARCH | SWT.CANCEL);
 		searchText.setMessage("搜索: 资源");
 		searchText.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
 		searchText.addKeyListener(new KeyAdapter() {

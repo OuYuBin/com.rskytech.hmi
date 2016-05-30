@@ -157,6 +157,7 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
+import com.rskytech.hmi.common.editor.IRskyCommonEditor;
 import com.rskytech.hmi.icd.model.editor.page.RSICDConfigGeneralFormPage;
 import com.rskytech.hmi.icd.model.provider.RSICDConfigItemProviderAdapterFactory;
 
@@ -171,7 +172,7 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
  */
 public class RSICDConfigEditor
 	extends FormEditor
-	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
+	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker,IRskyCommonEditor {
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
 	 * <!-- begin-user-doc -->
@@ -921,6 +922,12 @@ public class RSICDConfigEditor
 		viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
 	}
 
+	
+	Resource resource = null;
+	
+	public Resource getResource() {
+		return resource;
+	}
 	/**
 	 * This is the method called to load a resource into the editing domain's resource set based on the editor's input.
 	 * <!-- begin-user-doc -->
@@ -934,7 +941,7 @@ public class RSICDConfigEditor
 		//URI resourceURI = URI.createPlatformResourceURI(modelFile.getFile().getFullPath().toString(), true);
 		URI resourceURI = EditUIUtil.getURI(getEditorInput());
 		Exception exception = null;
-		Resource resource = null;
+		
 		try {
 			// Load the resource through the editing domain.
 			//
@@ -1793,4 +1800,6 @@ public class RSICDConfigEditor
 	protected boolean showOutlineView() {
 		return true;
 	}
+	
+	
 }
