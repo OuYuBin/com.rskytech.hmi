@@ -64,7 +64,7 @@ public class ICDViewPart extends ViewPart {
 
 			@Override
 			public void doubleClick(DoubleClickEvent event) {
-				File file = new File("/Users/robin/Downloads/My.icd");
+				File file = new File("/home/robin/Downloads/My.icd");
 				if (file.exists()) {
 					IFileStore fileStore = EFS.getLocalFileSystem().getStore(
 							file.toURI());

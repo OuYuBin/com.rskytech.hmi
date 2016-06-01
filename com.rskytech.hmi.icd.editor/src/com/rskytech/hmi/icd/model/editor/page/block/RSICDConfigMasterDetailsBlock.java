@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -23,22 +25,28 @@ import com.rskytech.hmi.icd.common.model.impl.ICD;
 import com.rskytech.hmi.icd.common.model.manager.RSICDConfigModelManager;
 import com.rskytech.hmi.icd.model.editor.page.block.provider.RSICDConfigContentProvider;
 import com.rskytech.hmi.icd.model.editor.page.block.provider.RSICDConfigLabelProvider;
+import com.rskytech.hmi.icd.model.editor.page.provider.RSICDConfigDetailPageProvider;
 
 /**
  * 
  * @author robin
- *
+ * 
  */
-public class RSICDConfigMasterDetailsBlock extends AbstractRskyCommonMasterDetailsBlock {
+public class RSICDConfigMasterDetailsBlock extends
+		AbstractRskyCommonMasterDetailsBlock {
+
+	RSICDConfigDetailPageProvider rsicdConfigDetailPageProvider;
 
 	public RSICDConfigMasterDetailsBlock(IRskyCommonFormPage rskyCommonFormPage) {
 		super(rskyCommonFormPage);
+		this.rsicdConfigDetailPageProvider = new RSICDConfigDetailPageProvider();
 	}
 
 	@Override
-	protected void createMasterPart(IManagedForm managedForm, Composite parent) {
+	protected void createMasterPart(final IManagedForm managedForm, Composite parent) {
 		FormToolkit formTookit = managedForm.getToolkit();
-		Section section = formTookit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
+		final Section section = formTookit.createSection(parent, Section.EXPANDED
+				| Section.TITLE_BAR);
 		section.setText("ICD资源配置");
 		section.marginHeight = 5;
 		section.marginWidth = 5;
@@ -52,7 +60,7 @@ public class RSICDConfigMasterDetailsBlock extends AbstractRskyCommonMasterDetai
 		client.setLayout(gridLayout);
 		formTookit.paintBordersFor(client);
 
-		Tree tree = new Tree(client, SWT.FULL_SELECTION|SWT.BORDER);
+		Tree tree = new Tree(client, SWT.FULL_SELECTION | SWT.BORDER);
 		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		gridData.widthHint = 20;
 		gridData.heightHint = 20;
@@ -77,6 +85,15 @@ public class RSICDConfigMasterDetailsBlock extends AbstractRskyCommonMasterDetai
 		list.add(icd);
 		treeViewer.setInput(list);
 		treeViewer.expandToLevel(3);
+		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			
+			final SectionPart sectionPart = new SectionPart(section);
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				managedForm.fireSelectionChanged(sectionPart, event.getSelection());
+				
+			}
+		});
 
 		section.setClient(client);
 		SectionPart sectionPart = new SectionPart(section);
@@ -86,7 +103,7 @@ public class RSICDConfigMasterDetailsBlock extends AbstractRskyCommonMasterDetai
 
 	@Override
 	protected void registerPages(DetailsPart detailsPart) {
-		// TODO Auto-generated method stub
+		detailsPart.setPageProvider(rsicdConfigDetailPageProvider);
 
 	}
 

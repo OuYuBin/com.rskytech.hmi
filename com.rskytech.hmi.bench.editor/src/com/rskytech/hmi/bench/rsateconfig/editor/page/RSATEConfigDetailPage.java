@@ -81,7 +81,7 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 
 		}
 		if (!attributes.isEmpty()) {
-			Section section = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
+			Section section = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR|Section.TREE_NODE);
 			section.setText("属性");
 			TableWrapData twd = new TableWrapData(TableWrapData.FILL_GRAB);
 			twd.grabHorizontal = true;
