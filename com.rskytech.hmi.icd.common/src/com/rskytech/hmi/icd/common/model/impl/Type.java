@@ -3,8 +3,6 @@ package com.rskytech.hmi.icd.common.model.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.ecore.EObject;
-
 import com.rskytech.hmi.icd.common.model.IRSICDConfigContainerModel;
 import com.rskytech.hmi.icd.common.model.IRSICDConfigModel;
 
@@ -13,21 +11,21 @@ import com.rskytech.hmi.icd.common.model.IRSICDConfigModel;
  * @author robin
  *
  */
-public class ICD extends RSICDConfigModelImpl implements IRSICDConfigContainerModel {
+public class Type extends RSICDConfigModelImpl implements IRSICDConfigContainerModel{
 	
-	List<Device> devices=new ArrayList<Device>();
+	private List<Channel> channels=new ArrayList<Channel>();
 
-	public ICD(EObject eObject) {
-		super(eObject);
+	public Type() {
+		super();
 	}
 
 	@Override
 	public List<? extends IRSICDConfigModel> getRSICDConfigModels() {
-		return devices;
+		return channels;
 	}
 	
-	public void addDevice(Device device){
-		devices.add(device);
+	public void addChannel(Channel channel){
+		channels.add(channel);
 	}
-
+	
 }
