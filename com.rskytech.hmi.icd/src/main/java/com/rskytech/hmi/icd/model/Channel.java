@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.Channel#getConfig <em>Config</em>}</li>
+ *   <li>{@link com.rskytech.hmi.icd.model.Channel#getDatas <em>Datas</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.Channel#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -44,6 +45,23 @@ public interface Channel extends ICDElement {
 	 * @generated
 	 */
 	EList getConfig();
+
+	/**
+	 * Returns the value of the '<em><b>Datas</b></em>' reference list.
+	 * The list contents are of type {@link com.rskytech.hmi.icd.model.Data}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Datas</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Datas</em>' reference list.
+	 * @see com.rskytech.hmi.icd.model.RSICDConfigPackage#getChannel_Datas()
+	 * @model type="com.rskytech.hmi.icd.model.Data" resolveProxies="false"
+	 *        extendedMetaData="kind='attribute' name='datas' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList getDatas();
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.

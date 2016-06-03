@@ -79,6 +79,9 @@ public class RSICDConfigAdapterFactory extends AdapterFactoryImpl {
 			public Object caseConfig(Config object) {
 				return createConfigAdapter();
 			}
+			public Object caseData(Data object) {
+				return createDataAdapter();
+			}
 			public Object caseDevice(Device object) {
 				return createDeviceAdapter();
 			}
@@ -148,6 +151,20 @@ public class RSICDConfigAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConfigAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.rskytech.hmi.icd.model.Data <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.rskytech.hmi.icd.model.Data
+	 * @generated
+	 */
+	public Adapter createDataAdapter() {
 		return null;
 	}
 

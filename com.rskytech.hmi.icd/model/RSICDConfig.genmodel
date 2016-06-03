@@ -14,11 +14,15 @@
     </genClasses>
     <genClasses ecoreClass="RSICDConfig.ecore#//Channel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//Channel/config"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//Channel/datas"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSICDConfig.ecore#//Channel/type"/>
     </genClasses>
     <genClasses ecoreClass="RSICDConfig.ecore#//Config">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSICDConfig.ecore#//Config/property"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSICDConfig.ecore#//Config/value"/>
+    </genClasses>
+    <genClasses ecoreClass="RSICDConfig.ecore#//Data">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//Data/datas"/>
     </genClasses>
     <genClasses ecoreClass="RSICDConfig.ecore#//Device">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//Device/channels"/>
@@ -32,6 +36,7 @@
     <genClasses ecoreClass="RSICDConfig.ecore#//ICD">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//ICD/device"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//ICD/bus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RSICDConfig.ecore#//ICD/data"/>
     </genClasses>
     <genClasses ecoreClass="RSICDConfig.ecore#//ICDElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RSICDConfig.ecore#//ICDElement/comment"/>

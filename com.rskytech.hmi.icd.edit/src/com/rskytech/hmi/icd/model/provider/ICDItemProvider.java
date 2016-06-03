@@ -80,6 +80,7 @@ public class ICDItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RSICDConfigPackage.Literals.ICD__DEVICE);
 			childrenFeatures.add(RSICDConfigPackage.Literals.ICD__BUS);
+			childrenFeatures.add(RSICDConfigPackage.Literals.ICD__DATA);
 		}
 		return childrenFeatures;
 	}
@@ -129,6 +130,7 @@ public class ICDItemProvider
 		switch (notification.getFeatureID(ICD.class)) {
 			case RSICDConfigPackage.ICD__DEVICE:
 			case RSICDConfigPackage.ICD__BUS:
+			case RSICDConfigPackage.ICD__DATA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -154,6 +156,11 @@ public class ICDItemProvider
 			(createChildParameter
 				(RSICDConfigPackage.Literals.ICD__BUS,
 				 RSICDConfigFactory.eINSTANCE.createBus()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RSICDConfigPackage.Literals.ICD__DATA,
+				 RSICDConfigFactory.eINSTANCE.createData()));
 	}
 
 	/**

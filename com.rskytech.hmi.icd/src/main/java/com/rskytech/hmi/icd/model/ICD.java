@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.ICD#getDevice <em>Device</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.ICD#getBus <em>Bus</em>}</li>
+ *   <li>{@link com.rskytech.hmi.icd.model.ICD#getData <em>Data</em>}</li>
  * </ul>
  *
  * @see com.rskytech.hmi.icd.model.RSICDConfigPackage#getICD()
@@ -71,5 +72,22 @@ public interface ICD extends EObject {
 	 * @generated
 	 */
 	void setBus(Bus value);
+
+	/**
+	 * Returns the value of the '<em><b>Data</b></em>' containment reference list.
+	 * The list contents are of type {@link com.rskytech.hmi.icd.model.Data}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data</em>' containment reference list.
+	 * @see com.rskytech.hmi.icd.model.RSICDConfigPackage#getICD_Data()
+	 * @model type="com.rskytech.hmi.icd.model.Data" containment="true"
+	 *        extendedMetaData="kind='element' name='Data' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList getData();
 
 } // ICD

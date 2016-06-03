@@ -62,6 +62,7 @@ public class RSICDConfigFactoryImpl extends EFactoryImpl implements RSICDConfigF
 			case RSICDConfigPackage.BUS: return createBus();
 			case RSICDConfigPackage.CHANNEL: return createChannel();
 			case RSICDConfigPackage.CONFIG: return createConfig();
+			case RSICDConfigPackage.DATA: return createData();
 			case RSICDConfigPackage.DEVICE: return createDevice();
 			case RSICDConfigPackage.DOCUMENT_ROOT: return createDocumentRoot();
 			case RSICDConfigPackage.ICD: return createICD();
@@ -99,6 +100,16 @@ public class RSICDConfigFactoryImpl extends EFactoryImpl implements RSICDConfigF
 	public Config createConfig() {
 		ConfigImpl config = new ConfigImpl();
 		return config;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Data createData() {
+		DataImpl data = new DataImpl();
+		return data;
 	}
 
 	/**

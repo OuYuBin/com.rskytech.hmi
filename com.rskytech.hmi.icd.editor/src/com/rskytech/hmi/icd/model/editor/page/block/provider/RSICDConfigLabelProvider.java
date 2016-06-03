@@ -1,10 +1,12 @@
 package com.rskytech.hmi.icd.model.editor.page.block.provider;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
 
 import com.rskytech.hmi.icd.common.model.IRSICDConfigModel;
+import com.rskytech.hmi.icd.model.editor.RSICDEditorPlugin;
 
 /**
  * 
@@ -15,25 +17,29 @@ public class RSICDConfigLabelProvider extends LabelProvider {
 
 	@Override
 	public Image getImage(Object element) {
-		return super.getImage(element);
+		System.out.println("++++++++" + element.getClass().getSimpleName());
+
+		return RSICDEditorPlugin.getPlugin().getImageRegistry().get(element.getClass().getSimpleName());
 	}
 
 	@Override
 	public String getText(Object element) {
 		if (element instanceof IRSICDConfigModel) {
 			EObject eObject = ((IRSICDConfigModel) element).geteObject();
-			String name="";
+			String name = null;
 			if (eObject != null) {
-				name = (String) eObject.eGet(eObject.eClass().getEStructuralFeature("name"));
+				EStructuralFeature feature = eObject.eClass().getEStructuralFeature("name");
+				if (feature != null)
+					name = (String) eObject.eGet(feature);
 				if (name == null) {
 					name = ((IRSICDConfigModel) element).geteObject().eClass().getName();
 				}
-			}else{
-				name=((IRSICDConfigModel) element).getName();
+			} else {
+				name = ((IRSICDConfigModel) element).getName();
 			}
 			return name;
 		}
-		return null;
+		return element.getClass().getSimpleName();
 	}
 
 }

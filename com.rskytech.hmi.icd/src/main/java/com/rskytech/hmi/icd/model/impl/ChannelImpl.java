@@ -8,6 +8,7 @@ package com.rskytech.hmi.icd.model.impl;
 
 import com.rskytech.hmi.icd.model.Channel;
 import com.rskytech.hmi.icd.model.Config;
+import com.rskytech.hmi.icd.model.Data;
 import com.rskytech.hmi.icd.model.RSICDConfigPackage;
 
 import java.util.Collection;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.rskytech.hmi.icd.model.impl.ChannelImpl#getConfig <em>Config</em>}</li>
+ *   <li>{@link com.rskytech.hmi.icd.model.impl.ChannelImpl#getDatas <em>Datas</em>}</li>
  *   <li>{@link com.rskytech.hmi.icd.model.impl.ChannelImpl#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -44,6 +47,16 @@ public class ChannelImpl extends ICDElementImpl implements Channel {
 	 * @ordered
 	 */
 	protected EList config;
+
+	/**
+	 * The cached value of the '{@link #getDatas() <em>Datas</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDatas()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList datas;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -99,6 +112,18 @@ public class ChannelImpl extends ICDElementImpl implements Channel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList getDatas() {
+		if (datas == null) {
+			datas = new EObjectEList(Data.class, this, RSICDConfigPackage.CHANNEL__DATAS);
+		}
+		return datas;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getType() {
 		return type;
 	}
@@ -137,6 +162,8 @@ public class ChannelImpl extends ICDElementImpl implements Channel {
 		switch (featureID) {
 			case RSICDConfigPackage.CHANNEL__CONFIG:
 				return getConfig();
+			case RSICDConfigPackage.CHANNEL__DATAS:
+				return getDatas();
 			case RSICDConfigPackage.CHANNEL__TYPE:
 				return getType();
 		}
@@ -153,6 +180,10 @@ public class ChannelImpl extends ICDElementImpl implements Channel {
 			case RSICDConfigPackage.CHANNEL__CONFIG:
 				getConfig().clear();
 				getConfig().addAll((Collection)newValue);
+				return;
+			case RSICDConfigPackage.CHANNEL__DATAS:
+				getDatas().clear();
+				getDatas().addAll((Collection)newValue);
 				return;
 			case RSICDConfigPackage.CHANNEL__TYPE:
 				setType((String)newValue);
@@ -171,6 +202,9 @@ public class ChannelImpl extends ICDElementImpl implements Channel {
 			case RSICDConfigPackage.CHANNEL__CONFIG:
 				getConfig().clear();
 				return;
+			case RSICDConfigPackage.CHANNEL__DATAS:
+				getDatas().clear();
+				return;
 			case RSICDConfigPackage.CHANNEL__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
@@ -187,6 +221,8 @@ public class ChannelImpl extends ICDElementImpl implements Channel {
 		switch (featureID) {
 			case RSICDConfigPackage.CHANNEL__CONFIG:
 				return config != null && !config.isEmpty();
+			case RSICDConfigPackage.CHANNEL__DATAS:
+				return datas != null && !datas.isEmpty();
 			case RSICDConfigPackage.CHANNEL__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}

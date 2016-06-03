@@ -9,6 +9,7 @@ package com.rskytech.hmi.icd.model.impl;
 import com.rskytech.hmi.icd.model.Bus;
 import com.rskytech.hmi.icd.model.Channel;
 import com.rskytech.hmi.icd.model.Config;
+import com.rskytech.hmi.icd.model.Data;
 import com.rskytech.hmi.icd.model.Device;
 import com.rskytech.hmi.icd.model.DocumentRoot;
 import com.rskytech.hmi.icd.model.ICDElement;
@@ -51,6 +52,13 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 	 * @generated
 	 */
 	private EClass configEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dataEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,8 +193,17 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getChannel_Datas() {
+		return (EReference)channelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getChannel_Type() {
-		return (EAttribute)channelEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)channelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -214,6 +231,24 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 	 */
 	public EAttribute getConfig_Value() {
 		return (EAttribute)configEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getData() {
+		return dataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getData_Datas() {
+		return (EReference)dataEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -311,6 +346,15 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getICD_Data() {
+		return (EReference)icdEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getICDElement() {
 		return icdElementEClass;
 	}
@@ -375,11 +419,15 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 
 		channelEClass = createEClass(CHANNEL);
 		createEReference(channelEClass, CHANNEL__CONFIG);
+		createEReference(channelEClass, CHANNEL__DATAS);
 		createEAttribute(channelEClass, CHANNEL__TYPE);
 
 		configEClass = createEClass(CONFIG);
 		createEAttribute(configEClass, CONFIG__PROPERTY);
 		createEAttribute(configEClass, CONFIG__VALUE);
+
+		dataEClass = createEClass(DATA);
+		createEReference(dataEClass, DATA__DATAS);
 
 		deviceEClass = createEClass(DEVICE);
 		createEReference(deviceEClass, DEVICE__CHANNELS);
@@ -393,6 +441,7 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 		icdEClass = createEClass(ICD);
 		createEReference(icdEClass, ICD__DEVICE);
 		createEReference(icdEClass, ICD__BUS);
+		createEReference(icdEClass, ICD__DATA);
 
 		icdElementEClass = createEClass(ICD_ELEMENT);
 		createEAttribute(icdElementEClass, ICD_ELEMENT__COMMENT);
@@ -428,6 +477,7 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 
 		// Add supertypes to classes
 		channelEClass.getESuperTypes().add(this.getICDElement());
+		dataEClass.getESuperTypes().add(this.getICDElement());
 		deviceEClass.getESuperTypes().add(this.getICDElement());
 
 		// Initialize classes and features; add operations and parameters
@@ -436,11 +486,15 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 
 		initEClass(channelEClass, Channel.class, "Channel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChannel_Config(), this.getConfig(), null, "config", null, 0, -1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getChannel_Datas(), this.getData(), null, "datas", null, 0, -1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getChannel_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configEClass, Config.class, "Config", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConfig_Property(), theXMLTypePackage.getString(), "property", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfig_Value(), theXMLTypePackage.getString(), "value", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getData_Datas(), this.getData(), null, "datas", null, 0, -1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDevice_Channels(), this.getChannel(), null, "channels", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -454,6 +508,7 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 		initEClass(icdEClass, com.rskytech.hmi.icd.model.ICD.class, "ICD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getICD_Device(), this.getDevice(), null, "device", null, 0, -1, com.rskytech.hmi.icd.model.ICD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getICD_Bus(), this.getBus(), null, "bus", null, 0, 1, com.rskytech.hmi.icd.model.ICD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getICD_Data(), this.getData(), null, "data", null, 0, -1, com.rskytech.hmi.icd.model.ICD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(icdElementEClass, ICDElement.class, "ICDElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getICDElement_Comment(), theXMLTypePackage.getString(), "comment", null, 0, 1, ICDElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -513,6 +568,14 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
+		  (getChannel_Datas(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "datas",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
 		  (getChannel_Type(), 
 		   source, 
 		   new String[] {
@@ -541,6 +604,21 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 		   new String[] {
 			 "kind", "attribute",
 			 "name", "value",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (dataEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Data",
+			 "kind", "empty"
+		   });	
+		addAnnotation
+		  (getData_Datas(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "datas",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
@@ -615,6 +693,14 @@ public class RSICDConfigPackageImpl extends EPackageImpl implements RSICDConfigP
 		   new String[] {
 			 "kind", "element",
 			 "name", "Bus",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getICD_Data(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Data",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation

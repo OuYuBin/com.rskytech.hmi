@@ -53,6 +53,15 @@ public interface RSICDConfigFactory extends EFactory {
 	Config createConfig();
 
 	/**
+	 * Returns a new object of class '<em>Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data</em>'.
+	 * @generated
+	 */
+	Data createData();
+
+	/**
 	 * Returns a new object of class '<em>Device</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
