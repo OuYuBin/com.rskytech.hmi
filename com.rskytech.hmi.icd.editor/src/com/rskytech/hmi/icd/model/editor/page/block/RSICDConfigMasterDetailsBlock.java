@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jface.action.IMenuListener;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -12,6 +15,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.forms.DetailsPart;
 import org.eclipse.ui.forms.IManagedForm;
@@ -94,11 +98,25 @@ public class RSICDConfigMasterDetailsBlock extends
 				
 			}
 		});
+		
+		//--设置选择提供器
+		rskyCommonFormPage.getSite().setSelectionProvider(treeViewer);
+		createContextMenuFor(treeViewer);
 
 		section.setClient(client);
 		SectionPart sectionPart = new SectionPart(section);
 		managedForm.addPart(sectionPart);
 
+	}
+
+	private void createContextMenuFor(TreeViewer treeViewer) {
+		MenuManager contextMenu=new MenuManager("#PopUp");
+		contextMenu.add(new Separator("additions"));
+		contextMenu.setRemoveAllWhenShown(true);
+		contextMenu.addMenuListener((IMenuListener) getRskyCommonFormPage().getEditor());
+		Menu menu=contextMenu.createContextMenu(treeViewer.getControl());
+		treeViewer.getControl().setMenu(menu);
+		getRskyCommonFormPage().getEditor().getSite().registerContextMenu(contextMenu, treeViewer);
 	}
 
 	@Override

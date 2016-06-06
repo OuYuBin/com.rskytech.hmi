@@ -19,7 +19,7 @@ public class RSICDConfigDetailPageProvider implements IDetailsPageProvider {
 
 	@Override
 	public IDetailsPage getPage(Object key) {
-		return new RSICDConfigDetailPage();
+		return new RSICDConfigDetailPage(key);
 	}
 
 }

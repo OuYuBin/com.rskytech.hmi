@@ -17,22 +17,20 @@ public class RSICDConfigLabelProvider extends LabelProvider {
 
 	@Override
 	public Image getImage(Object element) {
-		System.out.println("++++++++" + element.getClass().getSimpleName());
-
 		return RSICDEditorPlugin.getPlugin().getImageRegistry().get(element.getClass().getSimpleName());
 	}
 
 	@Override
 	public String getText(Object element) {
 		if (element instanceof IRSICDConfigModel) {
-			EObject eObject = ((IRSICDConfigModel) element).geteObject();
+			EObject eObject = ((IRSICDConfigModel) element).getEObject();
 			String name = null;
 			if (eObject != null) {
 				EStructuralFeature feature = eObject.eClass().getEStructuralFeature("name");
 				if (feature != null)
 					name = (String) eObject.eGet(feature);
 				if (name == null) {
-					name = ((IRSICDConfigModel) element).geteObject().eClass().getName();
+					name = ((IRSICDConfigModel) element).getEObject().eClass().getName();
 				}
 			} else {
 				name = ((IRSICDConfigModel) element).getName();

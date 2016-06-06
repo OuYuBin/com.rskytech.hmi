@@ -11,7 +11,7 @@ import com.rskytech.hmi.common.editor.page.IRskyCommonFormPage;
  */
 public abstract class AbstractRskyCommonMasterDetailsBlock extends MasterDetailsBlock {
 
-	IRskyCommonFormPage rskyCommonFormPage;
+	public IRskyCommonFormPage rskyCommonFormPage;
 
 	public AbstractRskyCommonMasterDetailsBlock(IRskyCommonFormPage rskyCommonFormPage) {
 		this.rskyCommonFormPage = rskyCommonFormPage;

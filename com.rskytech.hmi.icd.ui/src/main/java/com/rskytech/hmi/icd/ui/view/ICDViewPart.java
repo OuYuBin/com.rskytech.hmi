@@ -4,12 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.plaf.IconUIResource;
-
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
 import org.eclipse.jface.viewers.DoubleClickEvent;
-import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
@@ -22,7 +19,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.forms.widgets.Form;
@@ -64,7 +60,7 @@ public class ICDViewPart extends ViewPart {
 
 			@Override
 			public void doubleClick(DoubleClickEvent event) {
-				File file = new File("/home/robin/Downloads/My.icd");
+				File file = new File("/Users/robin/Downloads/My.icd");
 				if (file.exists()) {
 					IFileStore fileStore = EFS.getLocalFileSystem().getStore(
 							file.toURI());

@@ -32,11 +32,11 @@ public class RSICDConfigModelImpl implements IRSICDConfigModel {
 		this.name = name;
 	}
 
-	public EObject geteObject() {
+	public EObject getEObject() {
 		return eObject;
 	}
 
-	public void seteObject(EObject eObject) {
+	public void setEObject(EObject eObject) {
 		this.eObject = eObject;
 	}
 

@@ -178,33 +178,33 @@ public class RSICDConfigActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_RSICDConfigEditor_menu"), "com.rskytech.hmi.icd.modelMenuID");
-		menuManager.insertAfter("additions", submenuManager);
-		submenuManager.add(new Separator("settings"));
-		submenuManager.add(new Separator("actions"));
-		submenuManager.add(new Separator("additions"));
-		submenuManager.add(new Separator("additions-end"));
-
-		// Prepare for CreateChild item addition or removal.
-		//
-		createChildMenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
-		submenuManager.insertBefore("additions", createChildMenuManager);
-
-		// Prepare for CreateSibling item addition or removal.
-		//
-		createSiblingMenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
-		submenuManager.insertBefore("additions", createSiblingMenuManager);
-
-		// Force an update because Eclipse hides empty menus now.
-		//
-		submenuManager.addMenuListener
-			(new IMenuListener() {
-				 public void menuAboutToShow(IMenuManager menuManager) {
-					 menuManager.updateAll(true);
-				 }
-			 });
-
-		addGlobalActions(submenuManager);
+//		IMenuManager submenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_RSICDConfigEditor_menu"), "com.rskytech.hmi.icd.modelMenuID");
+//		menuManager.insertAfter("additions", submenuManager);
+//		submenuManager.add(new Separator("settings"));
+//		submenuManager.add(new Separator("actions"));
+//		submenuManager.add(new Separator("additions"));
+//		submenuManager.add(new Separator("additions-end"));
+//
+//		// Prepare for CreateChild item addition or removal.
+//		//
+//		createChildMenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+//		submenuManager.insertBefore("additions", createChildMenuManager);
+//
+//		// Prepare for CreateSibling item addition or removal.
+//		//
+//		createSiblingMenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+//		submenuManager.insertBefore("additions", createSiblingMenuManager);
+//
+//		// Force an update because Eclipse hides empty menus now.
+//		//
+//		submenuManager.addMenuListener
+//			(new IMenuListener() {
+//				 public void menuAboutToShow(IMenuManager menuManager) {
+//					 menuManager.updateAll(true);
+//				 }
+//			 });
+//
+//		addGlobalActions(submenuManager);
 	}
 
 	/**
@@ -398,13 +398,13 @@ public class RSICDConfigActionBarContributor
 	 * @generated
 	 */
 	protected void addGlobalActions(IMenuManager menuManager) {
-		menuManager.insertAfter("additions-end", new Separator("ui-actions"));
-		menuManager.insertAfter("ui-actions", showPropertiesViewAction);
-
-		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());		
-		menuManager.insertAfter("ui-actions", refreshViewerAction);
-
-		super.addGlobalActions(menuManager);
+//		menuManager.insertAfter("additions-end", new Separator("ui-actions"));
+//		menuManager.insertAfter("ui-actions", showPropertiesViewAction);
+//
+//		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());		
+//		menuManager.insertAfter("ui-actions", refreshViewerAction);
+//
+//		super.addGlobalActions(menuManager);
 	}
 
 	/**

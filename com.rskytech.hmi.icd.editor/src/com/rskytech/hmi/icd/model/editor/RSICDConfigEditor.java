@@ -908,18 +908,18 @@ public class RSICDConfigEditor
 	 * @generated
 	 */
 	protected void createContextMenuFor(StructuredViewer viewer) {
-		MenuManager contextMenu = new MenuManager("#PopUp");
-		contextMenu.add(new Separator("additions"));
-		contextMenu.setRemoveAllWhenShown(true);
-		contextMenu.addMenuListener(this);
-		Menu menu= contextMenu.createContextMenu(viewer.getControl());
-		viewer.getControl().setMenu(menu);
-		getSite().registerContextMenu(contextMenu, viewer);
-
-		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
-		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
-		viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
+//		MenuManager contextMenu = new MenuManager("#PopUp");
+//		contextMenu.add(new Separator("additions"));
+//		contextMenu.setRemoveAllWhenShown(true);
+//		contextMenu.addMenuListener(this);
+//		Menu menu= contextMenu.createContextMenu(viewer.getControl());
+//		viewer.getControl().setMenu(menu);
+//		getSite().registerContextMenu(contextMenu, viewer);
+//
+//		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
+//		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
+//		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
+//		viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
 	}
 
 	
