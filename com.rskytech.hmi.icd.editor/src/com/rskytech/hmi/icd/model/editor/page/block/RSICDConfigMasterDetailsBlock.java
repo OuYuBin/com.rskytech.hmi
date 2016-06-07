@@ -143,9 +143,9 @@ public class RSICDConfigMasterDetailsBlock extends
 	}
 
 	@Override
-	public <T> T getAdapter(Class<T> adapter) {
+	public Object getAdapter(Class adapter) {
 		if(adapter==ISelectionProvider.class){
-			return (T) treeViewer;
+			return treeViewer;
 		}
 		return null;
 	}

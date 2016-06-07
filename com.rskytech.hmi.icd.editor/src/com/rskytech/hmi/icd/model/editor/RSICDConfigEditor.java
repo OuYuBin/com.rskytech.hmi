@@ -1259,7 +1259,7 @@ public class RSICDConfigEditor extends FormEditor implements IEditingDomainProvi
 		IEditorPart editPart = this.getActiveEditor();
 		if (editPart instanceof IRskyCommonFormPage) {
 			IAdaptable adaptable = ((IRskyCommonFormPage) editPart).getRskyCommonMasterDetailsBlock();
-			ISelectionProvider selectionProvider = adaptable.getAdapter(ISelectionProvider.class);
+			ISelectionProvider selectionProvider = (ISelectionProvider) adaptable.getAdapter(ISelectionProvider.class);
 			this.getSite().setSelectionProvider(selectionProvider);
 		}
 
