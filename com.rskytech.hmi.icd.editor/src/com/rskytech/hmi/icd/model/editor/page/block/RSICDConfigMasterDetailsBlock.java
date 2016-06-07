@@ -9,6 +9,7 @@ import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
@@ -40,6 +41,8 @@ public class RSICDConfigMasterDetailsBlock extends
 		AbstractRskyCommonMasterDetailsBlock {
 
 	RSICDConfigDetailPageProvider rsicdConfigDetailPageProvider;
+	
+	TreeViewer treeViewer;
 
 	public RSICDConfigMasterDetailsBlock(IRskyCommonFormPage rskyCommonFormPage) {
 		super(rskyCommonFormPage);
@@ -70,7 +73,7 @@ public class RSICDConfigMasterDetailsBlock extends
 		gridData.heightHint = 20;
 		tree.setLayoutData(gridData);
 
-		TreeViewer treeViewer = new TreeViewer(tree);
+		treeViewer = new TreeViewer(tree);
 		treeViewer.setContentProvider(new RSICDConfigContentProvider());
 		// RSATEConfigStyledLabelProvider rsATEConfigLabelProvider = new
 		// RSATEConfigStyledLabelProvider();
@@ -99,16 +102,17 @@ public class RSICDConfigMasterDetailsBlock extends
 			}
 		});
 		
-		//--设置选择提供器
-		rskyCommonFormPage.getSite().setSelectionProvider(treeViewer);
 		createContextMenuFor(treeViewer);
-
 		section.setClient(client);
 		SectionPart sectionPart = new SectionPart(section);
 		managedForm.addPart(sectionPart);
 
 	}
 
+	/**
+	 * 注册上下文菜单到树型视图上
+	 * @param treeViewer
+	 */
 	private void createContextMenuFor(TreeViewer treeViewer) {
 		MenuManager contextMenu=new MenuManager("#PopUp");
 		contextMenu.add(new Separator("additions"));
@@ -137,5 +141,15 @@ public class RSICDConfigMasterDetailsBlock extends
 		super.createContent(managedForm, parent);
 		this.sashForm.setWeights(new int[] { 35, 65 });
 	}
+
+	@Override
+	public <T> T getAdapter(Class<T> adapter) {
+		if(adapter==ISelectionProvider.class){
+			return (T) treeViewer;
+		}
+		return null;
+	}
+
+	
 
 }

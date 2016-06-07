@@ -7,6 +7,7 @@ import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.editor.FormPage;
 
 import com.rskytech.hmi.common.editor.IRskyCommonEditor;
+import com.rskytech.hmi.common.editor.page.block.IRskyCommonMasterDetailsBlock;
 
 /**
  * 
@@ -20,6 +21,8 @@ public class RskyCommonFormPage extends FormPage implements IRskyCommonFormPage 
 	private EditingDomain editingDomain;
 
 	private AdapterFactory adapterFactory;
+
+	protected IRskyCommonMasterDetailsBlock rskyCommonMasterDetailsBlock;
 
 	public RskyCommonFormPage(FormEditor editor, String id, String title) {
 		super(editor, id, title);
@@ -46,6 +49,14 @@ public class RskyCommonFormPage extends FormPage implements IRskyCommonFormPage 
 	@Override
 	public AdapterFactory getAdapterFactory() {
 		return adapterFactory;
+	}
+
+	public IRskyCommonMasterDetailsBlock getRskyCommonMasterDetailsBlock() {
+		return rskyCommonMasterDetailsBlock;
+	}
+
+	public void setRskyCommonMasterDetailsBlock(IRskyCommonMasterDetailsBlock rskyCommonMasterDetailsBlock) {
+		this.rskyCommonMasterDetailsBlock = rskyCommonMasterDetailsBlock;
 	}
 
 }

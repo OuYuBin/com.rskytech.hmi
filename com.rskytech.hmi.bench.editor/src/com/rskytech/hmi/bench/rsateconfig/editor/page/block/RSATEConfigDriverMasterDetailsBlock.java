@@ -108,4 +108,10 @@ public class RSATEConfigDriverMasterDetailsBlock extends AbstractRskyCommonMaste
 
 	}
 
+	@Override
+	public <T> T getAdapter(Class<T> adapter) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
