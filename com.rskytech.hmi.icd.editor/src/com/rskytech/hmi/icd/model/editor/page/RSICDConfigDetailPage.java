@@ -79,6 +79,7 @@ public class RSICDConfigDetailPage extends AbstractFormPart implements IDetailsP
 			gridLayout.numColumns = 3;
 			gridLayout.horizontalSpacing = 8;
 			client.setLayout(gridLayout);
+			
 
 			createAttributesSection(input, client);
 			section.setClient(client);

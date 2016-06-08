@@ -7,15 +7,18 @@ import org.eclipse.emf.ecore.EObject;
 
 import com.rskytech.hmi.icd.common.model.IRSICDConfigContainerModel;
 import com.rskytech.hmi.icd.common.model.IRSICDConfigModel;
+import com.rskytech.hmi.icd.common.model.annotation.ICDModelAnnotation;
 
 /**
  * 
  * @author robin
  *
  */
+@ICDModelAnnotation(childWrappingWithEmfClass = { "com.rskytech.hmi.icd.model.Device",
+		"com.rskytech.hmi.icd.common.model.impl.Device" })
 public class ICD extends RSICDConfigModelImpl implements IRSICDConfigContainerModel {
-	
-	List<Device> devices=new ArrayList<Device>();
+
+	List<Device> devices = new ArrayList<Device>();
 
 	public ICD(EObject eObject) {
 		super(eObject);
@@ -25,8 +28,8 @@ public class ICD extends RSICDConfigModelImpl implements IRSICDConfigContainerMo
 	public List<? extends IRSICDConfigModel> getRSICDConfigModels() {
 		return devices;
 	}
-	
-	public void addDevice(Device device){
+
+	public void addDevice(Device device) {
 		devices.add(device);
 	}
 

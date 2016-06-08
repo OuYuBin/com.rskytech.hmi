@@ -107,9 +107,9 @@ public final class RSICDEditorPlugin extends EMFPlugin {
 			Bundle bundle = this.getBundle();
 			@SuppressWarnings("rawtypes")
 			Map map = new HashMap();
-			map.put("ICD", "icons/icd.gif");
-			map.put("Device", "icons/device.gif");
-			map.put("Type","icons/type.gif");
+			map.put("ICD", "icons/icd.png");
+			map.put("Device", "icons/device.png");
+			map.put("Type","icons/type.png");
 			map.put("Channel","icons/channel.gif");
 
 			for (@SuppressWarnings("rawtypes")

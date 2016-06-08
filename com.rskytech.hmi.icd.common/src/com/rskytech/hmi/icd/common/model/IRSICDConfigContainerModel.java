@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface IRSICDConfigContainerModel extends IRSICDConfigModel{
 
-	public List<? extends IRSICDConfigModel> getRSICDConfigModels();
+	public <T> List<T> getRSICDConfigModels();
 }

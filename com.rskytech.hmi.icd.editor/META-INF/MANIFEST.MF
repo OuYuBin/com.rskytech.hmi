@@ -17,6 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.forms,
  com.rskytech.hmi.common.editor,
  com.rskytech.hmi.icd.common;bundle-version="1.0.0",
- com.rskytech.hmi.protocol;bundle-version="1.0.0"
+ com.rskytech.hmi.protocol;bundle-version="1.0.0",
+ org.apache.commons.lang;bundle-version="2.6.0"
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy

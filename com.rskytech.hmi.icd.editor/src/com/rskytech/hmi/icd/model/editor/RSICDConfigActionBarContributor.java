@@ -6,6 +6,9 @@
  */
 package com.rskytech.hmi.icd.model.editor;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -15,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.commons.lang.ArrayUtils;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.CommandParameter;
@@ -51,8 +55,10 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
 import com.rskytech.hmi.icd.common.model.IRSICDConfigContainerModel;
+import com.rskytech.hmi.icd.common.model.IRSICDConfigModel;
+import com.rskytech.hmi.icd.common.model.annotation.ICDModelAnnotation;
 import com.rskytech.hmi.icd.model.Device;
-import com.rskytech.hmi.icd.model.editor.action.RSICDCreateChildAction;
+import com.rskytech.hmi.icd.model.editor.actions.RSICDCreateChildAction;
 import com.rskytech.hmi.protocol.manager.RSProtocolManager;
 import com.rskytech.hmi.protocol.provider.IRSProtocolContentProvider;
 
@@ -129,6 +135,8 @@ public class RSICDConfigActionBarContributor extends EditingDomainActionBarContr
 	 * @generated
 	 */
 	protected Collection createChildActions = new ArrayList();
+
+	protected Collection createChildOfExtensionActions = new ArrayList();
 
 	/**
 	 * This is the menu manager into which menu contribution items should be
@@ -280,11 +288,15 @@ public class RSICDConfigActionBarContributor extends EditingDomainActionBarContr
 					EditingDomain editingDomain = ((IEditingDomainProvider) activeEditorPart).getEditingDomain();
 					Collection newChildDescriptions = editingDomain.getNewChildDescriptors(eObject, null);
 					if (newChildDescriptions != null) {
-						createChildActions = generateChildActions(eObject, newChildDescriptions);
+						createChildActions = generateChildActions((IRSICDConfigContainerModel) object,
+								newChildDescriptions);
 					}
-				}else{
-					createChildActions=Collections.EMPTY_LIST;
+				} else {
+					createChildActions = Collections.EMPTY_LIST;
 				}
+				createChildOfExtensionActions = generateChildOfExtensionActions(eObject);
+				createChildActions.addAll(createChildOfExtensionActions);
+
 			}
 		}
 
@@ -330,34 +342,106 @@ public class RSICDConfigActionBarContributor extends EditingDomainActionBarContr
 		// }
 	}
 
-	private Collection<IAction> generateChildActions(EObject eObject,
-			Collection<?> newChildDescriptions) {
+	private Collection generateChildOfExtensionActions(EObject eObject) {
 		Collection<IAction> actions = new ArrayList<IAction>();
-		// --针对设备节点定制总线菜单显示
 		if (eObject instanceof Device) {
 			List<IRSProtocolContentProvider> providers = RSProtocolManager.createProtocolProvider();
 			for (IRSProtocolContentProvider provider : providers) {
 				String protocolName = provider.getProtocolName();
 				String protocolGroupName = provider.getGroupName();
-				RSICDCreateChildAction rsICDCreateChildAction = new RSICDCreateChildAction();
+				RSICDCreateChildAction rsICDCreateChildAction = new RSICDCreateChildAction(activeEditorPart);
 				rsICDCreateChildAction.setText(protocolName);
 				rsICDCreateChildAction.setGroupName(protocolGroupName);
 				rsICDCreateChildAction
 						.setImageDescriptor(RSICDEditorPlugin.getPlugin().getImageRegistry().getDescriptor("Channel"));
 				actions.add(rsICDCreateChildAction);
 			}
-		}else{
-			for(Object descriptor:newChildDescriptions){
-				RSICDCreateChildAction rsICDCreateChildAction = new RSICDCreateChildAction();
-				if(descriptor instanceof CommandParameter){
-					EObject eChild=(EObject) ((CommandParameter)descriptor).value;
-					String name=eChild.eClass().getName();
-					rsICDCreateChildAction.setText(name);
-					actions.add(rsICDCreateChildAction);
+		}
+		return actions;
+	}
+
+	private Collection<IAction> generateChildActions(IRSICDConfigContainerModel object,
+			Collection<?> newChildDescriptions) {
+		Collection<IAction> actions = new ArrayList<IAction>();
+		EObject eObject = object.getEObject();
+		Map<String, String> wrappingModelWithEmfs = createWrappingModelWithEMF(object);
+		for (Object description : newChildDescriptions) {
+			if (description instanceof CommandParameter) {
+				EObject eChild = (EObject) ((CommandParameter) description).getValue();
+				String typeName = eChild.eClass().getInstanceTypeName();
+				if (wrappingModelWithEmfs.keySet().size() > 0) {
+					if (ArrayUtils.contains(wrappingModelWithEmfs.keySet().toArray(), typeName)) {
+						IRSICDConfigModel child = createWrappingModelOfEMF(eChild, wrappingModelWithEmfs.get(typeName));
+						RSICDCreateChildAction rsICDCreateChildAction = new RSICDCreateChildAction(activeEditorPart,
+								eObject, description, object, child);
+						String name = eChild.eClass().getName();
+						rsICDCreateChildAction.setText(name);
+						rsICDCreateChildAction.setImageDescriptor(
+								RSICDEditorPlugin.getPlugin().getImageRegistry().getDescriptor(name));
+						actions.add(rsICDCreateChildAction);
+					}
 				}
 			}
 		}
+
+		// --针对设备节点定制总线菜单显示
+		// if (eObject instanceof Device) {
+		// List<IRSProtocolContentProvider> providers =
+		// RSProtocolManager.createProtocolProvider();
+		// for (IRSProtocolContentProvider provider : providers) {
+		// String protocolName = provider.getProtocolName();
+		// String protocolGroupName = provider.getGroupName();
+		// RSICDCreateChildAction rsICDCreateChildAction = new
+		// RSICDCreateChildAction();
+		// rsICDCreateChildAction.setText(protocolName);
+		// rsICDCreateChildAction.setGroupName(protocolGroupName);
+		// rsICDCreateChildAction
+		// .setImageDescriptor(RSICDEditorPlugin.getPlugin().getImageRegistry().getDescriptor("Channel"));
+		// actions.add(rsICDCreateChildAction);
+		// }
+		// } else {
+		// for (Object descriptor : newChildDescriptions) {
+		// RSICDCreateChildAction rsICDCreateChildAction = new
+		// RSICDCreateChildAction();
+		// if (descriptor instanceof CommandParameter) {
+		// EObject eChild = (EObject) ((CommandParameter) descriptor).value;
+		// String name = eChild.eClass().getName();
+		// rsICDCreateChildAction.setText(name);
+		// actions.add(rsICDCreateChildAction);
+		// }
+		// }
+		// }
 		return actions;
+	}
+
+	private IRSICDConfigModel createWrappingModelOfEMF(EObject eObject, String modelClassName) {
+		IRSICDConfigModel wrappingModel=null;
+		Class clazz;
+		try {
+			clazz = Class.forName(modelClassName);
+			Constructor constructor = clazz.getConstructor(EObject.class);
+			constructor.setAccessible(true);
+			wrappingModel = (IRSICDConfigModel) constructor.newInstance(eObject);
+		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException
+				| IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+			e.printStackTrace();
+		}
+		return wrappingModel;
+
+	}
+
+	private Map<String, String> createWrappingModelWithEMF(IRSICDConfigContainerModel object) {
+		Annotation[] annotations = object.getClass().getAnnotations();
+		Map<String, String> wrappingModelWithEmfs = new HashMap<String, String>();
+		for (Annotation annotation : annotations) {
+			if (annotation instanceof ICDModelAnnotation) {
+				String[] names = ((ICDModelAnnotation) annotation).childWrappingWithEmfClass();
+				for (int i = 0; i < names.length; i = i + 2) {
+					wrappingModelWithEmfs.put(names[i], names[i + 1]);
+				}
+			}
+		}
+		return wrappingModelWithEmfs;
 	}
 
 	/**

@@ -17,6 +17,7 @@ import com.rskytech.hmi.icd.model.editor.page.block.RSICDConfigMasterDetailsBloc
  */
 public class RSICDConfigGeneralFormPage extends RskyCommonFormPage implements IRskyCommonFormPage {
 
+
 	public RSICDConfigGeneralFormPage(FormEditor editor, String id, String title) {
 		super(editor, id, title);
 	}
