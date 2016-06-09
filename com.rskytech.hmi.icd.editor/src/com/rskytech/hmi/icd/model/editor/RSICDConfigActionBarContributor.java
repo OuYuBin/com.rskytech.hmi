@@ -6,12 +6,22 @@
  */
 package com.rskytech.hmi.icd.model.editor;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
+import org.apache.commons.lang.ArrayUtils;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
-
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 
@@ -44,110 +54,122 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
+import com.rskytech.hmi.icd.common.model.IRSICDConfigContainerModel;
+import com.rskytech.hmi.icd.common.model.IRSICDConfigModel;
+import com.rskytech.hmi.icd.common.model.annotation.ICDModelAnnotation;
+import com.rskytech.hmi.icd.model.Device;
+import com.rskytech.hmi.icd.model.editor.actions.RSICDCreateChildAction;
+import com.rskytech.hmi.protocol.manager.RSProtocolManager;
+import com.rskytech.hmi.protocol.provider.IRSProtocolContentProvider;
+
 /**
- * This is the action bar contributor for the RSICDConfig model editor.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * This is the action bar contributor for the RSICDConfig model editor. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class RSICDConfigActionBarContributor
-	extends EditingDomainActionBarContributor
-	implements ISelectionChangedListener {
+public class RSICDConfigActionBarContributor extends EditingDomainActionBarContributor
+		implements ISelectionChangedListener {
 	/**
-	 * This keeps track of the active editor.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This keeps track of the active editor. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IEditorPart activeEditorPart;
 
 	/**
-	 * This keeps track of the current selection provider.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This keeps track of the current selection provider. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ISelectionProvider selectionProvider;
 
 	/**
-	 * This action opens the Properties view.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This action opens the Properties view. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	protected IAction showPropertiesViewAction =
-		new Action(RSICDEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
-			public void run() {
-				try {
-					getPage().showView("org.eclipse.ui.views.PropertySheet");
-				}
-				catch (PartInitException exception) {
-					RSICDEditorPlugin.INSTANCE.log(exception);
-				}
+	protected IAction showPropertiesViewAction = new Action(
+			RSICDEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
+		public void run() {
+			try {
+				getPage().showView("org.eclipse.ui.views.PropertySheet");
+			} catch (PartInitException exception) {
+				RSICDEditorPlugin.INSTANCE.log(exception);
 			}
-		};
+		}
+	};
 
 	/**
 	 * This action refreshes the viewer of the current editor if the editor
-	 * implements {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * implements {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	protected IAction refreshViewerAction =
-		new Action(RSICDEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
-			public boolean isEnabled() {
-				return activeEditorPart instanceof IViewerProvider;
-			}
+	protected IAction refreshViewerAction = new Action(
+			RSICDEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
+		public boolean isEnabled() {
+			return activeEditorPart instanceof IViewerProvider;
+		}
 
-			public void run() {
-				if (activeEditorPart instanceof IViewerProvider) {
-					Viewer viewer = ((IViewerProvider)activeEditorPart).getViewer();
-					if (viewer != null) {
-						viewer.refresh();
-					}
+		public void run() {
+			if (activeEditorPart instanceof IViewerProvider) {
+				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
+				if (viewer != null) {
+					viewer.refresh();
 				}
 			}
-		};
+		}
+	};
 
 	/**
-	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to each descriptor
-	 * generated for the current selection by the item provider.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This will contain one
+	 * {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to
+	 * each descriptor generated for the current selection by the item provider.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	protected Collection createChildActions;
+	protected Collection createChildActions = new ArrayList();
+
+	protected Collection createChildOfExtensionActions = new ArrayList();
 
 	/**
-	 * This is the menu manager into which menu contribution items should be added for CreateChild actions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This is the menu manager into which menu contribution items should be
+	 * added for CreateChild actions. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
 	 * @generated
 	 */
 	protected IMenuManager createChildMenuManager;
 
 	/**
-	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} corresponding to each descriptor
-	 * generated for the current selection by the item provider.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This will contain one
+	 * {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} corresponding
+	 * to each descriptor generated for the current selection by the item
+	 * provider. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection createSiblingActions;
 
 	/**
-	 * This is the menu manager into which menu contribution items should be added for CreateSibling actions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This is the menu manager into which menu contribution items should be
+	 * added for CreateSibling actions. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IMenuManager createSiblingMenuManager;
 
 	/**
-	 * This creates an instance of the contributor.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This creates an instance of the contributor. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RSICDConfigActionBarContributor() {
@@ -158,9 +180,9 @@ public class RSICDConfigActionBarContributor
 	}
 
 	/**
-	 * This adds Separators for editor additions to the tool bar.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds Separators for editor additions to the tool bar. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
@@ -169,48 +191,58 @@ public class RSICDConfigActionBarContributor
 	}
 
 	/**
-	 * This adds to the menu bar a menu and some separators for editor additions,
-	 * as well as the sub-menus for object creation items.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds to the menu bar a menu and some separators for editor
+	 * additions, as well as the sub-menus for object creation items. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_RSICDConfigEditor_menu"), "com.rskytech.hmi.icd.modelMenuID");
-		menuManager.insertAfter("additions", submenuManager);
-		submenuManager.add(new Separator("settings"));
-		submenuManager.add(new Separator("actions"));
-		submenuManager.add(new Separator("additions"));
-		submenuManager.add(new Separator("additions-end"));
-
-		// Prepare for CreateChild item addition or removal.
+		// IMenuManager submenuManager = new
+		// MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_RSICDConfigEditor_menu"),
+		// "com.rskytech.hmi.icd.modelMenuID");
+		// menuManager.insertAfter("additions", submenuManager);
+		// submenuManager.add(new Separator("settings"));
+		// submenuManager.add(new Separator("actions"));
+		// submenuManager.add(new Separator("additions"));
+		// submenuManager.add(new Separator("additions-end"));
 		//
-		createChildMenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
-		submenuManager.insertBefore("additions", createChildMenuManager);
-
-		// Prepare for CreateSibling item addition or removal.
+		// // Prepare for CreateChild item addition or removal.
+		// //
+		// createChildMenuManager = new
+		// MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		// submenuManager.insertBefore("additions", createChildMenuManager);
 		//
-		createSiblingMenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
-		submenuManager.insertBefore("additions", createSiblingMenuManager);
-
-		// Force an update because Eclipse hides empty menus now.
+		// // Prepare for CreateSibling item addition or removal.
+		// //
+		// createSiblingMenuManager = new
+		// MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		// submenuManager.insertBefore("additions", createSiblingMenuManager);
 		//
-		submenuManager.addMenuListener
-			(new IMenuListener() {
-				 public void menuAboutToShow(IMenuManager menuManager) {
-					 menuManager.updateAll(true);
-				 }
-			 });
+		// // Force an update because Eclipse hides empty menus now.
+		// //
+		// submenuManager.addMenuListener
+		// (new IMenuListener() {
+		// public void menuAboutToShow(IMenuManager menuManager) {
+		// menuManager.updateAll(true);
+		// }
+		// });
+		//
+		// addGlobalActions(submenuManager);
+	}
 
-		addGlobalActions(submenuManager);
+	@Override
+	public void setActivePage(IEditorPart part) {
+		super.setActivePage(part);
 	}
 
 	/**
-	 * When the active editor changes, this remembers the change and registers with it as a selection provider.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * When the active editor changes, this remembers the change and registers
+	 * with it as a selection provider. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setActiveEditor(IEditorPart part) {
@@ -224,8 +256,7 @@ public class RSICDConfigActionBarContributor
 		}
 		if (part == null) {
 			selectionProvider = null;
-		}
-		else {
+		} else {
 			selectionProvider = part.getSite().getSelectionProvider();
 			selectionProvider.addSelectionChangedListener(this);
 
@@ -238,64 +269,192 @@ public class RSICDConfigActionBarContributor
 	}
 
 	/**
-	 * This implements {@link org.eclipse.jface.viewers.ISelectionChangedListener},
-	 * handling {@link org.eclipse.jface.viewers.SelectionChangedEvent}s by querying for the children and siblings
-	 * that can be added to the selected object and updating the menus accordingly.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This implements
+	 * {@link org.eclipse.jface.viewers.ISelectionChangedListener}, handling
+	 * {@link org.eclipse.jface.viewers.SelectionChangedEvent}s by querying for
+	 * the children and siblings that can be added to the selected object and
+	 * updating the menus accordingly. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated not 重建右键菜单,用于添加元素
 	 */
 	public void selectionChanged(SelectionChangedEvent event) {
-		// Remove any menu items for old selection.
-		//
-		if (createChildMenuManager != null) {
-			depopulateManager(createChildMenuManager, createChildActions);
+		ISelection selection = event.getSelection();
+		if (selection instanceof IStructuredSelection) {
+			Object object = ((IStructuredSelection) selection).getFirstElement();
+			if (object instanceof IRSICDConfigContainerModel) {
+				EObject eObject = ((IRSICDConfigContainerModel) object).getEObject();
+				if (eObject != null) {
+					EditingDomain editingDomain = ((IEditingDomainProvider) activeEditorPart).getEditingDomain();
+					Collection newChildDescriptions = editingDomain.getNewChildDescriptors(eObject, null);
+					if (newChildDescriptions != null) {
+						createChildActions = generateChildActions((IRSICDConfigContainerModel) object,
+								newChildDescriptions);
+					}
+				} else {
+					createChildActions = Collections.EMPTY_LIST;
+				}
+				createChildOfExtensionActions = generateChildOfExtensionActions(eObject);
+				createChildActions.addAll(createChildOfExtensionActions);
+
+			}
 		}
-		if (createSiblingMenuManager != null) {
-			depopulateManager(createSiblingMenuManager, createSiblingActions);
-		}
+
+		// if (createChildMenuManager != null) {
+		// depopulateManager(createChildMenuManager, createChildActions);
+		// }
+		// if (createSiblingMenuManager != null) {
+		// depopulateManager(createSiblingMenuManager, createSiblingActions);
+		// }
 
 		// Query the new selection for appropriate new child/sibling descriptors
 		//
-		Collection newChildDescriptors = null;
-		Collection newSiblingDescriptors = null;
-
-		ISelection selection = event.getSelection();
-		if (selection instanceof IStructuredSelection && ((IStructuredSelection)selection).size() == 1) {
-			Object object = ((IStructuredSelection)selection).getFirstElement();
-
-			EditingDomain domain = ((IEditingDomainProvider)activeEditorPart).getEditingDomain();
-
-			newChildDescriptors = domain.getNewChildDescriptors(object, null);
-			newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
-		}
-
-		// Generate actions for selection; populate and redraw the menus.
+		// Collection newChildDescriptors = null;
+		// Collection newSiblingDescriptors = null;
 		//
-		createChildActions = generateCreateChildActions(newChildDescriptors, selection);
-		createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
+		// ISelection selection = event.getSelection();
+		// if (selection instanceof IStructuredSelection &&
+		// ((IStructuredSelection) selection).size() == 1) {
+		// Object object = ((IStructuredSelection) selection).getFirstElement();
+		//
+		// EditingDomain domain = ((IEditingDomainProvider)
+		// activeEditorPart).getEditingDomain();
+		//
+		// newChildDescriptors = domain.getNewChildDescriptors(object, null);
+		// newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
+		// }
+		//
+		// // Generate actions for selection; populate and redraw the menus.
+		// //
+		// createChildActions = generateCreateChildActions(newChildDescriptors,
+		// selection);
+		// createSiblingActions =
+		// generateCreateSiblingActions(newSiblingDescriptors, selection);
 
-		if (createChildMenuManager != null) {
-			populateManager(createChildMenuManager, createChildActions, null);
-			createChildMenuManager.update(true);
+		// if (createChildMenuManager != null) {
+		// populateManager(createChildMenuManager, createChildActions, null);
+		// createChildMenuManager.update(true);
+		// }
+		// if (createSiblingMenuManager != null) {
+		// populateManager(createSiblingMenuManager, createSiblingActions,
+		// null);
+		// createSiblingMenuManager.update(true);
+		// }
+	}
+
+	private Collection generateChildOfExtensionActions(EObject eObject) {
+		Collection<IAction> actions = new ArrayList<IAction>();
+		if (eObject instanceof Device) {
+			List<IRSProtocolContentProvider> providers = RSProtocolManager.createProtocolProvider();
+			for (IRSProtocolContentProvider provider : providers) {
+				String protocolName = provider.getProtocolName();
+				String protocolGroupName = provider.getGroupName();
+				RSICDCreateChildAction rsICDCreateChildAction = new RSICDCreateChildAction(activeEditorPart);
+				rsICDCreateChildAction.setText(protocolName);
+				rsICDCreateChildAction.setGroupName(protocolGroupName);
+				rsICDCreateChildAction
+						.setImageDescriptor(RSICDEditorPlugin.getPlugin().getImageRegistry().getDescriptor("Channel"));
+				actions.add(rsICDCreateChildAction);
+			}
 		}
-		if (createSiblingMenuManager != null) {
-			populateManager(createSiblingMenuManager, createSiblingActions, null);
-			createSiblingMenuManager.update(true);
+		return actions;
+	}
+
+	private Collection<IAction> generateChildActions(IRSICDConfigContainerModel object,
+			Collection<?> newChildDescriptions) {
+		Collection<IAction> actions = new ArrayList<IAction>();
+		EObject eObject = object.getEObject();
+		Map<String, String> wrappingModelWithEmfs = createWrappingModelWithEMF(object);
+		for (Object description : newChildDescriptions) {
+			if (description instanceof CommandParameter) {
+				EObject eChild = (EObject) ((CommandParameter) description).getValue();
+				String typeName = eChild.eClass().getInstanceTypeName();
+				if (wrappingModelWithEmfs.keySet().size() > 0) {
+					if (ArrayUtils.contains(wrappingModelWithEmfs.keySet().toArray(), typeName)) {
+						IRSICDConfigModel child = createWrappingModelOfEMF(eChild, wrappingModelWithEmfs.get(typeName));
+						RSICDCreateChildAction rsICDCreateChildAction = new RSICDCreateChildAction(activeEditorPart,
+								eObject, description, object, child);
+						String name = eChild.eClass().getName();
+						rsICDCreateChildAction.setText(name);
+						rsICDCreateChildAction.setImageDescriptor(
+								RSICDEditorPlugin.getPlugin().getImageRegistry().getDescriptor(name));
+						actions.add(rsICDCreateChildAction);
+					}
+				}
+			}
 		}
+
+		// --针对设备节点定制总线菜单显示
+		// if (eObject instanceof Device) {
+		// List<IRSProtocolContentProvider> providers =
+		// RSProtocolManager.createProtocolProvider();
+		// for (IRSProtocolContentProvider provider : providers) {
+		// String protocolName = provider.getProtocolName();
+		// String protocolGroupName = provider.getGroupName();
+		// RSICDCreateChildAction rsICDCreateChildAction = new
+		// RSICDCreateChildAction();
+		// rsICDCreateChildAction.setText(protocolName);
+		// rsICDCreateChildAction.setGroupName(protocolGroupName);
+		// rsICDCreateChildAction
+		// .setImageDescriptor(RSICDEditorPlugin.getPlugin().getImageRegistry().getDescriptor("Channel"));
+		// actions.add(rsICDCreateChildAction);
+		// }
+		// } else {
+		// for (Object descriptor : newChildDescriptions) {
+		// RSICDCreateChildAction rsICDCreateChildAction = new
+		// RSICDCreateChildAction();
+		// if (descriptor instanceof CommandParameter) {
+		// EObject eChild = (EObject) ((CommandParameter) descriptor).value;
+		// String name = eChild.eClass().getName();
+		// rsICDCreateChildAction.setText(name);
+		// actions.add(rsICDCreateChildAction);
+		// }
+		// }
+		// }
+		return actions;
+	}
+
+	private IRSICDConfigModel createWrappingModelOfEMF(EObject eObject, String modelClassName) {
+		IRSICDConfigModel wrappingModel=null;
+		Class clazz;
+		try {
+			clazz = Class.forName(modelClassName);
+			Constructor constructor = clazz.getConstructor(EObject.class);
+			constructor.setAccessible(true);
+			wrappingModel = (IRSICDConfigModel) constructor.newInstance(eObject);
+		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException
+				| IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+			e.printStackTrace();
+		}
+		return wrappingModel;
+
+	}
+
+	private Map<String, String> createWrappingModelWithEMF(IRSICDConfigContainerModel object) {
+		Annotation[] annotations = object.getClass().getAnnotations();
+		Map<String, String> wrappingModelWithEmfs = new HashMap<String, String>();
+		for (Annotation annotation : annotations) {
+			if (annotation instanceof ICDModelAnnotation) {
+				String[] names = ((ICDModelAnnotation) annotation).childWrappingWithEmfClass();
+				for (int i = 0; i < names.length; i = i + 2) {
+					wrappingModelWithEmfs.put(names[i], names[i + 1]);
+				}
+			}
+		}
+		return wrappingModelWithEmfs;
 	}
 
 	/**
-	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateChildAction} for each object in <code>descriptors</code>,
-	 * and returns the collection of these actions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateChildAction}
+	 * for each object in <code>descriptors</code>, and returns the collection
+	 * of these actions. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection generateCreateChildActions(Collection descriptors, ISelection selection) {
 		Collection actions = new ArrayList();
 		if (descriptors != null) {
-			for (Iterator i = descriptors.iterator(); i.hasNext(); ) {
+			for (Iterator i = descriptors.iterator(); i.hasNext();) {
 				actions.add(new CreateChildAction(activeEditorPart, selection, i.next()));
 			}
 		}
@@ -303,16 +462,17 @@ public class RSICDConfigActionBarContributor
 	}
 
 	/**
-	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} for each object in <code>descriptors</code>,
-	 * and returns the collection of these actions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This generates a
+	 * {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} for each
+	 * object in <code>descriptors</code>, and returns the collection of these
+	 * actions. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection generateCreateSiblingActions(Collection descriptors, ISelection selection) {
 		Collection actions = new ArrayList();
 		if (descriptors != null) {
-			for (Iterator i = descriptors.iterator(); i.hasNext(); ) {
+			for (Iterator i = descriptors.iterator(); i.hasNext();) {
 				actions.add(new CreateSiblingAction(activeEditorPart, selection, i.next()));
 			}
 		}
@@ -320,33 +480,75 @@ public class RSICDConfigActionBarContributor
 	}
 
 	/**
-	 * This populates the specified <code>manager</code> with {@link org.eclipse.jface.action.ActionContributionItem}s
-	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection,
-	 * by inserting them before the specified contribution item <code>contributionID</code>.
-	 * If <code>contributionID</code> is <code>null</code>, they are simply added.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This populates the specified <code>manager</code> with
+	 * {@link org.eclipse.jface.action.ActionContributionItem}s based on the
+	 * {@link org.eclipse.jface.action.IAction}s contained in the
+	 * <code>actions</code> collection, by inserting them before the specified
+	 * contribution item <code>contributionID</code>. If
+	 * <code>contributionID</code> is <code>null</code>, they are simply added.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	protected void populateManager(IContributionManager manager, Collection actions, String contributionID) {
-		if (actions != null) {
-			for (Iterator i = actions.iterator(); i.hasNext(); ) {
-				IAction action = (IAction)i.next();
-				if (contributionID != null) {
-					manager.insertBefore(contributionID, action);
+	@SuppressWarnings("rawtypes")
+	protected void populateManager(IContributionManager manager, Collection<RSICDCreateChildAction> actions,
+			String contributionID) {
+		// --分组处理action
+		Map<String, List<IAction>> actionMap = new HashMap<String, List<IAction>>();
+		for (RSICDCreateChildAction action : actions) {
+			String groupName = action.getGroupName();
+			if (groupName != null) {
+				if (!actionMap.containsKey(groupName)) {
+					actionMap.put(groupName, new ArrayList<IAction>());
 				}
-				else {
-					manager.add(action);
+			} else {
+				groupName = "common";
+				if (!actionMap.containsKey(groupName)) {
+					actionMap.put(groupName, new ArrayList<IAction>());
 				}
 			}
+			List createChildActions = actionMap.get(groupName);
+			createChildActions.add(action);
 		}
+
+		for (Iterator iter = actionMap.entrySet().iterator(); iter.hasNext();) {
+			Map.Entry entry = (Entry) iter.next();
+			String key = (String) entry.getKey();
+			if (key.equals("common")) {
+				List<IAction> actionList = (List<IAction>) entry.getValue();
+				for (Iterator i = actionList.iterator(); i.hasNext();) {
+					IAction action = (IAction) i.next();
+					if (contributionID != null) {
+						manager.insertBefore(contributionID, action);
+					} else {
+						manager.add(action);
+					}
+				}
+			} else {
+				// --需要生成2级菜单
+				MenuManager subMenuManager = new MenuManager(key);
+				List<IAction> actionList = (List<IAction>) entry.getValue();
+				for (Iterator i = actionList.iterator(); i.hasNext();) {
+					IAction action = (IAction) i.next();
+					subMenuManager.add(action);
+				}
+				manager.add(subMenuManager);
+
+			}
+		}
+
+		// if (actions != null) {
+		//
+		// }
 	}
-		
+
 	/**
-	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.ActionContributionItem}s
-	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This removes from the specified <code>manager</code> all
+	 * {@link org.eclipse.jface.action.ActionContributionItem}s based on the
+	 * {@link org.eclipse.jface.action.IAction}s contained in the
+	 * <code>actions</code> collection. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void depopulateManager(IContributionManager manager, Collection actions) {
@@ -357,13 +559,13 @@ public class RSICDConfigActionBarContributor
 				//
 				IContributionItem contributionItem = items[i];
 				while (contributionItem instanceof SubContributionItem) {
-					contributionItem = ((SubContributionItem)contributionItem).getInnerItem();
+					contributionItem = ((SubContributionItem) contributionItem).getInnerItem();
 				}
 
 				// Delete the ActionContributionItems with matching action.
 				//
 				if (contributionItem instanceof ActionContributionItem) {
-					IAction action = ((ActionContributionItem)contributionItem).getAction();
+					IAction action = ((ActionContributionItem) contributionItem).getAction();
 					if (actions.contains(action)) {
 						manager.remove(contributionItem);
 					}
@@ -373,44 +575,46 @@ public class RSICDConfigActionBarContributor
 	}
 
 	/**
-	 * This populates the pop-up menu before it appears.
-	 * <!-- begin-user-doc -->
+	 * This populates the pop-up menu before it appears. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void menuAboutToShow(IMenuManager menuManager) {
 		super.menuAboutToShow(menuManager);
 		MenuManager submenuManager = null;
 
-		submenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		submenuManager = new MenuManager("New");
 		populateManager(submenuManager, createChildActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 
-		submenuManager = new MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
-		populateManager(submenuManager, createSiblingActions, null);
-		menuManager.insertBefore("edit", submenuManager);
+		// submenuManager = new
+		// MenuManager(RSICDEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		// populateManager(submenuManager, createSiblingActions, null);
+		// menuManager.insertBefore("edit", submenuManager);
 	}
 
 	/**
-	 * This inserts global actions before the "additions-end" separator.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This inserts global actions before the "additions-end" separator. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addGlobalActions(IMenuManager menuManager) {
-		menuManager.insertAfter("additions-end", new Separator("ui-actions"));
-		menuManager.insertAfter("ui-actions", showPropertiesViewAction);
-
-		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());		
-		menuManager.insertAfter("ui-actions", refreshViewerAction);
-
-		super.addGlobalActions(menuManager);
+		// menuManager.insertAfter("additions-end", new
+		// Separator("ui-actions"));
+		// menuManager.insertAfter("ui-actions", showPropertiesViewAction);
+		//
+		// refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());
+		// menuManager.insertAfter("ui-actions", refreshViewerAction);
+		//
+		// super.addGlobalActions(menuManager);
 	}
 
 	/**
-	 * This ensures that a delete action will clean up all references to deleted objects.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This ensures that a delete action will clean up all references to deleted
+	 * objects. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected boolean removeAllReferencesOnDelete() {

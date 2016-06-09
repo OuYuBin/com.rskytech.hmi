@@ -3,10 +3,10 @@
 <schema targetNamespace="com.rskytech.hmi.protocol.extension" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="com.rskytech.hmi.protocol.extension" id="protocal" name="com.rskytech.hmi.protocol"/>
+         <meta.schema plugin="com.rskytech.hmi.protocol.extension" id="protocol" name="com.rskytech.hmi.protocol"/>
       </appinfo>
       <documentation>
-         [Enter description of this extension point.]
+         该扩展点用于扩展总线类型,定义总线指标特性等信息.
       </documentation>
    </annotation>
 
@@ -50,7 +50,7 @@
    <element name="protocol">
       <complexType>
          <choice>
-            <element ref="const"/>
+            <element ref="attr" minOccurs="1" maxOccurs="unbounded"/>
          </choice>
          <attribute name="id" type="string" use="required">
             <annotation>
@@ -66,22 +66,13 @@
                </documentation>
             </annotation>
          </attribute>
-      </complexType>
-   </element>
-
-   <element name="const">
-      <complexType>
-         <sequence minOccurs="1" maxOccurs="unbounded">
-            <element ref="node"/>
-         </sequence>
-      </complexType>
-   </element>
-
-   <element name="node">
-      <complexType>
-         <sequence minOccurs="0" maxOccurs="unbounded">
-            <element ref="attr"/>
-         </sequence>
+         <attribute name="groupName" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
       </complexType>
    </element>
 

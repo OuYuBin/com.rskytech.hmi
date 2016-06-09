@@ -1,5 +1,6 @@
 package com.rskytech.hmi.bench.rsateconfig.editor.page;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -80,8 +81,8 @@ public class RSATEConfigDetailPage extends AbstractFormPart implements IDetailsP
 			attributes = ((IRSATEConfigModel) input).getEObject().eClass().getEAllAttributes();
 
 		}
-		if (!attributes.isEmpty()) {
-			Section section = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
+		if (attributes!=null&&!attributes.isEmpty()) {
+			Section section = toolKit.createSection(parent, Section.EXPANDED | Section.TITLE_BAR|Section.TREE_NODE);
 			section.setText("属性");
 			TableWrapData twd = new TableWrapData(TableWrapData.FILL_GRAB);
 			twd.grabHorizontal = true;

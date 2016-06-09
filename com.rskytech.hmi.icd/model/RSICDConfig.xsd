@@ -8,6 +8,8 @@
 			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Device"
 				type="Device"></xsd:element>
 			<xsd:element minOccurs="0" maxOccurs="1" name="Bus" type="Bus"></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Data"
+				type="Data"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -35,6 +37,8 @@
 						type="Config"></xsd:element>
 				</xsd:sequence>
 				<xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+				<xsd:attribute name="datas" type="xsd:IDREFS"
+					ecore:reference="Data"></xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -42,6 +46,15 @@
 	<xsd:complexType name="Config">
 		<xsd:attribute name="property" type="xsd:string"></xsd:attribute>
 		<xsd:attribute name="value" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="Data">
+		<xsd:complexContent>
+			<xsd:extension base="ICDElement">
+				<xsd:attribute name="datas" type="xsd:IDREFS"
+					ecore:reference="Data"></xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
 	</xsd:complexType>
 
 	<xsd:complexType name="ICDElement">

@@ -7,7 +7,7 @@ import java.util.List;
  * @author robin
  *
  */
-public interface IRSICDConfigContainerModel {
+public interface IRSICDConfigContainerModel extends IRSICDConfigModel{
 
-	public List<? extends IRSICDConfigModel> getRSICDConfigModels();
+	public <T> List<T> getRSICDConfigModels();
 }

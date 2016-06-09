@@ -7,11 +7,14 @@ Bundle-Activator: com.rskytech.hmi.icd.common.Activator
 Bundle-Vendor: RSKYTECH
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.emf.ecore;bundle-version="2.11.2",
- org.eclipse.emf.query;bundle-version="1.7.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.query,
  com.rskytech.hmi.icd;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Export-Package: com.rskytech.hmi.icd.common,
  com.rskytech.hmi.icd.common.model,
+ com.rskytech.hmi.icd.common.model.annotation,
  com.rskytech.hmi.icd.common.model.impl,
- com.rskytech.hmi.icd.common.model.manager
+ com.rskytech.hmi.icd.common.model.manager,
+ com.rskytech.hmi.icd.common.model.query,
+ com.rskytech.hmi.icd.common.model.query.condition

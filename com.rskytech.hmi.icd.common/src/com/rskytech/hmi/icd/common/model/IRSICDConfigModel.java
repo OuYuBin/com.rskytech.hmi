@@ -11,5 +11,5 @@ public interface IRSICDConfigModel {
 
 	public String getName();
 	
-	public EObject geteObject();
+	public EObject getEObject();
 }

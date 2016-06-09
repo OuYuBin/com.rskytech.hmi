@@ -9,16 +9,19 @@ import com.rskytech.hmi.icd.common.model.IRSICDConfigModel;
  * @author robin
  *
  */
-public class RSICDConfigModelImpl implements IRSICDConfigModel{
+public class RSICDConfigModelImpl implements IRSICDConfigModel {
 
-	
-	//--封装的EMF对象信息
+	// --封装的EMF对象信息
 	private EObject eObject;
-	
+
 	private String name;
-	
-	public RSICDConfigModelImpl(EObject eObject){
-		this.eObject=eObject;
+
+	public RSICDConfigModelImpl() {
+
+	}
+
+	public RSICDConfigModelImpl(EObject eObject) {
+		this.eObject = eObject;
 	}
 
 	public String getName() {
@@ -29,14 +32,12 @@ public class RSICDConfigModelImpl implements IRSICDConfigModel{
 		this.name = name;
 	}
 
-	public EObject geteObject() {
+	public EObject getEObject() {
 		return eObject;
 	}
 
-	public void seteObject(EObject eObject) {
+	public void setEObject(EObject eObject) {
 		this.eObject = eObject;
 	}
-	
-	
 
 }

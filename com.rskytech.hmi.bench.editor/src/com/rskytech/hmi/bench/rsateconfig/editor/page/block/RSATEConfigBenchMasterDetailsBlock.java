@@ -139,4 +139,10 @@ public class RSATEConfigBenchMasterDetailsBlock extends
 
 	}
 
+	@Override
+	public <T> T getAdapter(Class<T> adapter) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

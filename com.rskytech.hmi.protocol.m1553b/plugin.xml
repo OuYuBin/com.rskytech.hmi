@@ -2,13 +2,12 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="com.rskytech.hmi.protocol.extension.protocal">
-      <protocol
-            id="com.rskytech.hmi.protocol.m1553.protocol"
-            name="M1553B Remote Terminal">
-         <const>
-            <node>
-               <attr
+         point="com.rskytech.hmi.protocol.extension.protocol">
+         <protocol
+               groupName="MIL1553B"
+               id="com.rskytech.hmi.protocol.m1553.protocol.rt"
+               name="MIL1553B (Remote Terminal)">
+            <attr
                      name="Direction"
                      type="enum"
                      value="[TX,RX]">
@@ -18,8 +17,20 @@
                      name="SubType"
                      type="string"
                      value="RT">
-               </attr></node>
-         </const>
+               </attr>
+         
+      </protocol>
+   </extension>
+   <extension
+         point="com.rskytech.hmi.protocol.extension.protocol">
+      <protocol
+            groupName="MIL1553B"
+            id="com.rskytech.hmi.protocol.m1553.protocol1"
+            name="MIL1553B (Bus Controller)">
+         <attr
+               name="SubType"
+               type="string">
+         </attr>
       </protocol>
    </extension>
 

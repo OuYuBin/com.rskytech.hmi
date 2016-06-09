@@ -96,7 +96,7 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getICDElement()
 	 * @generated
 	 */
-	int ICD_ELEMENT = 6;
+	int ICD_ELEMENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -181,13 +181,22 @@ public interface RSICDConfigPackage extends EPackage {
 	int CHANNEL__CONFIG = ICD_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Datas</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANNEL__DATAS = ICD_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHANNEL__TYPE = ICD_ELEMENT_FEATURE_COUNT + 1;
+	int CHANNEL__TYPE = ICD_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Channel</em>' class.
@@ -196,7 +205,7 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANNEL_FEATURE_COUNT = ICD_ELEMENT_FEATURE_COUNT + 2;
+	int CHANNEL_FEATURE_COUNT = ICD_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link com.rskytech.hmi.icd.model.impl.ConfigImpl <em>Config</em>}' class.
@@ -236,6 +245,61 @@ public interface RSICDConfigPackage extends EPackage {
 	int CONFIG_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link com.rskytech.hmi.icd.model.impl.DataImpl <em>Data</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.rskytech.hmi.icd.model.impl.DataImpl
+	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getData()
+	 * @generated
+	 */
+	int DATA = 3;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__COMMENT = ICD_ELEMENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__INDEX = ICD_ELEMENT__INDEX;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__NAME = ICD_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Datas</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__DATAS = ICD_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Data</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FEATURE_COUNT = ICD_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link com.rskytech.hmi.icd.model.impl.DeviceImpl <em>Device</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -243,7 +307,7 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getDevice()
 	 * @generated
 	 */
-	int DEVICE = 3;
+	int DEVICE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -298,7 +362,7 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getDocumentRoot()
 	 * @generated
 	 */
-	int DOCUMENT_ROOT = 4;
+	int DOCUMENT_ROOT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -353,7 +417,7 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getICD()
 	 * @generated
 	 */
-	int ICD = 5;
+	int ICD = 6;
 
 	/**
 	 * The feature id for the '<em><b>Device</b></em>' containment reference list.
@@ -374,13 +438,22 @@ public interface RSICDConfigPackage extends EPackage {
 	int ICD__BUS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICD__DATA = 2;
+
+	/**
 	 * The number of structural features of the '<em>ICD</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICD_FEATURE_COUNT = 2;
+	int ICD_FEATURE_COUNT = 3;
 
 
 	/**
@@ -426,6 +499,17 @@ public interface RSICDConfigPackage extends EPackage {
 	EReference getChannel_Config();
 
 	/**
+	 * Returns the meta object for the reference list '{@link com.rskytech.hmi.icd.model.Channel#getDatas <em>Datas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Datas</em>'.
+	 * @see com.rskytech.hmi.icd.model.Channel#getDatas()
+	 * @see #getChannel()
+	 * @generated
+	 */
+	EReference getChannel_Datas();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.rskytech.hmi.icd.model.Channel#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -467,6 +551,27 @@ public interface RSICDConfigPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConfig_Value();
+
+	/**
+	 * Returns the meta object for class '{@link com.rskytech.hmi.icd.model.Data <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data</em>'.
+	 * @see com.rskytech.hmi.icd.model.Data
+	 * @generated
+	 */
+	EClass getData();
+
+	/**
+	 * Returns the meta object for the reference list '{@link com.rskytech.hmi.icd.model.Data#getDatas <em>Datas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Datas</em>'.
+	 * @see com.rskytech.hmi.icd.model.Data#getDatas()
+	 * @see #getData()
+	 * @generated
+	 */
+	EReference getData_Datas();
 
 	/**
 	 * Returns the meta object for class '{@link com.rskytech.hmi.icd.model.Device <em>Device</em>}'.
@@ -576,6 +681,17 @@ public interface RSICDConfigPackage extends EPackage {
 	EReference getICD_Bus();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.rskytech.hmi.icd.model.ICD#getData <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Data</em>'.
+	 * @see com.rskytech.hmi.icd.model.ICD#getData()
+	 * @see #getICD()
+	 * @generated
+	 */
+	EReference getICD_Data();
+
+	/**
 	 * Returns the meta object for class '{@link com.rskytech.hmi.icd.model.ICDElement <em>ICD Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -677,6 +793,14 @@ public interface RSICDConfigPackage extends EPackage {
 		EReference CHANNEL__CONFIG = eINSTANCE.getChannel_Config();
 
 		/**
+		 * The meta object literal for the '<em><b>Datas</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHANNEL__DATAS = eINSTANCE.getChannel_Datas();
+
+		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -709,6 +833,24 @@ public interface RSICDConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONFIG__VALUE = eINSTANCE.getConfig_Value();
+
+		/**
+		 * The meta object literal for the '{@link com.rskytech.hmi.icd.model.impl.DataImpl <em>Data</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.rskytech.hmi.icd.model.impl.DataImpl
+		 * @see com.rskytech.hmi.icd.model.impl.RSICDConfigPackageImpl#getData()
+		 * @generated
+		 */
+		EClass DATA = eINSTANCE.getData();
+
+		/**
+		 * The meta object literal for the '<em><b>Datas</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__DATAS = eINSTANCE.getData_Datas();
 
 		/**
 		 * The meta object literal for the '{@link com.rskytech.hmi.icd.model.impl.DeviceImpl <em>Device</em>}' class.
@@ -795,6 +937,14 @@ public interface RSICDConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ICD__BUS = eINSTANCE.getICD_Bus();
+
+		/**
+		 * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICD__DATA = eINSTANCE.getICD_Data();
 
 		/**
 		 * The meta object literal for the '{@link com.rskytech.hmi.icd.model.impl.ICDElementImpl <em>ICD Element</em>}' class.
