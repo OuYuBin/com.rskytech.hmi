@@ -131,13 +131,11 @@ public class RSICDConfigMasterDetailsBlock extends
 
 	@Override
 	protected void createToolBarActions(IManagedForm managedForm) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void createContent(IManagedForm managedForm, Composite parent) {
-		// TODO Auto-generated method stub
 		super.createContent(managedForm, parent);
 		this.sashForm.setWeights(new int[] { 35, 65 });
 	}

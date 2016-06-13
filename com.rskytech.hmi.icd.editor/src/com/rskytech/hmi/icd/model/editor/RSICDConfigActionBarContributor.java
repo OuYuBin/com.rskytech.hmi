@@ -21,6 +21,7 @@ import java.util.Map.Entry;
 import org.apache.commons.lang.ArrayUtils;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
@@ -54,10 +55,16 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
+import com.rskytech.hmi.common.editor.IRskyCommonEditor;
 import com.rskytech.hmi.icd.common.model.IRSICDConfigContainerModel;
 import com.rskytech.hmi.icd.common.model.IRSICDConfigModel;
 import com.rskytech.hmi.icd.common.model.annotation.ICDModelAnnotation;
+import com.rskytech.hmi.icd.common.model.impl.Channel;
+import com.rskytech.hmi.icd.common.model.impl.Type;
+import com.rskytech.hmi.icd.common.model.query.ModelQuery;
+import com.rskytech.hmi.icd.model.Bus;
 import com.rskytech.hmi.icd.model.Device;
+import com.rskytech.hmi.icd.model.RSICDConfigFactory;
 import com.rskytech.hmi.icd.model.editor.actions.RSICDCreateChildAction;
 import com.rskytech.hmi.protocol.manager.RSProtocolManager;
 import com.rskytech.hmi.protocol.provider.IRSProtocolContentProvider;
@@ -294,7 +301,7 @@ public class RSICDConfigActionBarContributor extends EditingDomainActionBarContr
 				} else {
 					createChildActions = Collections.EMPTY_LIST;
 				}
-				createChildOfExtensionActions = generateChildOfExtensionActions(eObject);
+				createChildOfExtensionActions = generateChildOfExtensionActions((IRSICDConfigContainerModel) object);
 				createChildActions.addAll(createChildOfExtensionActions);
 
 			}
@@ -342,14 +349,84 @@ public class RSICDConfigActionBarContributor extends EditingDomainActionBarContr
 		// }
 	}
 
-	private Collection generateChildOfExtensionActions(EObject eObject) {
+	/**
+	 * 处理协议扩展
+	 * 
+	 * @param eObject
+	 * @return
+	 */
+	private Collection generateChildOfExtensionActions(IRSICDConfigContainerModel object) {
 		Collection<IAction> actions = new ArrayList<IAction>();
-		if (eObject instanceof Device) {
+		if (object instanceof com.rskytech.hmi.icd.common.model.impl.Device) {
+			EObject eObject = object.getEObject();
 			List<IRSProtocolContentProvider> providers = RSProtocolManager.createProtocolProvider();
 			for (IRSProtocolContentProvider provider : providers) {
 				String protocolName = provider.getProtocolName();
 				String protocolGroupName = provider.getGroupName();
-				RSICDCreateChildAction rsICDCreateChildAction = new RSICDCreateChildAction(activeEditorPart);
+				// --生成协议EMF模型对象
+				com.rskytech.hmi.icd.model.Channel eChannel = RSICDConfigFactory.eINSTANCE.createChannel();
+				eChannel.setType(protocolGroupName);
+				Resource resource = ((IRskyCommonEditor) activeEditorPart).getResource();
+				EObject root = resource.getContents().get(0);
+				Collection<?> buses = ModelQuery.queryBus(root);
+				com.rskytech.hmi.icd.model.Bus eBus = null;
+				RSICDCreateChildAction rsICDCreateChildAction = null;
+				if (buses.isEmpty()) {
+					eBus = RSICDConfigFactory.eINSTANCE.createBus();
+					eObject = root;
+					eBus.getChannel().add(eChannel);
+					List<Type> types = (List<Type>) ((com.rskytech.hmi.icd.common.model.impl.Device) object)
+							.getRSICDConfigModels();
+					if (!types.isEmpty()) {
+						for (Type child : types) {
+							String typeName = child.getName();
+							if (typeName.equals(protocolGroupName)) {
+								Channel channel = new Channel(eChannel);
+								child.addChannel(channel);
+								rsICDCreateChildAction = new RSICDCreateChildAction(activeEditorPart, eObject, eBus,
+										object, child);
+							}
+						}
+					} else {
+						Type child = new Type();
+						if (protocolGroupName == null)
+							child.setName(protocolName);
+						else
+							child.setName(protocolGroupName);
+						Channel channel = new Channel(eChannel);
+						child.addChannel(channel);
+						rsICDCreateChildAction = new RSICDCreateChildAction(activeEditorPart, eObject, eBus, object,
+								child);
+					}
+
+				} else {
+					eBus = (Bus) buses.toArray()[0];
+					List<Type> types = (List<Type>) ((com.rskytech.hmi.icd.common.model.impl.Device) object)
+							.getRSICDConfigModels();
+					String pName=protocolGroupName==null?protocolName:protocolGroupName;
+					if (!types.isEmpty()) {
+						for (Type child : types) {
+							String typeName = child.getName();
+							if (typeName.equals(pName)) {
+								Channel channel = new Channel(eChannel);
+								//child.addChannel(channel);
+								rsICDCreateChildAction = new RSICDCreateChildAction(activeEditorPart, eBus, eChannel,
+										child, channel);
+							}
+						}
+					} else {
+						Type child = new Type();
+						if (protocolGroupName == null)
+							child.setName(protocolName);
+						else
+							child.setName(protocolGroupName);
+						Channel channel = new Channel(eChannel);
+						child.addChannel(channel);
+						rsICDCreateChildAction = new RSICDCreateChildAction(activeEditorPart, eBus, eChannel, object,
+								child);
+					}
+				}
+
 				rsICDCreateChildAction.setText(protocolName);
 				rsICDCreateChildAction.setGroupName(protocolGroupName);
 				rsICDCreateChildAction
@@ -415,7 +492,7 @@ public class RSICDConfigActionBarContributor extends EditingDomainActionBarContr
 	}
 
 	private IRSICDConfigModel createWrappingModelOfEMF(EObject eObject, String modelClassName) {
-		IRSICDConfigModel wrappingModel=null;
+		IRSICDConfigModel wrappingModel = null;
 		Class clazz;
 		try {
 			clazz = Class.forName(modelClassName);

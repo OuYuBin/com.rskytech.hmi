@@ -28,6 +28,19 @@ public class ICDAddCommand extends AddCommand {
 	@Override
 	public void doExecute() {
 		super.doExecute();
+		this.doRedo();
+
+	}
+
+	@Override
+	public void doUndo() {
+		super.doUndo();
+		((IRSICDConfigContainerModel) parent).getRSICDConfigModels().remove(child);
+	}
+
+	@Override
+	public void doRedo() {
+		super.doRedo();
 		if (parent instanceof IRSICDConfigContainerModel) {
 			(((IRSICDConfigContainerModel) parent).getRSICDConfigModels()).add(child);
 		}

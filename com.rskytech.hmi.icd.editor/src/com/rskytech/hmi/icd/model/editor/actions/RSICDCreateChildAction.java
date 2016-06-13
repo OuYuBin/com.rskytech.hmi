@@ -26,6 +26,8 @@ public class RSICDCreateChildAction extends StaticSelectionCommandAction {
 
 	public EObject eObject;
 
+	public EObject eChild;
+
 	public CommandParameter descriptor;
 
 	public Object parent;
@@ -34,21 +36,24 @@ public class RSICDCreateChildAction extends StaticSelectionCommandAction {
 
 	public RSICDCreateChildAction(IEditorPart editorPart) {
 		super(editorPart);
-
 	}
 
-	public RSICDCreateChildAction(IEditorPart editorPart, EObject eObject, Object descriptor, Object parent,
+	public RSICDCreateChildAction(IEditorPart editorPart, EObject eObject, EObject eChild, Object parent,
 			Object child) {
-		this(editorPart);
+		super(editorPart);
 		this.eObject = eObject;
-		this.descriptor = (CommandParameter) descriptor;
+		this.eChild = eChild;
 		this.parent = parent;
 		this.child = child;
 	}
 
+	public RSICDCreateChildAction(IEditorPart editorPart, EObject eObject, Object descriptor, Object parent,
+			Object child) {
+		this(editorPart, eObject, ((CommandParameter) descriptor).getEValue(), parent, child);
+	}
+
 	@Override
 	public void run() {
-		EObject eChild = descriptor.getEValue();
 		EStructuralFeature feature = eObject.eClass()
 				.getEStructuralFeature(StringUtils.uncapitalize(eChild.eClass().getName()));
 		ICDAddCommand addCommand = new ICDAddCommand(editingDomain, eObject, feature, eChild, parent, child);

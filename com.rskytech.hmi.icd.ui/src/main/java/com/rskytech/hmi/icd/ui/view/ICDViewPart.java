@@ -60,12 +60,9 @@ public class ICDViewPart extends ViewPart {
 
 			@Override
 			public void doubleClick(DoubleClickEvent event) {
-<<<<<<< HEAD
-				File file = new File("/Users/robin/Downloads/xml/My.icd");
-=======
-				File file=new File("/Users/robin/Downloads/My.icd");
+
+				File file=new File("/Users/robin/Downloads/xml/My.icd");
 				//File file = new File("/home/robin/Downloads/My.icd");
->>>>>>> branch 'master' of https://github.com/OuYuBin/com.rskytech.hmi.git
 				if (file.exists()) {
 					IFileStore fileStore = EFS.getLocalFileSystem().getStore(
 							file.toURI());
